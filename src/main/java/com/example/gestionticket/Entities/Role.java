@@ -18,9 +18,9 @@ public class Role {
     private int id;
 
     @Column(nullable = false)
-    private String role_name;
+    private String name;
 
-    public Role(String role_name) {
-        this.role_name = role_name;
+    public Role(String name) {
+        this.name = name;
     }
 }
