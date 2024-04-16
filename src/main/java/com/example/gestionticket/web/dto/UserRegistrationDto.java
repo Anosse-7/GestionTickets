@@ -21,8 +21,9 @@ public class UserRegistrationDto {
 
     }
 
-    public UserRegistrationDto(String nom, String prenom, String email, String password,String repeatPassword , String address, String telephone, boolean active) {
+    public UserRegistrationDto(String username,String nom, String prenom, String email, String password,String repeatPassword , String address, String telephone, boolean active) {
         super();
+        this.username = username;
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
