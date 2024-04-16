@@ -11,6 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -18,12 +19,15 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "_user", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name = "_user")
 public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @Column(nullable = false,length = 50,unique = true,name = "username")
+    private String username;
 
     @Column(nullable = false,length = 50,name = "nom")
     private String nom;
@@ -58,10 +62,11 @@ public class User implements UserDetails {
                     name = "user_id" , referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(
                     name = "role_id" , referencedColumnName = "id"))
-    private Collection<Role> roles;
+    private Collection<Role> roles = Collections.singletonList(new Role("Client"));;
 
-    public User(String nom, String prenom, String email, String password,String repeatPassword , String addresse, String telephone, boolean active, Collection<Role> roles) {
+    public User(String username ,String nom, String prenom, String email, String password,String repeatPassword , String addresse, String telephone, boolean active, Collection<Role> roles) {
 
+        this.username = username;
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
@@ -71,6 +76,11 @@ public class User implements UserDetails {
         this.telephone = telephone;
         this.active = active;
         this.roles = roles;
+        if (roles == null || roles.isEmpty()) {
+            this.roles = Collections.singletonList(new Role("Client"));
+        } else {
+            this.roles = roles;
+        }
     }
 
     @Override
