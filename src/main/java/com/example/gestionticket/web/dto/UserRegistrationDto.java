@@ -1,5 +1,6 @@
 package com.example.gestionticket.web.dto;
 
+import com.example.gestionticket.Entities.User;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,6 +34,22 @@ public class UserRegistrationDto {
         this.telephone = telephone;
         this.active = active;
     }
+
+    // Add this method to the UserRegistrationDto class
+public User toUser() {
+    User user = new User();
+    user.setUsername(this.username);
+    user.setNom(this.nom);
+    user.setPrenom(this.prenom);
+    user.setEmail(this.email);
+    user.setPassword(this.password);
+    user.setRepeatPassword(this.repeatPassword);
+    user.setAddresse(this.address);
+    user.setTelephone(this.telephone);
+    user.setActive(this.active);
+    // Set the roles as needed
+    return user;
+}
 
 }
 

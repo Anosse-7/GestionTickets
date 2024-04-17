@@ -46,14 +46,13 @@
 
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="form5Example4cdg">Entrer votre mot de passe</label>
-
                                     <input type="password" id="form5Example4cdg" class="form-control form-control-lg" th:field="${user.password}" required autofocus="autofocus"/>
                                 </div>
 
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="form6Example4cdg">Repeat Password</label>
-
-                                    <input type="password" id="form6Example4cdg" class="form-control form-control-lg" th:field="${user.repeatPassword}" required autofocus="autofocus"/>
+                                    <input type="password" id="form6Example4cdg" class="form-control form-control-lg" th:field="${user.repeatPassword}" required autofocus="autofocus" pattern="^(?=.*\bform5Example4cdg\b).+$"
+                                           onkeyup="validatePasswordMatch()">
                                     <span th:if="${#fields.hasErrors('repeatPassword')}" class="text-danger">Passwords don't match!</span>
                                 </div>
 
@@ -76,7 +75,6 @@
 
                                 <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
                             </form>
-
                         </div>
                     </div>
                 </div>
