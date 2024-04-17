@@ -1,10 +1,8 @@
-package com.example.gestionticket.web.dto;
+package com.example.gestionticket.web.Controllers;
 
 import com.example.gestionticket.Entities.User;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.List;
 
 @Setter
 @Getter

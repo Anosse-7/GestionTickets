@@ -2,7 +2,7 @@ package com.example.gestionticket.web;
 
 import com.example.gestionticket.Entities.User;
 import com.example.gestionticket.services.UserService;
-import com.example.gestionticket.web.dto.UserRegistrationDto;
+import com.example.gestionticket.web.Controllers.UserRegistrationDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.annotation.PostConstruct;
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 @RequestMapping("/registration")

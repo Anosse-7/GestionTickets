@@ -46,12 +46,14 @@ public class User implements UserDetails {
     @Column(nullable = false,length = 50,name = "telephone")
     private String telephone;
 
-
     @Column(nullable = false,name = "active")
     private boolean active;
 
+    @Column(nullable = false,name = "role")
+    private String role;
 
-    public User(String username ,String nom, String prenom, String email, String password, String addresse, String telephone, boolean active) {
+
+    public User(String username ,String nom, String prenom, String email, String password, String addresse, String telephone, boolean active , String role) {
 
         this.username = username;
         this.nom = nom;
@@ -61,6 +63,8 @@ public class User implements UserDetails {
         this.addresse = addresse;
         this.telephone = telephone;
         this.active = active;
+        this.role = role;
+
     }
 
     @Override
