@@ -1,7 +1,7 @@
 package com.example.gestionticket.services;
 
 import com.example.gestionticket.Entities.User;
-import com.example.gestionticket.web.Controllers.UserRegistrationDto;
+import com.example.gestionticket.web.dto.UserRegistrationDto;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
