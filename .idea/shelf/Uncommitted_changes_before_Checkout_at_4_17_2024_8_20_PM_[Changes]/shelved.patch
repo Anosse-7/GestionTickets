@@ -1,0 +1,19 @@
+Index: src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.application.name=GestionTicket\n\nserver.port=8080\n\n\nspring.datasource.url=jdbc:sqlserver://localhost:1433;serverName=pavilion;encrypt=true;trustServerCertificate=true;databaseName=    \nspring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver\nspring.datasource.username=sa\nspring.datasource.password=admin\nspring.jpa.show-sql=true\n\n# Enable SQL formatting for Hibernate\nspring.jpa.properties.hibernate.format_sql=true\n\n# Hibernate Configuration\nspring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServerDialect\nspring.jpa.hibernate.ddl-auto=update\n\nspring.thymeleaf.prefix=classpath:/templates/\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/application.properties b/src/main/resources/application.properties
+--- a/src/main/resources/application.properties	(revision c11e8a2a47f5c09ceb385442f3c957c0be94ba38)
++++ b/src/main/resources/application.properties	(date 1713381472939)
+@@ -3,7 +3,7 @@
+ server.port=8080
+ 
+ 
+-spring.datasource.url=jdbc:sqlserver://localhost:1433;serverName=pavilion;encrypt=true;trustServerCertificate=true;databaseName=    
++spring.datasource.url=jdbc:sqlserver://localhost:1433;serverName=EVILLBOX;encrypt=true;trustServerCertificate=true;databaseName=GestionTicket    
+ spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+ spring.datasource.username=sa
+ spring.datasource.password=admin

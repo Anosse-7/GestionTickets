@@ -1,0 +1,574 @@
+Index: src/main/resources/templates/Registration/registration.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Title</title>\n    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH\" crossorigin=\"anonymous\">\n    <link href=\"./resources/CSS/mystyle.css\" type=\"text/css\">\n</head>\n<body>\n<section class=\"vh-100 bg-image\"\n         style=\"background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');\">\n    <div class=\"mask d-flex align-items-center h-100 gradient-custom-3\">\n        <div class=\"container h-100\">\n            <div class=\"row d-flex justify-content-center align-items-center h-100\">\n                <div class=\"col-12 col-md-9 col-lg-7 col-xl-6\">\n                    <div class=\"card\" style=\"border-radius: 15px;\">\n                        <div class=\"card-body p-5\">\n                            <h2 class=\"text-uppercase text-center mb-5\">Create an account</h2>\n\n                            <form th:action=\"@{/registration}\" method=\"post\" th:object=\"${user}\">\n                                <!-- success message -->\n                                <div th:if=\"${param.success}\" class=\"alert alert-success\">\n                                    You have been registered successfully\n                                </div>\n\n                                <div data-mdb-input-init class=\"form-outline mb-4\">\n                                    <label class=\"form-label\" for=\"form3Example1cg\">Nom</label>\n                                    <input type=\"text\" id=\"form3Example1cg\" class=\"form-control form-control-lg \" th:field=\"${user.nom}\" required autofocus=\"autofocus\" />\n                                </div>\n\n                                <div data-mdb-input-init class=\"form-outline mb-4\">\n                                    <label class=\"form-label\" for=\"form3Example3cg\">Prenom</label>\n                                    <input type=\"text\" id=\"form3Example3cg\" class=\"form-control form-control-lg\" th:field=\"${user.prenom}\" required autofocus=\"autofocus\"/>\n                                </div>\n\n                                <div data-mdb-input-init class=\"form-outline mb-4\">\n                                    <label class=\"form-label\" for=\"form2Example4cg\">Email</label>\n\n                                    <input type=\"email\" id=\"form2Example4cg\" class=\"form-control form-control-lg\" th:field=\"${user.email}\" required autofocus=\"autofocus\"/>\n                                </div>\n\n                                <div data-mdb-input-init class=\"form-outline mb-4\">\n                                    <label class=\"form-label\" for=\"form5Example4cdg\">Entrer votre mot de passe</label>\n\n                                    <input type=\"password\" id=\"form5Example4cdg\" class=\"form-control form-control-lg\" th:field=\"${user.password}\" required autofocus=\"autofocus\"/>\n                                </div>\n\n                                <div data-mdb-input-init class=\"form-outline mb-4\">\n                                    <label class=\"form-label\" for=\"form6Example4cdg\">Repeat Password</label>\n\n                                    <input type=\"password\" id=\"form6Example4cdg\" class=\"form-control form-control-lg\" th:field=\"${user.repeatPassword}\" required autofocus=\"autofocus\"/>\n                                    <span th:if=\"${#fields.hasErrors('repeatPassword')}\" class=\"text-danger\">Passwords don't match!</span>\n                                </div>\n\n                                <div data-mdb-input-init class=\"form-outline mb-4\">\n                                    <label class=\"form-label\" for=\"form3Example4cg\">Telephone</label>\n\n                                    <input type=\"tel\" id=\"form3Example4cg\" class=\"form-control form-control-lg\" th:field=\"${telephone}\" required autofocus=\"autofocus\"/>\n                                </div>\n\n                                <div class=\"form-check d-flex justify-content-center mb-5\">\n                                    <label class=\"form-check-label\" >\n                                        I agree all statements in <a href=\"#!\" class=\"text-body\"><u>Terms of service</u></a>\n                                    </label>\n                                    <label for=\"form2Example3cg\"></label><input class=\"form-check-input me-2\" type=\"checkbox\" value=\"\" id=\"form2Example3cg\" />\n                                </div>\n\n                                <div class=\"d-flex justify-content-center\">\n                                    <button type=\"button\" data-mdb-button-init data-mdb-ripple-init class=\"btn btn-success btn-block btn-lg gradient-custom-4 text-body\">Register</button>\n                                </div>\n\n                                <p class=\"text-center text-muted mt-5 mb-0\">Have already an account? <a href=\"#!\" class=\"fw-bold text-body\"><u>Login here</u></a></p>\n                            </form>\n\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>\n</body>\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/Registration/registration.html b/src/main/resources/templates/Registration/registration.html
+--- a/src/main/resources/templates/Registration/registration.html	
++++ b/src/main/resources/templates/Registration/registration.html	
+@@ -18,19 +18,25 @@
+                             <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+ 
+                             <form th:action="@{/registration}" method="post" th:object="${user}">
+-                                <!-- success message -->
++
++                            <!-- success message -->
+                                 <div th:if="${param.success}" class="alert alert-success">
+                                     You have been registered successfully
+                                 </div>
+ 
+                                 <div data-mdb-input-init class="form-outline mb-4">
+-                                    <label class="form-label" for="form3Example1cg">Nom</label>
+-                                    <input type="text" id="form3Example1cg" class="form-control form-control-lg " th:field="${user.nom}" required autofocus="autofocus" />
++                                    <label class="form-label" for="form3Example1cg">Username</label>
++                                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" th:field="*{user.username}" required autofocus="autofocus" />
++                                </div>
++
++                                <div data-mdb-input-init class="form-outline mb-4">
++                                    <label class="form-label" for="form3Example7cg">Nom</label>
++                                    <input type="text" id="form3Example7cg" class="form-control form-control-lg" th:field="*{user.nom}" required autofocus="autofocus" />
+                                 </div>
+ 
+                                 <div data-mdb-input-init class="form-outline mb-4">
+-                                    <label class="form-label" for="form3Example3cg">Prenom</label>
+-                                    <input type="text" id="form3Example3cg" class="form-control form-control-lg" th:field="${user.prenom}" required autofocus="autofocus"/>
++                                    <label class="form-label" for="form3Example2cg">Prenom</label>
++                                    <input type="text" id="form3Example2cg" class="form-control form-control-lg" th:field="${user.prenom}" required autofocus="autofocus"/>
+                                 </div>
+ 
+                                 <div data-mdb-input-init class="form-outline mb-4">
+@@ -55,7 +61,7 @@
+                                 <div data-mdb-input-init class="form-outline mb-4">
+                                     <label class="form-label" for="form3Example4cg">Telephone</label>
+ 
+-                                    <input type="tel" id="form3Example4cg" class="form-control form-control-lg" th:field="${telephone}" required autofocus="autofocus"/>
++                                    <input type="tel" id="form3Example4cg" class="form-control form-control-lg" th:field="${user.telephone}" required autofocus="autofocus"/>
+                                 </div>
+ 
+                                 <div class="form-check d-flex justify-content-center mb-5">
+@@ -66,7 +72,7 @@
+                                 </div>
+ 
+                                 <div class="d-flex justify-content-center">
+-                                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
++                                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                                 </div>
+ 
+                                 <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
+Index: src/main/java/com/example/gestionticket/web/UserResgistrationController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.web;\n\nimport com.example.gestionticket.services.UserService;\nimport com.example.gestionticket.web.dto.UserRegistrationDto;\nimport org.springframework.stereotype.Controller;\nimport org.springframework.ui.Model;\nimport org.springframework.web.bind.annotation.GetMapping;\nimport org.springframework.web.bind.annotation.ModelAttribute;\nimport org.springframework.web.bind.annotation.PostMapping;\nimport org.springframework.web.bind.annotation.RequestMapping;\n\n@Controller\n@RequestMapping(\"/registration\")\npublic class UserResgistrationController {\n\n    private final UserService userService;\n\n    public UserResgistrationController(UserService userService) {\n        super();\n        this.userService = userService;\n    }\n\n    @ModelAttribute(\"user\")\n    public UserRegistrationDto userRegistrationDto(UserService userService){\n        return new UserRegistrationDto();\n    }\n\n    @GetMapping\n    public String showRegistrationForm(Model model) {\n        model.addAttribute(\"user\", new UserRegistrationDto());\n        return \"Registration/registration.html\";\n    }\n\n    @PostMapping\n    public String registerUserAccount(@ModelAttribute(\"user\") UserRegistrationDto registrationDto){\n       userService.save(registrationDto);\n       return \"redirect:Registration/registration?success\";\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/web/UserResgistrationController.java b/src/main/java/com/example/gestionticket/web/UserResgistrationController.java
+--- a/src/main/java/com/example/gestionticket/web/UserResgistrationController.java	
++++ b/src/main/java/com/example/gestionticket/web/UserResgistrationController.java	
+@@ -21,19 +21,18 @@
+     }
+ 
+     @ModelAttribute("user")
+-    public UserRegistrationDto userRegistrationDto(UserService userService){
++    public UserRegistrationDto userRegistrationDto(){
+         return new UserRegistrationDto();
+     }
+ 
+     @GetMapping
+-    public String showRegistrationForm(Model model) {
+-        model.addAttribute("user", new UserRegistrationDto());
++    public String showRegistrationForm() {
+         return "Registration/registration.html";
+     }
+ 
+     @PostMapping
+-    public String registerUserAccount(@ModelAttribute("user") UserRegistrationDto registrationDto){
++    public String registerUserAccount(@ModelAttribute("form") UserRegistrationDto registrationDto){
+        userService.save(registrationDto);
+-       return "redirect:Registration/registration?success";
++       return "redirect:/registration?success";
+     }
+ }
+Index: src/main/java/com/example/gestionticket/services/UserServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.services;\n\nimport com.example.gestionticket.Entities.Role;\nimport com.example.gestionticket.Entities.User;\nimport com.example.gestionticket.Repository.UserRepository;\nimport com.example.gestionticket.web.dto.UserRegistrationDto;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.security.core.GrantedAuthority;\nimport org.springframework.security.core.authority.SimpleGrantedAuthority;\nimport org.springframework.security.core.userdetails.UserDetails;\nimport org.springframework.security.core.userdetails.UsernameNotFoundException;\nimport org.springframework.stereotype.Service;\n\nimport java.util.Arrays;\nimport java.util.Collection;\nimport java.util.stream.Collectors;\n\n@Service\npublic class UserServiceImpl implements UserService {\n\n\n    private UserRepository userRepository;\n\n    public UserServiceImpl(UserRepository userRepository) {\n        this.userRepository = userRepository;\n    }\n\n    @Override\n    public User save(UserRegistrationDto registrationDto) {\n       User user = new User(registrationDto.getNom(),registrationDto.getPrenom(),registrationDto.getEmail(),\n               registrationDto.getPassword(),registrationDto.getRepeatPassword() ,registrationDto.getAddress(),registrationDto.getTelephone(),\n               registrationDto.isActive(),Arrays.asList(new Role(\"ROLE_USER\")));\n\n       return userRepository.save(user);\n    }\n\n    @Override\n    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {\n\n        User user = userRepository.findByEmail(username);\n        if(user == null) {\n            throw new UsernameNotFoundException(\"Invalid username or password.\");\n        }\n        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), mapRolesToAuthorities(user.getRoles()));\n    }\n\n    private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles){\n        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/services/UserServiceImpl.java b/src/main/java/com/example/gestionticket/services/UserServiceImpl.java
+--- a/src/main/java/com/example/gestionticket/services/UserServiceImpl.java	
++++ b/src/main/java/com/example/gestionticket/services/UserServiceImpl.java	
+@@ -27,8 +27,8 @@
+ 
+     @Override
+     public User save(UserRegistrationDto registrationDto) {
+-       User user = new User(registrationDto.getNom(),registrationDto.getPrenom(),registrationDto.getEmail(),
+-               registrationDto.getPassword(),registrationDto.getRepeatPassword() ,registrationDto.getAddress(),registrationDto.getTelephone(),
++       User user = new User(registrationDto.getUsername(), registrationDto.getNom(),registrationDto.getPrenom(),registrationDto.getEmail(),
++               registrationDto.getPassword(),registrationDto.getRepeatPassword() ,registrationDto.getTelephone(),
+                registrationDto.isActive(),Arrays.asList(new Role("ROLE_USER")));
+ 
+        return userRepository.save(user);
+@@ -37,13 +37,15 @@
+     @Override
+     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+ 
+-        User user = userRepository.findByEmail(username);
++        User user = userRepository.findByUsername(username);
+         if(user == null) {
+-            throw new UsernameNotFoundException("Invalid username or password.");
++            throw new UsernameNotFoundException("Invalid username.");
+         }
+         return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), mapRolesToAuthorities(user.getRoles()));
+     }
+ 
++
++
+     private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles){
+         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+     }
+Index: src/main/java/com/example/gestionticket/web/dto/UserRegistrationDto.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.web.dto;\n\nimport lombok.Getter;\nimport lombok.Setter;\n\n@Setter\n@Getter\npublic class UserRegistrationDto {\n\n    private String nom;\n    private String prenom;\n    private String email;\n    private String password;\n    private String repeatPassword;\n    private String address;\n    private String telephone;\n    private boolean active;\n\n    public UserRegistrationDto() {\n\n    }\n\n    public UserRegistrationDto(String nom, String prenom, String email, String password,String repeatPassword , String address, String telephone, boolean active) {\n        super();\n        this.nom = nom;\n        this.prenom = prenom;\n        this.email = email;\n        this.password = password;\n        this.repeatPassword = repeatPassword;\n        this.address = address;\n        this.telephone = telephone;\n        this.active = active;\n    }\n\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/web/dto/UserRegistrationDto.java b/src/main/java/com/example/gestionticket/web/dto/UserRegistrationDto.java
+--- a/src/main/java/com/example/gestionticket/web/dto/UserRegistrationDto.java	
++++ b/src/main/java/com/example/gestionticket/web/dto/UserRegistrationDto.java	
+@@ -1,36 +1,26 @@
+ package com.example.gestionticket.web.dto;
+ 
++import com.example.gestionticket.Entities.Role;
++import lombok.AllArgsConstructor;
+ import lombok.Getter;
++import lombok.NoArgsConstructor;
+ import lombok.Setter;
+ 
+-@Setter
++import java.util.Collection;
++
++@NoArgsConstructor
++@AllArgsConstructor
+ @Getter
++@Setter
+ public class UserRegistrationDto {
+ 
++    private String username;
+     private String nom;
+     private String prenom;
+     private String email;
+     private String password;
+     private String repeatPassword;
+-    private String address;
+     private String telephone;
+     private boolean active;
+-
+-    public UserRegistrationDto() {
+-
+-    }
+-
+-    public UserRegistrationDto(String nom, String prenom, String email, String password,String repeatPassword , String address, String telephone, boolean active) {
+-        super();
+-        this.nom = nom;
+-        this.prenom = prenom;
+-        this.email = email;
+-        this.password = password;
+-        this.repeatPassword = repeatPassword;
+-        this.address = address;
+-        this.telephone = telephone;
+-        this.active = active;
+-    }
+-
+-}
+-
++    private Collection<Role> roles;
++}
+\ No newline at end of file
+Index: src/main/java/com/example/gestionticket/Entities/Role.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.Entities;\n\nimport jakarta.persistence.*;\nimport lombok.AllArgsConstructor;\nimport lombok.Builder;\nimport lombok.Data;\nimport lombok.NoArgsConstructor;\n\n@Entity\n@Data\n@AllArgsConstructor\n@NoArgsConstructor\n@Builder\npublic class Role {\n\n    @Id\n    @GeneratedValue\n    private int id;\n\n    @Column(nullable = false)\n    private String name;\n\n    public Role(String name) {\n        this.name = name;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/Entities/Role.java b/src/main/java/com/example/gestionticket/Entities/Role.java
+--- a/src/main/java/com/example/gestionticket/Entities/Role.java	
++++ b/src/main/java/com/example/gestionticket/Entities/Role.java	
+@@ -5,17 +5,18 @@
+ import lombok.Builder;
+ import lombok.Data;
+ import lombok.NoArgsConstructor;
++import org.springframework.security.core.GrantedAuthority;
+ 
+ @Entity
+ @Data
+ @AllArgsConstructor
+ @NoArgsConstructor
+ @Builder
+-public class Role {
++public class Role implements GrantedAuthority{
+ 
+     @Id
+     @GeneratedValue
+-    private int id;
++    private Long id;
+ 
+     @Column(nullable = false)
+     private String name;
+@@ -23,4 +24,8 @@
+     public Role(String name) {
+         this.name = name;
+     }
++    @Override
++    public String getAuthority() {
++    return name; // Assuming 'name' is the authority name in your Role entity
++     }
+ }
+Index: src/main/java/com/example/gestionticket/conf/SecurityConfig.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.conf;\n\nimport org.springframework.context.annotation.Bean;\nimport org.springframework.context.annotation.Configuration;\nimport org.springframework.security.config.annotation.web.builders.HttpSecurity;\nimport org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;\nimport org.springframework.security.web.SecurityFilterChain;\n\nimport static org.springframework.security.config.Customizer.withDefaults;\n\n@Configuration\n@EnableWebSecurity\nclass SecurityConfig {\n\n    @Bean\n    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {\n        http\n                .authorizeRequests((authz) -> authz\n                        .requestMatchers(\"/registration\").permitAll() // Allow access to /registration without authentication\n                        .anyRequest().authenticated()\n                )\n                .formLogin(withDefaults()) // Use default form login configuration\n                .logout(withDefaults()); // Use default logout configuration\n        return http.build();\n    }\n\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/conf/SecurityConfig.java b/src/main/java/com/example/gestionticket/conf/SecurityConfig.java
+--- a/src/main/java/com/example/gestionticket/conf/SecurityConfig.java	
++++ b/src/main/java/com/example/gestionticket/conf/SecurityConfig.java	
+@@ -4,25 +4,59 @@
+ import org.springframework.context.annotation.Configuration;
+ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+ import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
++import org.springframework.security.config.web.server.ServerHttpSecurity;
++import org.springframework.security.core.userdetails.User;
++import org.springframework.security.core.userdetails.UserDetails;
++import org.springframework.security.core.userdetails.UserDetailsService;
++import org.springframework.security.crypto.factory.PasswordEncoderFactories;
++import org.springframework.security.crypto.password.PasswordEncoder;
++import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+ import org.springframework.security.web.SecurityFilterChain;
++import org.springframework.security.web.server.SecurityWebFilterChain;
++import org.springframework.security.web.server.util.matcher.ServerWebExchangeMatchers;
+ 
+ import static org.springframework.security.config.Customizer.withDefaults;
+ 
+ @Configuration
+ @EnableWebSecurity
+-class SecurityConfig {
++public class SecurityConfig {
++
++    // Removed static final for role as it might be configurable
++    private String defaultRole = "CLIENT";
++
++    @Bean
++    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
++        return http
++                .authorizeExchange(exchanges -> exchanges
++                        .pathMatchers("/registration").permitAll()
++                        .anyExchange().authenticated()
++                )
++                .formLogin(formLogin -> formLogin
++                        .loginPage("/login")
++                        .usernameParameter("username")
++                        .permitAll()
++                )
++                .build();
++    }
+ 
+     @Bean
+-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+-        http
+-                .authorizeRequests((authz) -> authz
+-                        .requestMatchers("/registration").permitAll() // Allow access to /registration without authentication
+-                        .anyRequest().authenticated()
+-                )
+-                .formLogin(withDefaults()) // Use default form login configuration
+-                .logout(withDefaults()); // Use default logout configuration
+-        return http.build();
+-    }
++    public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
++        UserDetails user1 = User.withUsername("user")
++                .password(passwordEncoder.encode("password"))
++                .roles(defaultRole)
++                .build();
++
++        // Add more users here (replace with your actual user data source)
++        UserDetails user2 = User.withUsername("admin")
++                .password(passwordEncoder.encode("admin"))
++                .roles("ADMIN")
++                .build();
+ 
+-}
++        return new InMemoryUserDetailsManager(user1, user2);
++    }
+ 
++    @Bean
++    public PasswordEncoder passwordEncoder() {
++        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
++    }
++}
+Index: src/main/java/com/example/gestionticket/Entities/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.Entities;\n\nimport com.example.gestionticket.Validator.ConfirmPassword;\nimport jakarta.persistence.*;\nimport jakarta.validation.constraints.NotBlank;\nimport lombok.AllArgsConstructor;\nimport lombok.Builder;\nimport lombok.Data;\nimport lombok.NoArgsConstructor;\nimport org.springframework.security.core.GrantedAuthority;\nimport org.springframework.security.core.userdetails.UserDetails;\n\nimport java.util.Collection;\nimport java.util.List;\n\n\n@Entity\n@Data\n@AllArgsConstructor\n@NoArgsConstructor\n@Table(name = \"_user\", uniqueConstraints = @UniqueConstraint(columnNames = \"email\"))\npublic class User implements UserDetails {\n\n    @Id\n    @GeneratedValue(strategy = GenerationType.AUTO)\n    private int id;\n\n    @Column(nullable = false,length = 50,name = \"nom\")\n    private String nom;\n\n    @Column(nullable = false,length = 50, name = \"prenom\")\n    private String prenom;\n\n    @Column(nullable = false,length = 50,unique = true,name = \"email\")\n    private String email;\n\n    @NotBlank(message = \"Password cannot be blank\")\n    private String password;\n\n    @NotBlank(message = \"Repeat password cannot be blank\")\n    @ConfirmPassword(field = \"password\") // Custom annotation for confirmation\n    private String repeatPassword;\n\n    @Column(nullable = false,length = 50,name = \"adresse\")\n    private String addresse;\n\n    @Column(nullable = false,length = 50,name = \"telephone\")\n    private String telephone;\n\n\n    @Column(nullable = false,name = \"active\")\n    private boolean active;\n\n    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)\n    @JoinTable(\n            name = \"users_roles\",\n            joinColumns = @JoinColumn(\n                    name = \"user_id\" , referencedColumnName = \"id\"),\n            inverseJoinColumns = @JoinColumn(\n                    name = \"role_id\" , referencedColumnName = \"id\"))\n    private Collection<Role> roles;\n\n    public User(String nom, String prenom, String email, String password,String repeatPassword , String addresse, String telephone, boolean active, Collection<Role> roles) {\n\n        this.nom = nom;\n        this.prenom = prenom;\n        this.email = email;\n        this.password = password;\n        this.repeatPassword = repeatPassword;\n        this.addresse = addresse;\n        this.telephone = telephone;\n        this.active = active;\n        this.roles = roles;\n    }\n\n    @Override\n    public Collection<? extends GrantedAuthority> getAuthorities() {\n        return List.of();\n    }\n\n    @Override\n    public String getUsername() {\n        return \"\";\n    }\n\n    @Override\n    public boolean isAccountNonExpired() {\n        return true; // Implement your logic based on account expiration, if applicable\n    }\n\n    @Override\n    public boolean isAccountNonLocked() {\n        return active; // Implement your logic based on account locking, if applicable\n    }\n\n    @Override\n    public boolean isCredentialsNonExpired() {\n        return true; // Implement your logic based on credential expiration, if applicable\n    }\n\n    @Override\n    public boolean isEnabled() {\n        return active;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/Entities/User.java b/src/main/java/com/example/gestionticket/Entities/User.java
+--- a/src/main/java/com/example/gestionticket/Entities/User.java	
++++ b/src/main/java/com/example/gestionticket/Entities/User.java	
+@@ -8,12 +8,14 @@
+ import lombok.Data;
+ import lombok.NoArgsConstructor;
+ import org.springframework.security.core.GrantedAuthority;
++import org.springframework.security.core.authority.SimpleGrantedAuthority;
+ import org.springframework.security.core.userdetails.UserDetails;
+ 
++import java.util.ArrayList;
+ import java.util.Collection;
++import java.util.Collections; // Import Collections
+ import java.util.List;
+ 
+-
+ @Entity
+ @Data
+ @AllArgsConstructor
+@@ -25,13 +27,16 @@
+     @GeneratedValue(strategy = GenerationType.AUTO)
+     private int id;
+ 
+-    @Column(nullable = false,length = 50,name = "nom")
++    @Column(name = "username", unique = true)
++    private String username;
++
++    @Column(nullable = false, length = 50, name = "nom")
+     private String nom;
+ 
+-    @Column(nullable = false,length = 50, name = "prenom")
++    @Column(nullable = false, length = 50, name = "prenom")
+     private String prenom;
+ 
+-    @Column(nullable = false,length = 50,unique = true,name = "email")
++    @Column(nullable = false, length = 50, unique = true, name = "email")
+     private String email;
+ 
+     @NotBlank(message = "Password cannot be blank")
+@@ -41,41 +46,40 @@
+     @ConfirmPassword(field = "password") // Custom annotation for confirmation
+     private String repeatPassword;
+ 
+-    @Column(nullable = false,length = 50,name = "adresse")
+-    private String addresse;
+-
+-    @Column(nullable = false,length = 50,name = "telephone")
++    @Column(nullable = false, length = 50, name = "telephone")
+     private String telephone;
+ 
+-
+-    @Column(nullable = false,name = "active")
++    @Column(name = "active")
+     private boolean active;
+ 
+     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+     @JoinTable(
+             name = "users_roles",
+             joinColumns = @JoinColumn(
+-                    name = "user_id" , referencedColumnName = "id"),
++                    name = "user_id", referencedColumnName = "id"),
+             inverseJoinColumns = @JoinColumn(
+-                    name = "role_id" , referencedColumnName = "id"))
++                    name = "role_id", referencedColumnName = "id"))
+     private Collection<Role> roles;
+ 
+-    public User(String nom, String prenom, String email, String password,String repeatPassword , String addresse, String telephone, boolean active, Collection<Role> roles) {
+-
++    public User(String username ,String nom, String prenom, String email, String password, String repeatPassword, String telephone, boolean active, Collection<Role> roles) {
++        this.username = username;
+         this.nom = nom;
+         this.prenom = prenom;
+         this.email = email;
+         this.password = password;
+         this.repeatPassword = repeatPassword;
+-        this.addresse = addresse;
+         this.telephone = telephone;
+         this.active = active;
+         this.roles = roles;
+     }
+ 
++    // Modify this method to return the default role if roles are empty
+     @Override
+     public Collection<? extends GrantedAuthority> getAuthorities() {
+-        return List.of();
++        if (roles.isEmpty()) {
++            return Collections.singletonList(new SimpleGrantedAuthority("ROLE_CLIENT"));
++        }
++        return new ArrayList<>(roles);
+     }
+ 
+     @Override
+Index: src/main/java/com/example/gestionticket/Repository/UserRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.Repository;\n\nimport com.example.gestionticket.Entities.User;\nimport org.springframework.data.jpa.repository.JpaRepository;\nimport org.springframework.stereotype.Repository;\n\n@Repository\npublic interface UserRepository  extends JpaRepository<User, Long> {\n    User findByEmail(String email);\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/Repository/UserRepository.java b/src/main/java/com/example/gestionticket/Repository/UserRepository.java
+--- a/src/main/java/com/example/gestionticket/Repository/UserRepository.java	
++++ b/src/main/java/com/example/gestionticket/Repository/UserRepository.java	
+@@ -7,4 +7,6 @@
+ @Repository
+ public interface UserRepository  extends JpaRepository<User, Long> {
+     User findByEmail(String email);
++    User findByUsername(String username);
++
+ }
+Index: src/main/java/com/example/gestionticket/services/UserDetailsServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/services/UserDetailsServiceImpl.java b/src/main/java/com/example/gestionticket/services/UserDetailsServiceImpl.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/example/gestionticket/services/UserDetailsServiceImpl.java	
+@@ -0,0 +1,26 @@
++package com.example.gestionticket.services;
++
++import com.example.gestionticket.Entities.User;
++import com.example.gestionticket.Repository.UserRepository;
++import org.springframework.security.core.userdetails.UserDetails;
++import org.springframework.security.core.userdetails.UserDetailsService;
++import org.springframework.security.core.userdetails.UsernameNotFoundException;
++
++public class UserDetailsServiceImpl implements UserDetailsService {
++
++    private final UserRepository userRepository;
++
++    public UserDetailsServiceImpl(UserRepository userRepository) {
++        this.userRepository = userRepository;
++    }
++
++    @Override
++    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
++        User user = userRepository.findByUsername(username);
++        if (user == null) {
++            throw new UsernameNotFoundException("User not found with username: " + username);
++        }
++        return user;
++    }
++}
++
+Index: src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.application.name=GestionTicket\n\nserver.port=8080\n\n\nspring.datasource.url=jdbc:sqlserver://localhost:1433;serverName=pavilion;encrypt=true;trustServerCertificate=true;databaseName=    \nspring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver\nspring.datasource.username=sa\nspring.datasource.password=admin\nspring.jpa.show-sql=true\n\n# Enable SQL formatting for Hibernate\nspring.jpa.properties.hibernate.format_sql=true\n\n# Hibernate Configuration\nspring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServerDialect\nspring.jpa.hibernate.ddl-auto=update\n\nspring.thymeleaf.prefix=classpath:/templates/\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/application.properties b/src/main/resources/application.properties
+--- a/src/main/resources/application.properties	
++++ b/src/main/resources/application.properties	
+@@ -3,7 +3,7 @@
+ server.port=8080
+ 
+ 
+-spring.datasource.url=jdbc:sqlserver://localhost:1433;serverName=pavilion;encrypt=true;trustServerCertificate=true;databaseName=    
++spring.datasource.url=jdbc:sqlserver://localhost:1433;serverName=EVILLBOX;encrypt=true;trustServerCertificate=true;databaseName=GestionTicket   
+ spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+ spring.datasource.username=sa
+ spring.datasource.password=admin
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\n    <modelVersion>4.0.0</modelVersion>\n    <parent>\n        <groupId>org.springframework.boot</groupId>\n        <artifactId>spring-boot-starter-parent</artifactId>\n        <version>3.2.4</version>\n        <relativePath/> <!-- lookup parent from repository -->\n    </parent>\n    <groupId>com.example</groupId>\n    <artifactId>GestionTicket</artifactId>\n    <version>0.0.1-SNAPSHOT</version>\n    <name>GestionTicket</name>\n    <description>GestionTicket</description>\n    <properties>\n        <java.version>22</java.version>\n        <spring-cloud.version>2023.0.1</spring-cloud.version>\n    </properties>\n    <dependencyManagement>\n        <dependencies>\n            <dependency>\n                <groupId>org.springframework.cloud</groupId>\n                <artifactId>spring-cloud-dependencies</artifactId>\n                <version>${spring-cloud.version}</version>\n                <type>pom</type>\n                <scope>import</scope>\n            </dependency>\n        </dependencies>\n    </dependencyManagement>\n    <dependencies>\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-data-jpa</artifactId>\n        </dependency>\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-web</artifactId>\n        </dependency>\n        <dependency>\n            <groupId>org.projectlombok</groupId>\n            <artifactId>lombok</artifactId>\n            <optional>true</optional>\n        </dependency>\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-test</artifactId>\n            <scope>test</scope>\n        </dependency>\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-devtools</artifactId>\n            <scope>runtime</scope>\n        </dependency>\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-thymeleaf</artifactId>\n        </dependency>\n        <dependency>\n            <groupId>com.mysql</groupId>\n            <artifactId>mysql-connector-j</artifactId>\n            <scope>runtime</scope>\n        </dependency>\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-security</artifactId>\n        </dependency>\n        <dependency>\n            <groupId>org.springframework.security</groupId>\n            <artifactId>spring-security-test</artifactId>\n            <scope>test</scope>\n        </dependency>\n        <dependency>\n            <groupId>org.thymeleaf.extras</groupId>\n            <artifactId>thymeleaf-extras-springsecurity6</artifactId>\n        </dependency>\n        <dependency>\n            <groupId>com.microsoft.sqlserver</groupId>\n            <artifactId>mssql-jdbc</artifactId>\n            <scope>runtime</scope>\n        </dependency>\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-actuator</artifactId>\n        </dependency>\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n            <artifactId>spring-boot-starter-security</artifactId>\n        </dependency>\n        <dependency>\n            <groupId>org.springframework.cloud</groupId>\n            <artifactId>spring-cloud-starter</artifactId>\n        </dependency>\n        <dependency>\n            <groupId>org.hibernate.validator</groupId>\n            <artifactId>hibernate-validator</artifactId>\n        </dependency>\n        <dependency>\n            <groupId>jakarta.validation</groupId>\n            <artifactId>jakarta.validation-api</artifactId>\n            <version>3.0.2</version>\n        </dependency>\n\n        <dependency>\n            <groupId>org.hibernate.validator</groupId>\n            <artifactId>hibernate-validator</artifactId>\n            <version>LATEST</version>\n        </dependency>\n        <dependency>\n            <groupId>javax.validation</groupId>\n            <artifactId>validation-api</artifactId>\n            <version>LATEST</version>\n        </dependency>\n    </dependencies>\n\n    <build>\n        <plugins>\n            <plugin>\n                <groupId>org.springframework.boot</groupId>\n                <artifactId>spring-boot-maven-plugin</artifactId>\n            </plugin>\n        </plugins>\n    </build>\n\n</project>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	
++++ b/pom.xml	
+@@ -57,15 +57,6 @@
+             <artifactId>spring-boot-starter-thymeleaf</artifactId>
+         </dependency>
+         <dependency>
+-            <groupId>com.mysql</groupId>
+-            <artifactId>mysql-connector-j</artifactId>
+-            <scope>runtime</scope>
+-        </dependency>
+-        <dependency>
+-            <groupId>org.springframework.boot</groupId>
+-            <artifactId>spring-boot-starter-security</artifactId>
+-        </dependency>
+-        <dependency>
+             <groupId>org.springframework.security</groupId>
+             <artifactId>spring-security-test</artifactId>
+             <scope>test</scope>
+@@ -92,10 +83,6 @@
+             <artifactId>spring-cloud-starter</artifactId>
+         </dependency>
+         <dependency>
+-            <groupId>org.hibernate.validator</groupId>
+-            <artifactId>hibernate-validator</artifactId>
+-        </dependency>
+-        <dependency>
+             <groupId>jakarta.validation</groupId>
+             <artifactId>jakarta.validation-api</artifactId>
+             <version>3.0.2</version>
+@@ -104,13 +91,9 @@
+         <dependency>
+             <groupId>org.hibernate.validator</groupId>
+             <artifactId>hibernate-validator</artifactId>
+-            <version>LATEST</version>
+-        </dependency>
+-        <dependency>
+-            <groupId>javax.validation</groupId>
+-            <artifactId>validation-api</artifactId>
+-            <version>LATEST</version>
++            <version>6.2.2.Final</version>
+         </dependency>
++
+     </dependencies>
+ 
+     <build>
+Index: src/main/java/com/example/gestionticket/Validator/ConfirmPasswordValidator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.Validator;\n\nimport jakarta.validation.ConstraintValidator;\nimport jakarta.validation.ConstraintValidatorContext;\n\npublic class ConfirmPasswordValidator implements ConstraintValidator<ConfirmPassword, Object> {\n\n    private String field;\n\n    @Override\n    public void initialize(ConfirmPassword constraintAnnotation) {\n        this.field = constraintAnnotation.field();\n    }\n\n    @Override\n    public boolean isValid(Object value, ConstraintValidatorContext context) {\n        Object fieldValue = getFieldFieldValue(context, field);\n        return value != null && value.equals(fieldValue);\n    }\n\n    private Object getFieldFieldValue(ConstraintValidatorContext context, String fieldName) {\n        try {\n            Object rootBean = context.unwrap(Object.class); // Unwrap to the root object\n            if (rootBean != null) {\n                return rootBean.getClass().getDeclaredField(fieldName).get(rootBean);\n            }\n            return null;\n        } catch (NoSuchFieldException | IllegalAccessException e) {\n            return null;\n        }\n    }\n}\n
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/Validator/ConfirmPasswordValidator.java b/src/main/java/com/example/gestionticket/Validator/ConfirmPasswordValidator.java
+--- a/src/main/java/com/example/gestionticket/Validator/ConfirmPasswordValidator.java	
++++ b/src/main/java/com/example/gestionticket/Validator/ConfirmPasswordValidator.java	
+@@ -2,13 +2,19 @@
+ 
+ import jakarta.validation.ConstraintValidator;
+ import jakarta.validation.ConstraintValidatorContext;
++import jakarta.validation.MessageInterpolator;
++
++import java.util.Optional;
+ 
+ public class ConfirmPasswordValidator implements ConstraintValidator<ConfirmPassword, Object> {
+ 
+     private String field;
++    private MessageInterpolator messageInterpolator;
++
+ 
+     @Override
+     public void initialize(ConfirmPassword constraintAnnotation) {
++
+         this.field = constraintAnnotation.field();
+     }
+ 
+@@ -22,7 +28,7 @@
+         try {
+             Object rootBean = context.unwrap(Object.class); // Unwrap to the root object
+             if (rootBean != null) {
+-                return rootBean.getClass().getDeclaredField(fieldName).get(rootBean);
++                return Optional.ofNullable((String) rootBean.getClass().getDeclaredField(fieldName).get(rootBean));
+             }
+             return null;
+         } catch (NoSuchFieldException | IllegalAccessException e) {
