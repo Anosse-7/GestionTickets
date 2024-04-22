@@ -6,6 +6,7 @@ import com.example.gestionticket.web.dto.UserRegistrationDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -55,7 +56,11 @@ public class UserRegistrationController {
             return "Registration/registration";
         }
 
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(registrationDto.getPassword());
+
         User user = registrationDto.toUser();
+        user.setPassword(encodedPassword);
         User savedUser = userService.save(user);
         if (savedUser == null) {
             logger.error("User could not be saved");

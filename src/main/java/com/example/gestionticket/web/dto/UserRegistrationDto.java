@@ -24,8 +24,7 @@ public class UserRegistrationDto {
     public UserRegistrationDto() {
 
     }
-    // Add this method to the UserRegistrationDto class
-public User toUser() {
+    public User toUser() {
     User user = new User();
     user.setUsername(this.username);
     user.setNom(this.nom);

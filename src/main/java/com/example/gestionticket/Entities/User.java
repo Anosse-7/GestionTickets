@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
@@ -40,10 +41,10 @@ public class User implements UserDetails {
     @NotBlank(message = "Password cannot be blank")
     private String password;
 
-    @Column(nullable = false,length = 50,name = "adresse")
+    @Column(length = 50,name = "adresse")
     private String addresse;
 
-    @Column(nullable = false,length = 50,name = "telephone")
+    @Column(length = 50,name = "telephone")
     private String telephone;
 
     @Column(nullable = false,name = "active")
@@ -67,14 +68,10 @@ public class User implements UserDetails {
 
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
-    }
 
     @Override
-    public String getUsername() {
-        return "";
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Collections.singletonList(new SimpleGrantedAuthority(role));
     }
 
     @Override
