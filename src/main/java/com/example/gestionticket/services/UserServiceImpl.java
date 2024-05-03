@@ -2,18 +2,14 @@ package com.example.gestionticket.services;
 
 import com.example.gestionticket.Entities.User;
 import com.example.gestionticket.Repository.UserRepository;
-import com.example.gestionticket.web.dto.UserRegistrationDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -21,12 +17,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
-    private BCryptPasswordEncoder passwordEncoder;
 
 
-    public UserServiceImpl(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -34,11 +28,54 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return userRepository.findByUsername(username);
     }
 
+
     @Override
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email);
+    public void updateUserProfile(User updatedUser) {
+    if (updatedUser.getId() == null) {
+        throw new IllegalArgumentException("Updated user must have a valid id");
     }
 
+    // Load the existing user from the database
+    User existingUser = userRepository.findById(updatedUser.getId())
+            .orElseThrow(() -> new RuntimeException("User not found"));
+
+    // Update the fields of the existing user with the new information only if they have changed
+    if (updatedUser.getUsername() != null && !updatedUser.getUsername().equals(existingUser.getUsername())) {
+        existingUser.setUsername(updatedUser.getUsername());
+    }
+    if (updatedUser.getNom() != null && !updatedUser.getNom().equals(existingUser.getNom())) {
+        existingUser.setNom(updatedUser.getNom());
+    }
+    if (updatedUser.getPrenom() != null && !updatedUser.getPrenom().equals(existingUser.getPrenom())) {
+        existingUser.setPrenom(updatedUser.getPrenom());
+    }
+    if (updatedUser.getEmail() != null && !updatedUser.getEmail().equals(existingUser.getEmail())) {
+        existingUser.setEmail(updatedUser.getEmail());
+    }
+    if (updatedUser.getPassword() != null && !updatedUser.getPassword().equals(existingUser.getPassword())) {
+        existingUser.setPassword(updatedUser.getPassword());
+    }
+    if (updatedUser.getVille() != null && !updatedUser.getVille().equals(existingUser.getVille())) {
+        existingUser.setVille(updatedUser.getVille());
+    }
+    if (updatedUser.getTelephone() != null && !updatedUser.getTelephone().equals(existingUser.getTelephone())) {
+        existingUser.setTelephone(updatedUser.getTelephone());
+    }
+    // For boolean fields, you can check if the updatedUser's field is different from the existingUser's field
+    if (updatedUser.isActive() != existingUser.isActive()) {
+        existingUser.setActive(updatedUser.isActive());
+    }
+    if (updatedUser.getRole() != null && !updatedUser.getRole().equals(existingUser.getRole())) {
+        existingUser.setRole(updatedUser.getRole());
+    }
+
+    // Save the updated user back to the database
+    userRepository.save(existingUser);
+}
+
+    public boolean userExists(String username) {
+    return userRepository.findByUsername(username) != null;
+}
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -54,33 +91,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), authorities);
     }
 
-    public User getCurrentUser() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentUserName = authentication.getName();
-        return this.findByUsername(currentUserName);
-    }
-
-    @Override
-    public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException {
-        return null;
-    }
-
-    @Override
-    public User save(UserRegistrationDto registrationDto) {
-        User user = new User();
-        user.setUsername(registrationDto.getUsername());
-        user.setNom(registrationDto.getNom());
-        user.setPrenom(registrationDto.getPrenom());
-        user.setEmail(registrationDto.getEmail());
-        user.setPassword(passwordEncoder.encode(registrationDto.getPassword()));
-        user.setAddresse(registrationDto.getAddresse());
-        user.setTelephone(registrationDto.getTelephone());
-        user.setActive(registrationDto.isActive());
-
-        userRepository.save(user);
-
-        return user;
-    }
 
     @Override
     public User save(User user) {

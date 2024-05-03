@@ -10,13 +10,15 @@ import java.util.List;
 @Getter
 public class UserRegistrationDto {
 
+    private Long id;
     private String username;
     private String nom;
     private String prenom;
+    private String Gender;
     private String email;
     private String password;
     private String repeatPassword;
-    private String addresse;
+    private String ville;
     private String telephone;
     private boolean active;
     private String role;
@@ -26,12 +28,14 @@ public class UserRegistrationDto {
     }
     public User toUser() {
     User user = new User();
+    user.setId(this.id);
     user.setUsername(this.username);
     user.setNom(this.nom);
     user.setPrenom(this.prenom);
+    user.setGender(this.Gender);
     user.setEmail(this.email);
     user.setPassword(this.password);
-    user.setAddresse(this.addresse);
+    user.setVille(this.ville);
     user.setTelephone(this.telephone);
     user.setActive(this.active);
     if (this.role == null || this.role.isEmpty()) {

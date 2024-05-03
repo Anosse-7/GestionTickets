@@ -21,10 +21,6 @@
                                 <div th:if="${param.success}" class="alert alert-success">
                                     You have been registered successfully
                                 </div>
-                                <div th:if="${param.success}" class="alert alert-success">
-                                    You have been registered successfully
-                                </div>
-
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="form3Example7cg">Username</label>
                                     <input type="text" id="form3Example7cg" th:field="${user.username}" class="form-control form-control-lg" placeholder="Username">
@@ -33,28 +29,37 @@
 
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="form3Example1cg">Nom</label>
-                                    <input type="text" id="form3Example1cg" class="form-control form-control-lg " th:field="${user.nom}" required autofocus="autofocus" />
+                                    <input placeholder="nom" type="text" id="form3Example1cg" class="form-control form-control-lg " th:field="${user.nom}" required autofocus="autofocus" />
                                 </div>
 
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="form3Example3cg">Prenom</label>
-                                    <input type="text" id="form3Example3cg" class="form-control form-control-lg" th:field="${user.prenom}" required autofocus="autofocus"/>
+                                    <input placeholder="prenom" type="text" id="form3Example3cg" class="form-control form-control-lg" th:field="${user.prenom}" required autofocus="autofocus"/>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                <label for="gender">Gender</label>
+                                <select class="form-control form-control-lg" id="gender" th:field="${user.gender}">
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
                                 </div>
 
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="form2Example4cg">Email</label>
-
-                                    <input type="email" id="form2Example4cg" class="form-control form-control-lg" th:field="${user.email}" required autofocus="autofocus"/>
+                                    <input placeholder="email" type="email" id="form2Example4cg" class="form-control form-control-lg" th:field="${user.email}" required autofocus="autofocus"/>
                                 </div>
 
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="form5Example4cdg">Entrer votre mot de passe</label>
-                                    <input type="password" id="form5Example4cdg" th:field="${user.password}" class="form-control form-control-lg" name="password" placeholder="Password">
+                                    <input aria-placeholder="password" type="password" id="form5Example4cdg" th:field="${user.password}" class="form-control form-control-lg" name="password" placeholder="Password">
                                 </div>
 
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="form6Example4cdg">Repeat Password</label>
-                                    <input type="password" id="form6Example4cdg" class="form-control form-control-lg" th:field="${user.repeatPassword}" required autofocus="autofocus">
+                                    <input placeholder="repeat password" type="password" id="form6Example4cdg" class="form-control form-control-lg" th:field="${user.repeatPassword}" required autofocus="autofocus">
                                     <span th:if="${#fields.hasErrors('repeatPassword')}" th:errors="*{repeatPassword}" class="text-danger">Passwords don't match!</span>
                                 </div>
 
