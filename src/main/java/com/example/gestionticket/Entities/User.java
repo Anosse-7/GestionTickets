@@ -50,6 +50,10 @@ public class User implements UserDetails {
     @Column(length = 50,name = "telephone")
     private String telephone;
 
+    @Column(name = "avatar")
+    @Lob
+    private byte[] avatar;
+
     @Column(nullable = false,name = "active")
     private boolean active;
 
@@ -57,7 +61,7 @@ public class User implements UserDetails {
     private String role;
 
 
-    public User(String username ,String nom, String prenom, String email, String password, String ville, String telephone, boolean active , String role) {
+    public User(String username ,String nom, String prenom, String email, String password, String ville, String telephone, byte[] avatar, boolean active , String role) {
 
         this.username = username;
         this.nom = nom;
@@ -68,6 +72,7 @@ public class User implements UserDetails {
         this.telephone = telephone;
         this.active = active;
         this.role = role;
+        this.avatar = avatar;
     }
 
 
