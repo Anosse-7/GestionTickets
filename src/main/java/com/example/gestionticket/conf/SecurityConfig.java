@@ -39,17 +39,19 @@ class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests((authz) -> authz
-                .requestMatchers("/registration", "/index", "/static/css/**", "/static/images/**" ,"/static/js/**").permitAll() // Allow access to /registration without authentication
+                .requestMatchers("/registration", "/index","/static/css/**", "/static/images/**" ,"/static/js/**").permitAll() // Allow access to /registration without authentication
                 .anyRequest().authenticated()
         );
 
         http.formLogin(form -> form
-                .loginPage("/login")
-                .defaultSuccessUrl("/index", true)
-                .permitAll())
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/userProfile", true)
+                        .permitAll()
+                        .failureUrl("/login?error=true"))
+
                 .logout(logout -> logout
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                        .logoutSuccessUrl("/login")
+                        .logoutSuccessUrl("/index")
                         .permitAll())
 
         ;
