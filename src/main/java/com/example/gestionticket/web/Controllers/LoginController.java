@@ -1,27 +1,34 @@
 package com.example.gestionticket.web.Controllers;
 
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+import com.example.gestionticket.services.UserService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
+@RequestMapping("/login")
 public class LoginController {
 
-    @GetMapping("/login")
-        public String loginGetHandller () {
+    private final UserService userService;
+
+    @GetMapping
+        public String loginGetHandller (){
             return "Login/login";
         }
-
-
-    @PostMapping("/login")
-    public String loginPostHandller(){
-        Authentication authentification = SecurityContextHolder.getContext().getAuthentication();
-        if (authentification.isAuthenticated()) {
-            return "redirect:/index";
-        }
-        return "redirect:/login";
+    public LoginController(UserService userService) {
+        this.userService = userService;
     }
 
+    @PostMapping
+    public String loginPostHandller(Model model, @RequestParam("username") String username, RedirectAttributes redirectAttributes) {
+    if (!userService.userExists(username)) {
+        redirectAttributes.addFlashAttribute("errorMsg", "Invalid username or password!");
+        return "redirect:/login";
+    }
+        return "Login/login";
+    }
 }
