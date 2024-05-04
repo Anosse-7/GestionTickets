@@ -16912,8 +16912,8 @@
 1045578763|||2|execute|D
 1061578820|||0|execute|G
 1061578820|||2|execute|D</Grants>
-      <IntrospectionTimestamp>2024-05-02.16:08:26.897</IntrospectionTimestamp>
-      <LastIntrospectionLocalTimestamp>2024-05-02.14:08:26</LastIntrospectionLocalTimestamp>
+      <IntrospectionTimestamp>2024-05-04.12:15:39.320</IntrospectionTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-05-04.10:15:39</LastIntrospectionLocalTimestamp>
       <ObjectId>1</ObjectId>
       <PermissionsCheckSum>13688225601</PermissionsCheckSum>
     </schema>
@@ -17008,7 +17008,7 @@ int</ExtendedProperties>
       <DasType>bigint|0s</DasType>
       <ModifiedTimestamp>2024-05-02.14:05:19.480</ModifiedTimestamp>
       <ObjectId>1698105090</ObjectId>
-      <SequenceIdentity>null(151)+50</SequenceIdentity>
+      <SequenceIdentity>null(351)+50</SequenceIdentity>
       <StartValue>1</StartValue>
       <UnderlyingDasType>bigint|0s</UnderlyingDasType>
     </sequence>
@@ -17058,11 +17058,11 @@ int</ExtendedProperties>
       <UnderlyingDasType>bigint|0s</UnderlyingDasType>
     </sequence>
     <table id="5594" parent="5577" name="_user">
-      <CreatedTimestamp>2024-05-02.14:21:19.443</CreatedTimestamp>
+      <CreatedTimestamp>2024-05-04.12:11:19.640</CreatedTimestamp>
       <DataRetentionPeriod>-1</DataRetentionPeriod>
-      <ModifiedTimestamp>2024-05-02.14:21:19.457</ModifiedTimestamp>
-      <ObjectId>1778105375</ObjectId>
-      <LobDataSpaceId>0</LobDataSpaceId>
+      <ModifiedTimestamp>2024-05-04.12:11:19.653</ModifiedTimestamp>
+      <ObjectId>110623437</ObjectId>
+      <LobDataSpaceId>1</LobDataSpaceId>
     </table>
     <table id="5595" parent="5577" name="sysdiagrams">
       <CreatedTimestamp>2024-04-11.13:48:07.743</CreatedTimestamp>
@@ -17167,27 +17167,27 @@ int</ExtendedProperties>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="5617" parent="5594" name="avatar">
-      <DasType>varbinary(255 char)|0s</DasType>
+    <column id="5617" parent="5594" name="email">
+      <DasType>varchar(50 char)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="5618" parent="5594" name="email">
+    <column id="5618" parent="5594" name="nom">
       <DasType>varchar(50 char)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="5619" parent="5594" name="nom">
-      <DasType>varchar(50 char)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="5619" parent="5594" name="password">
+      <DasType>varchar(255 char)|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="5620" parent="5594" name="password">
-      <DasType>varchar(255 char)|0s</DasType>
-      <Position>7</Position>
-    </column>
-    <column id="5621" parent="5594" name="prenom">
+    <column id="5620" parent="5594" name="prenom">
       <DasType>varchar(50 char)|0s</DasType>
       <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="5621" parent="5594" name="profile_image">
+      <DasType>varbinary(max)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="5622" parent="5594" name="role">
@@ -17208,7 +17208,7 @@ int</ExtendedProperties>
       <DasType>varchar(50 char)|0s</DasType>
       <Position>12</Position>
     </column>
-    <index id="5626" parent="5594" name="PK___user__3213E83F271474D0">
+    <index id="5626" parent="5594" name="PK___user__3213E83F918BC603">
       <Clustering>1</Clustering>
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -17228,24 +17228,24 @@ int</ExtendedProperties>
       <Unique>1</Unique>
       <PartitionDataSpaceId>1</PartitionDataSpaceId>
     </index>
-    <key id="5629" parent="5594" name="PK___user__3213E83F271474D0">
-      <CreatedTimestamp>2024-05-02.14:21:19.447</CreatedTimestamp>
-      <ModifiedTimestamp>2024-05-02.14:21:19.447</ModifiedTimestamp>
+    <key id="5629" parent="5594" name="PK___user__3213E83F918BC603">
+      <CreatedTimestamp>2024-05-04.12:11:19.640</CreatedTimestamp>
+      <ModifiedTimestamp>2024-05-04.12:11:19.640</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>1794105432</ObjectId>
+      <ObjectId>126623494</ObjectId>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PK___user__3213E83F271474D0</UnderlyingIndexName>
+      <UnderlyingIndexName>PK___user__3213E83F918BC603</UnderlyingIndexName>
     </key>
     <key id="5630" parent="5594" name="UK_k11y3pdtsrjgy8w9b6q4bjwrx">
-      <CreatedTimestamp>2024-05-02.14:21:19.447</CreatedTimestamp>
-      <ModifiedTimestamp>2024-05-02.14:21:19.447</ModifiedTimestamp>
-      <ObjectId>1810105489</ObjectId>
+      <CreatedTimestamp>2024-05-04.12:11:19.640</CreatedTimestamp>
+      <ModifiedTimestamp>2024-05-04.12:11:19.640</ModifiedTimestamp>
+      <ObjectId>142623551</ObjectId>
       <UnderlyingIndexName>UK_k11y3pdtsrjgy8w9b6q4bjwrx</UnderlyingIndexName>
     </key>
     <key id="5631" parent="5594" name="UK_nlcolwbx8ujaen5h0u2kr2bn2">
-      <CreatedTimestamp>2024-05-02.14:21:19.450</CreatedTimestamp>
-      <ModifiedTimestamp>2024-05-02.14:21:19.450</ModifiedTimestamp>
-      <ObjectId>1826105546</ObjectId>
+      <CreatedTimestamp>2024-05-04.12:11:19.643</CreatedTimestamp>
+      <ModifiedTimestamp>2024-05-04.12:11:19.643</ModifiedTimestamp>
+      <ObjectId>158623608</ObjectId>
       <UnderlyingIndexName>UK_nlcolwbx8ujaen5h0u2kr2bn2</UnderlyingIndexName>
     </key>
     <column id="5632" parent="5595" name="name">
@@ -17302,15 +17302,15 @@ name</ColNames>
       <UnderlyingIndexName>UK_principal_name</UnderlyingIndexName>
     </key>
     <partition id="5641" parent="5626">
-      <ObjectId>72057594048413696</ObjectId>
+      <ObjectId>72057594048806912</ObjectId>
       <Position>1</Position>
     </partition>
     <partition id="5642" parent="5627">
-      <ObjectId>72057594048479232</ObjectId>
+      <ObjectId>72057594048872448</ObjectId>
       <Position>1</Position>
     </partition>
     <partition id="5643" parent="5628">
-      <ObjectId>72057594048544768</ObjectId>
+      <ObjectId>72057594048937984</ObjectId>
       <Position>1</Position>
     </partition>
     <partition id="5644" parent="5637">
