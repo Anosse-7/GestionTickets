@@ -4,16 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="premier prototype">
+    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="working proto for userProfileUpdate">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/71392396-3889-48be-894b-abe4da59c69a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/71392396-3889-48be-894b-abe4da59c69a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/dto/UserUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/userProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User$UserBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Interfaces/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Interfaces/userProfile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,6 +227,7 @@
       <workItem from="1714660519378" duration="152000" />
       <workItem from="1714677214688" duration="2691000" />
       <workItem from="1714751080214" duration="10693000" />
+      <workItem from="1714815568414" duration="2559000" />
     </task>
     <task id="LOCAL-00001" summary="commit uncommplite registration">
       <option name="closed" value="true" />
@@ -319,7 +325,39 @@
       <option name="project" value="LOCAL" />
       <updated>1714304835655</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="uncomplite update immplementation">
+      <option name="closed" value="true" />
+      <created>1714783544417</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714783544417</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Merge remote-tracking branch 'origin/pavilion' into pavilion&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources/71392396-3889-48be-894b-abe4da59c69a.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/example/gestionticket/Entities/User.java&#10;#&#9;src/main/java/com/example/gestionticket/services/UserService.java&#10;#&#9;src/main/java/com/example/gestionticket/services/UserServiceImpl.java&#10;#&#9;src/main/java/com/example/gestionticket/web/Controllers/UserProfileController.java&#10;#&#9;src/main/resources/templates/Interfaces/userProfile.html&#10;#&#9;target/classes/com/example/gestionticket/Entities/User$UserBuilder.class&#10;#&#9;target/classes/com/example/gestionticket/Entities/User.class&#10;#&#9;target/classes/com/example/gestionticket/services/UserService.class&#10;#&#9;target/classes/com/example/gestionticket/services/UserServiceImpl.class&#10;#&#9;target/classes/com/example/gestionticket/web/Controllers/LoginController.class">
+      <option name="closed" value="true" />
+      <created>1714783574882</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1714783574882</updated>
+    </task>
+    <task id="LOCAL-00015" summary="working proto for userProfileUpdate">
+      <option name="closed" value="true" />
+      <created>1714783664425</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1714783664425</updated>
+    </task>
+    <task id="LOCAL-00016" summary="working proto for userProfileUpdate">
+      <option name="closed" value="true" />
+      <created>1714783675928</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1714783675928</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +386,12 @@
     <MESSAGE value="index page commit" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="premier prototype" />
-    <option name="LAST_COMMIT_MESSAGE" value="premier prototype" />
+    <MESSAGE value="premier prototype working" />
+    <MESSAGE value="uncomplite update immplementation" />
+    <MESSAGE value="working prototype of userProfile update" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/pavilion' into pavilion&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources/71392396-3889-48be-894b-abe4da59c69a.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/example/gestionticket/Entities/User.java&#10;#&#9;src/main/java/com/example/gestionticket/services/UserService.java&#10;#&#9;src/main/java/com/example/gestionticket/services/UserServiceImpl.java&#10;#&#9;src/main/java/com/example/gestionticket/web/Controllers/UserProfileController.java&#10;#&#9;src/main/resources/templates/Interfaces/userProfile.html&#10;#&#9;target/classes/com/example/gestionticket/Entities/User$UserBuilder.class&#10;#&#9;target/classes/com/example/gestionticket/Entities/User.class&#10;#&#9;target/classes/com/example/gestionticket/services/UserService.class&#10;#&#9;target/classes/com/example/gestionticket/services/UserServiceImpl.class&#10;#&#9;target/classes/com/example/gestionticket/web/Controllers/LoginController.class" />
+    <MESSAGE value="working proto for userProfileUpdate" />
+    <option name="LAST_COMMIT_MESSAGE" value="working proto for userProfileUpdate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

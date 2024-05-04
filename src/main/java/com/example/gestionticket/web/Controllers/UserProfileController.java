@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Base64;
 
 @Controller
 @RequestMapping("/userProfile")
@@ -30,20 +31,28 @@ public class UserProfileController {
     public String showUserProfile(Model model) {
         String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
         User currentUser = userRepository.findByUsername(currentUserName);
+        String imageBase64;
+        if (currentUser.getProfileImage() != null) {
+            imageBase64 = Base64.getEncoder().encodeToString(currentUser.getProfileImage());
+        } else {
+            imageBase64 = null;
+        }
+        model.addAttribute("imageBase64", imageBase64);
         model.addAttribute("update", currentUser);
         return "Interfaces/userProfile";
     }
 
     @PostMapping
-    public String updateUserProfile(@ModelAttribute("update") User updatedUser, Model model) {
+    public String uploadProfileImage(@ModelAttribute("update") User updateUser,@RequestParam("image") MultipartFile file, Model model) {
         try {
-            userService.updateUserProfile(updatedUser);
-            model.addAttribute("update", updatedUser);
-            return "Interfaces/userProfile";
-
-        } catch (RuntimeException e) {
-            model.addAttribute("error", "Error updating user profile: " + e.getMessage());
+            userService.saveProfileImage(updateUser, file);
+            userService.updateUserProfile(updateUser);
+            model.addAttribute("success", "Profile updated successfully");
+            return "redirect:/userProfile";
+        } catch (IOException e) {
+            model.addAttribute("error", "Error Updating User Profile image: " + e.getMessage());
             return "Interfaces/userProfile";
         }
+
     }
 }
