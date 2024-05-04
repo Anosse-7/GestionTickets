@@ -2,7 +2,6 @@ package com.example.gestionticket.services;
 
 import com.example.gestionticket.Entities.User;
 import com.example.gestionticket.Repository.UserRepository;
-import com.example.gestionticket.web.dto.UserUpdateDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -31,7 +30,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
 
     @Override
-    public void updateUserProfile(UserUpdateDto updatedUser, byte[] avatar) {
+    public void updateUserProfile(User updatedUser) {
     if (updatedUser.getId() == null) {
         throw new IllegalArgumentException("Updated user must have a valid id");
     }
@@ -61,9 +60,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
     if (updatedUser.getTelephone() != null && !updatedUser.getTelephone().equals(existingUser.getTelephone())) {
         existingUser.setTelephone(updatedUser.getTelephone());
-    }
-    if (avatar != null && (existingUser.getAvatar() == null || !Arrays.equals(avatar, existingUser.getAvatar()))) {
-        existingUser.setAvatar(avatar);
     }
     // For boolean fields, you can check if the updatedUser's field is different from the existingUser's field
     if (updatedUser.isActive() != existingUser.isActive()) {

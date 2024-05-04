@@ -16,7 +16,7 @@
                     <div class="account-settings">
                         <div class="user-profile">
                            <div class="user-avatar d-flex justify-content-center align-items-center">
-                            <img width="250" height="250" th:src="${update.avatar != null && #arrays.length(update.avatar) > 0} ? ${'data:image/png;base64,' + T(org.springframework.util.Base64Utils).encodeToString(update.avatar)} : 'https://img.icons8.com/nolan/250/user-default.png'" alt="user-default"/>
+                            <img width="250" height="250" src="https://img.icons8.com/nolan/250/user-default.png" alt="user-default"/>
                            </div>
                             <div class="d-flex justify-content-center align-items-center">
                                 <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" style="display: none;"/>
