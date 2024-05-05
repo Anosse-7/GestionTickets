@@ -45,13 +45,13 @@ class SecurityConfig {
 
         http.formLogin(form -> form
                         .loginPage("/login")
-                        .defaultSuccessUrl("/userProfile", true)
+                        .defaultSuccessUrl("/", true)
                         .permitAll()
                         .failureUrl("/login?error=true"))
 
                 .logout(logout -> logout
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                        .logoutSuccessUrl("/index")
+                        .logoutSuccessUrl("/")
                         .permitAll())
 
         ;

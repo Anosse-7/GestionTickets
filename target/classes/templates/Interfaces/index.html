@@ -24,7 +24,13 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" th:href="@{/registration}">Sign Up</a></li>
-                        <li class="nav-item"><a class="nav-link" th:href="@{/login}">Log In</a></li>
+                        <li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">
+                            <a class="nav-link" th:href="@{/logout}">Logout</a>
+                        </li>
+                        <li class="nav-item" th:if="${#authorization.expression('!isAuthenticated()')}">
+                            <a class="nav-link" th:href="@{/login}">Log In</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" th:href="@{/Evenement}">Evenement</a></li>
                     </ul>
                 </div>
             </div>
