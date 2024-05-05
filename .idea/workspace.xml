@@ -4,40 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="premier prototype">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/dto/UserUpdateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/defaultUser.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/user.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/userProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/71392396-3889-48be-894b-abe4da59c69a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/71392396-3889-48be-894b-abe4da59c69a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/GestionTicketApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/GestionTicketApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/conf/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/conf/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/dto/UserRegistrationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/dto/UserRegistrationDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Registration/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Registration/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User$UserBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/UserRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/UserRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/conf/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/conf/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/dto/UserRegistrationDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/dto/UserRegistrationDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Registration/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Registration/registration.html" afterDir="false" />
-    </list>
+    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="updated user profile uncomplited" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,9 +14,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -61,7 +28,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="pavilion" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -120,44 +87,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.GestionTicketApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/obino/OneDrive - Ecole Marocaine des Sciences de l'Ingénieur/Documents/demo/GestionTicket/target/classes/CSS&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.GestionTicketApplication.executor": "Run",
+    "git-widget-placeholder": "Amjad",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/GestionTickets/src/main/resources/static/js",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlserver&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlserver"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GestionTickets\src\main\resources\static\js" />
+      <recent name="D:\GestionTickets\src\main\resources\static\css" />
       <recent name="C:\Users\obino\OneDrive - Ecole Marocaine des Sciences de l'Ingénieur\Documents\demo\GestionTicket\target\classes\CSS" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -245,6 +214,12 @@
       <workItem from="1714660519378" duration="152000" />
       <workItem from="1714677214688" duration="2691000" />
       <workItem from="1714751080214" duration="10693000" />
+      <workItem from="1714815568414" duration="2559000" />
+      <workItem from="1714819923639" duration="6752000" />
+      <workItem from="1714827820459" duration="96000" />
+      <workItem from="1714909410146" duration="13000" />
+      <workItem from="1714929281232" duration="1121000" />
+      <workItem from="1714930660548" duration="304000" />
     </task>
     <task id="LOCAL-00001" summary="commit uncommplite registration">
       <option name="closed" value="true" />
@@ -342,7 +317,55 @@
       <option name="project" value="LOCAL" />
       <updated>1714304835655</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="uncomplite update immplementation">
+      <option name="closed" value="true" />
+      <created>1714783544417</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714783544417</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Merge remote-tracking branch 'origin/pavilion' into pavilion&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources/71392396-3889-48be-894b-abe4da59c69a.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/example/gestionticket/Entities/User.java&#10;#&#9;src/main/java/com/example/gestionticket/services/UserService.java&#10;#&#9;src/main/java/com/example/gestionticket/services/UserServiceImpl.java&#10;#&#9;src/main/java/com/example/gestionticket/web/Controllers/UserProfileController.java&#10;#&#9;src/main/resources/templates/Interfaces/userProfile.html&#10;#&#9;target/classes/com/example/gestionticket/Entities/User$UserBuilder.class&#10;#&#9;target/classes/com/example/gestionticket/Entities/User.class&#10;#&#9;target/classes/com/example/gestionticket/services/UserService.class&#10;#&#9;target/classes/com/example/gestionticket/services/UserServiceImpl.class&#10;#&#9;target/classes/com/example/gestionticket/web/Controllers/LoginController.class">
+      <option name="closed" value="true" />
+      <created>1714783574882</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1714783574882</updated>
+    </task>
+    <task id="LOCAL-00015" summary="working proto for userProfileUpdate">
+      <option name="closed" value="true" />
+      <created>1714783664425</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1714783664425</updated>
+    </task>
+    <task id="LOCAL-00016" summary="working proto for userProfileUpdate">
+      <option name="closed" value="true" />
+      <created>1714783675928</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1714783675928</updated>
+    </task>
+    <task id="LOCAL-00017" summary="updated user profile">
+      <option name="closed" value="true" />
+      <created>1714827883892</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1714827883892</updated>
+    </task>
+    <task id="LOCAL-00018" summary="updated user profile uncomplited">
+      <option name="closed" value="true" />
+      <created>1714930742793</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1714930742793</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +394,16 @@
     <MESSAGE value="index page commit" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="premier prototype" />
-    <option name="LAST_COMMIT_MESSAGE" value="premier prototype" />
+    <MESSAGE value="premier prototype working" />
+    <MESSAGE value="uncomplite update immplementation" />
+    <MESSAGE value="working prototype of userProfile update" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/pavilion' into pavilion&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources/71392396-3889-48be-894b-abe4da59c69a.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/example/gestionticket/Entities/User.java&#10;#&#9;src/main/java/com/example/gestionticket/services/UserService.java&#10;#&#9;src/main/java/com/example/gestionticket/services/UserServiceImpl.java&#10;#&#9;src/main/java/com/example/gestionticket/web/Controllers/UserProfileController.java&#10;#&#9;src/main/resources/templates/Interfaces/userProfile.html&#10;#&#9;target/classes/com/example/gestionticket/Entities/User$UserBuilder.class&#10;#&#9;target/classes/com/example/gestionticket/Entities/User.class&#10;#&#9;target/classes/com/example/gestionticket/services/UserService.class&#10;#&#9;target/classes/com/example/gestionticket/services/UserServiceImpl.class&#10;#&#9;target/classes/com/example/gestionticket/web/Controllers/LoginController.class" />
+    <MESSAGE value="working proto for userProfileUpdate" />
+    <MESSAGE value="updated userprofile" />
+    <MESSAGE value="Merge pull request #3 from Anosse-7/pavilion&#10;&#10;Pavilion" />
+    <MESSAGE value="updated user profile" />
+    <MESSAGE value="updated user profile uncomplited" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated user profile uncomplited" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
