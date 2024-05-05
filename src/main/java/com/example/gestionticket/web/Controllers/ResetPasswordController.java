@@ -1,5 +1,7 @@
 package com.example.gestionticket.web.Controllers;
 
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.ui.Model;
 import com.example.gestionticket.Entities.User;
 import com.example.gestionticket.services.UserService;
@@ -34,13 +36,19 @@ public class ResetPasswordController {
     }
 
     @PostMapping
-    public String resetPassword(@ModelAttribute("user") User user,
-                                @RequestParam("oldPassword") String oldPassword,
+    public String resetPassword(@RequestParam("oldPassword") String oldPassword,
                                 @RequestParam("newPassword") String newPassword,
                                 @RequestParam("confirmPassword") String confirmPassword,
-                                @RequestParam("username") String username,
                                 Model model) {
-        user = userService.findByUsername(username);
+
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username;
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails)principal).getUsername();
+        } else {
+            username = principal.toString();
+        }
+        User user = userService.findByUsername(username);
         if (user == null) {
             model.addAttribute("error", "User not found");
             return "redirect:/resetPassword?error=User not found";
