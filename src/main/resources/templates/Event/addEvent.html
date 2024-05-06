@@ -15,15 +15,15 @@
                         <div class="card-body p-5">
                             <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-                            <form th:action="@{/addEvent}" method="post" th:object="${user}">
+                            <form th:action="@{/addEvent}" method="post" th:object="${addEvent}">
                                 <!-- success message -->
                                 <div th:if="${param.success}" class="alert alert-success">
                                     You have been registered successfully
                                 </div>
                                 <div data-mdb-input-init class="form-outline mb-4">
-                                    <label class="form-label" for="form3Example7cg">Username</label>
-                                    <input type="text" id="form3Example7cg" th:field="${user.username}" class="form-control form-control-lg" placeholder="Username">
-                                    <p class="alert alert-danger" th:if="${#fields.hasErrors('username')}" th:errors="${user.username}"></p>
+                                    <label class="form-label" for="form3Example7cg">Ajouter Evenement</label>
+                                    <input type="text" id="form3Example7cg" th:field="${addEvent.nom}" class="form-control form-control-lg" placeholder="Ajouter Evenement">
+                                    <p class="alert alert-danger" th:if="${#fields.hasErrors('nom')}" th:errors="${addEvent.nom}"></p>
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>

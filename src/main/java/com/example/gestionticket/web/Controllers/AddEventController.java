@@ -16,7 +16,7 @@ public class AddEventController {
     private EvenementService eventService = null;
     @GetMapping
     public String returnEvent(){
-        return "/Event/addEvent";
+        return "Event/addEvent";
     }
 
     @PostMapping
@@ -24,7 +24,6 @@ public class AddEventController {
         if(currentEvent.getId() != null){
             eventService.getCurrentEvent(currentEvent.getId());
         }
-
-        return "/Event/addEvent";
+        return "Event/addEvent";
     }
 }
