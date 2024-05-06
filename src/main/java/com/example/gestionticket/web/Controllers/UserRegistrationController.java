@@ -27,11 +27,13 @@ public class UserRegistrationController {
 
     @Autowired
     public UserRegistrationController(UserService userService){
+
         this.userService = userService;
     }
 
     @ModelAttribute("user")
     public UserRegistrationDto userRegistrationDto() {
+
         return new UserRegistrationDto();
     }
 
@@ -65,7 +67,7 @@ public class UserRegistrationController {
         if (savedUser == null) {
             logger.error("User could not be saved");
             result.rejectValue("username", null, "User could not be saved");
-            return "Registration/registration";
+            return "redirect:/registration?error";
         }
         return "redirect:/registration?success";
     }
