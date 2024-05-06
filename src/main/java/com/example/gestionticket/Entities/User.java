@@ -47,12 +47,12 @@ public class User implements UserDetails {
     @Column(length = 50,name = "ville")
     private String ville;
 
-    @Column(length = 50,name = "telephone")
+    @Column(length = 50,name = "telephone",nullable = true)
     private String telephone;
 
+    @Column(name = "avatar")
     @Lob
-    @Column(name = "profile_image")
-    private byte[] profileImage;
+    private byte[] avatar;
 
     @Column(nullable = false,name = "active")
     private boolean active;
@@ -61,7 +61,7 @@ public class User implements UserDetails {
     private String role;
 
 
-    public User(String username ,String nom, String prenom, String email, String password, String ville, String telephone, boolean active , String role , byte[] profileImage) {
+    public User(String username ,String nom, String prenom, String email, String password, String ville, String telephone, byte[] avatar, boolean active , String role) {
 
         this.username = username;
         this.nom = nom;
@@ -72,7 +72,7 @@ public class User implements UserDetails {
         this.telephone = telephone;
         this.active = active;
         this.role = role;
-        this.profileImage = profileImage;
+        this.avatar = avatar;
     }
 
 

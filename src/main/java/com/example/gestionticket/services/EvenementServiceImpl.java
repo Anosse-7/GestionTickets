@@ -10,32 +10,33 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 
-@Service
+@Service("evenementServiceImpl")
 public class EvenementServiceImpl implements EvenementService{
 
     @Autowired
-    private EvenementRepository event;
+    private EvenementRepository eventRepository;
     private Model model;
 
     @Override
     public List<Evenement> listAll(){
-        return (List<Evenement>) event.findAll();
+        return (List<Evenement>) eventRepository.findAll();
     }
 
     @Override
     public Evenement getCurrentEvent(Long id){
-        return event.findById(id).orElse(null);
+        return eventRepository.findById(id).orElse(null);
     }
 
     @Override
     public Evenement addEvent(Evenement evenement){
-        return event.save(evenement);
+
+        return eventRepository.save(evenement);
     }
 
     @Override
     public Evenement updateEvent(Evenement evenement){
-        if (event.existsById(evenement.getId())){
-            return event.save(evenement);
+        if (eventRepository.existsById(evenement.getId())){
+            return eventRepository.save(evenement);
         }
         return null;
     }

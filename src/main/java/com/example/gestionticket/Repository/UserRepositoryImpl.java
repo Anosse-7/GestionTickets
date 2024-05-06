@@ -16,6 +16,5 @@ public abstract class UserRepositoryImpl implements UserRepository{
 
         return Objects.equals(user.getUsername(), username) ? user : null;
     }
-
 }
 

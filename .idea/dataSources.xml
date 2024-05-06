@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Gestionticket@localhost" uuid="8a7ddec7-a184-4c92-af1a-3b67c1d83f1d">
+    <data-source source="LOCAL" name="GestionTickets@localhost" uuid="1743a149-6aeb-4d83-9abc-39575d776e71">
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://localhost:1433;database=Gestionticket</jdbc-url>
+      <jdbc-url>jdbc:sqlserver://localhost:1433;database=GestionTickets</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

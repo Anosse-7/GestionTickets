@@ -1,0 +1,572 @@
+Index: src/main/java/com/example/gestionticket/Entities/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.Entities;\r\nimport jakarta.persistence.*;\r\nimport jakarta.validation.constraints.NotBlank;\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Builder;\r\nimport lombok.Data;\r\nimport lombok.NoArgsConstructor;\r\nimport org.springframework.security.core.GrantedAuthority;\r\nimport org.springframework.security.core.authority.SimpleGrantedAuthority;\r\nimport org.springframework.security.core.userdetails.UserDetails;\r\n\r\nimport java.util.Collection;\r\nimport java.util.Collections;\r\nimport java.util.List;\r\n\r\n\r\n@Entity\r\n@Data\r\n@Builder\r\n@AllArgsConstructor\r\n@NoArgsConstructor\r\n@Table(name = \"_user\")\r\npublic class User implements UserDetails {\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.AUTO)\r\n    private Long id;\r\n\r\n    @Column(nullable = false,length = 50,unique = true,name = \"username\")\r\n    private String username;\r\n\r\n    @Column(nullable = false,length = 50,name = \"nom\")\r\n    private String nom;\r\n\r\n    @Column(nullable = false,length = 50, name = \"prenom\")\r\n    private String prenom;\r\n\r\n    @Column\r\n    private String Gender;\r\n\r\n    @Column(nullable = false,length = 50,unique = true,name = \"email\")\r\n    private String email;\r\n\r\n    @NotBlank(message = \"Password cannot be blank\")\r\n    private String password;\r\n\r\n    @Column(length = 50,name = \"ville\")\r\n    private String ville;\r\n\r\n    @Column(length = 50,name = \"telephone\")\r\n    private String telephone;\r\n\r\n    @Column(name = \"avatar\")\r\n    @Lob\r\n    private byte[] avatar;\r\n\r\n    @Column(nullable = false,name = \"active\")\r\n    private boolean active;\r\n\r\n    @Column(nullable = false,name = \"role\")\r\n    private String role;\r\n\r\n\r\n    public User(String username ,String nom, String prenom, String email, String password, String ville, String telephone, byte[] avatar, boolean active , String role) {\r\n\r\n        this.username = username;\r\n        this.nom = nom;\r\n        this.prenom = prenom;\r\n        this.email = email;\r\n        this.password = password;\r\n        this.ville = ville;\r\n        this.telephone = telephone;\r\n        this.active = active;\r\n        this.role = role;\r\n        this.avatar = avatar;\r\n    }\r\n\r\n\r\n    @Override\r\n    public Collection<? extends GrantedAuthority> getAuthorities() {\r\n        return Collections.singletonList(new SimpleGrantedAuthority(role));\r\n    }\r\n\r\n    @Override\r\n    public boolean isAccountNonExpired() {\r\n        return true; // Implement your logic based on account expiration, if applicable\r\n    }\r\n\r\n    @Override\r\n    public boolean isAccountNonLocked() {\r\n        return active; // Implement your logic based on account locking, if applicable\r\n    }\r\n\r\n    @Override\r\n    public boolean isCredentialsNonExpired() {\r\n        return true; // Implement your logic based on credential expiration, if applicable\r\n    }\r\n\r\n    @Override\r\n    public boolean isEnabled() {\r\n        return active;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/Entities/User.java b/src/main/java/com/example/gestionticket/Entities/User.java
+--- a/src/main/java/com/example/gestionticket/Entities/User.java	(revision 4423728d90410d7b953d9b4d344dd4c3a8f589bb)
++++ b/src/main/java/com/example/gestionticket/Entities/User.java	(date 1714981762918)
+@@ -47,7 +47,7 @@
+     @Column(length = 50,name = "ville")
+     private String ville;
+ 
+-    @Column(length = 50,name = "telephone")
++    @Column(length = 50,name = "telephone",nullable = true)
+     private String telephone;
+ 
+     @Column(name = "avatar")
+Index: src/main/java/com/example/gestionticket/web/Controllers/EvenementController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.web.Controllers;\r\nimport com.example.gestionticket.Entities.Evenement;\r\nimport com.example.gestionticket.services.EvenementServiceImpl;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.ui.Model;\r\nimport org.springframework.web.bind.annotation.*;\r\n\r\n@Controller\r\n@RequestMapping(\"/Evenement\")\r\npublic class EvenementController {\r\n\r\n    private final EvenementServiceImpl evenementServiceImpl;\r\n\r\n    @Autowired\r\n    public EvenementController(EvenementServiceImpl evenementServiceImpl) {\r\n        this.evenementServiceImpl = evenementServiceImpl;\r\n    }\r\n\r\n    @GetMapping(\"/{eventId}\")\r\n    public String Event(Model model, @PathVariable Long eventId) {\r\n        Evenement currentEvent = evenementServiceImpl.getCurrentEvent(eventId);\r\n        model.addAttribute(\"currentEvent\", currentEvent);\r\n        return \"/Event/Evenement\";\r\n    }\r\n\r\n    @PostMapping(\"/{eventId}/addEvent\")\r\n    public String addEvent(@ModelAttribute(\"event\") Evenement evenement) {\r\n        if(evenement.getId() == null) {\r\n            evenementServiceImpl.addEvent(evenement);\r\n        } else {\r\n            evenementServiceImpl.updateEvent(evenement);\r\n        }\r\n        return \"redirect:/Evenement\";\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/web/Controllers/EvenementController.java b/src/main/java/com/example/gestionticket/web/Controllers/EvenementController.java
+--- a/src/main/java/com/example/gestionticket/web/Controllers/EvenementController.java	(revision 4423728d90410d7b953d9b4d344dd4c3a8f589bb)
++++ b/src/main/java/com/example/gestionticket/web/Controllers/EvenementController.java	(date 1714983389038)
+@@ -18,19 +18,9 @@
+     }
+ 
+     @GetMapping("/{eventId}")
+-    public String Event(Model model, @PathVariable Long eventId) {
++    public String Event(@PathVariable Long eventId, Model model) {
+         Evenement currentEvent = evenementServiceImpl.getCurrentEvent(eventId);
+         model.addAttribute("currentEvent", currentEvent);
+         return "/Event/Evenement";
+     }
+-
+-    @PostMapping("/{eventId}/addEvent")
+-    public String addEvent(@ModelAttribute("event") Evenement evenement) {
+-        if(evenement.getId() == null) {
+-            evenementServiceImpl.addEvent(evenement);
+-        } else {
+-            evenementServiceImpl.updateEvent(evenement);
+-        }
+-        return "redirect:/Evenement";
+-    }
+ }
+\ No newline at end of file
+Index: src/main/java/com/example/gestionticket/Entities/Evenement.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.Entities;\r\n\r\nimport jakarta.persistence.*;\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Builder;\r\nimport lombok.Data;\r\nimport lombok.NoArgsConstructor;\r\n\r\nimport java.util.Date;\r\n\r\n@Entity\r\n@Table(name = \"Event\")\r\n@Data\r\n@Builder\r\n@AllArgsConstructor\r\n@NoArgsConstructor\r\npublic class Evenement {\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    private Long id;\r\n\r\n    @Column(length = 45, nullable = false, name = \"nom\")\r\n    private String nom;\r\n\r\n    @Column(length = 45, nullable = false, name = \"prenom\")\r\n    private String prenom;\r\n\r\n    @Temporal(TemporalType.TIMESTAMP)\r\n    private Date dateEvenement;\r\n\r\n    @Column\r\n    private String typeEvenement;\r\n\r\n    // Constructeurs, getters et setters...\r\n\r\n    public Evenement(String nom, String prenom, Date dateEvenement, String typeEvenement) {\r\n        this.nom = nom;\r\n        this.prenom = prenom;\r\n        this.dateEvenement = dateEvenement;\r\n        this.typeEvenement = typeEvenement;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/Entities/Evenement.java b/src/main/java/com/example/gestionticket/Entities/Evenement.java
+--- a/src/main/java/com/example/gestionticket/Entities/Evenement.java	(revision 0039fd08160d735538770950c2c84cc9abb54179)
++++ b/src/main/java/com/example/gestionticket/Entities/Evenement.java	(date 1714984029584)
+@@ -1,10 +1,7 @@
+ package com.example.gestionticket.Entities;
+ 
+ import jakarta.persistence.*;
+-import lombok.AllArgsConstructor;
+-import lombok.Builder;
+-import lombok.Data;
+-import lombok.NoArgsConstructor;
++import lombok.*;
+ 
+ import java.util.Date;
+ 
+Index: src/main/java/com/example/gestionticket/conf/SecurityConfig.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.conf;\r\n\r\nimport com.example.gestionticket.services.UserServiceImpl;\r\nimport org.apache.tomcat.util.net.openssl.ciphers.Authentication;\r\nimport org.springframework.boot.web.servlet.ServletContextInitializer;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\nimport org.springframework.security.authentication.dao.DaoAuthenticationProvider;\r\nimport org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;\r\nimport org.springframework.security.config.annotation.web.builders.HttpSecurity;\r\nimport org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;\r\nimport org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;\r\nimport org.springframework.security.web.SecurityFilterChain;\r\nimport org.springframework.security.web.util.matcher.AndRequestMatcher;\r\nimport org.springframework.security.web.util.matcher.AntPathRequestMatcher;\r\n\r\nimport static org.springframework.security.config.Customizer.withDefaults;\r\n\r\n@Configuration\r\n@EnableWebSecurity\r\nclass SecurityConfig {\r\n\r\n   @Bean\r\n    public ServletContextInitializer servletContextInitializer() {\r\n    return servletContext -> {\r\n        servletContext.getSessionCookieConfig().setHttpOnly(true);\r\n        servletContext.getSessionCookieConfig().setSecure(true); // Ensure cookies are only sent over HTTPS\r\n    };\r\n}\r\n\r\n    @Bean\r\n    public DaoAuthenticationProvider authenticationProvider(UserServiceImpl userService) {\r\n        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();\r\n        authProvider.setUserDetailsService(userService);\r\n        authProvider.setPasswordEncoder(passwordEncoder());\r\n        return authProvider;\r\n    }\r\n\r\n    @Bean\r\n    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {\r\n        http.authorizeRequests((authz) -> authz\r\n                .requestMatchers(\"/registration\", \"/index\",\"/static/css/**\", \"/static/images/**\" ,\"/static/js/**\").permitAll() // Allow access to /registration without authentication\r\n                .anyRequest().authenticated()\r\n        );\r\n\r\n        http.formLogin(form -> form\r\n                        .loginPage(\"/login\")\r\n                        .defaultSuccessUrl(\"/\", true)\r\n                        .permitAll()\r\n                        .failureUrl(\"/login?error=true\"))\r\n\r\n                .logout(logout -> logout\r\n                        .logoutRequestMatcher(new AntPathRequestMatcher(\"/logout\"))\r\n                        .logoutSuccessUrl(\"/\")\r\n                        .permitAll())\r\n\r\n        ;\r\n        http.logout(withDefaults());\r\n        return http.build();\r\n    }\r\n\r\n    @Bean\r\n    public BCryptPasswordEncoder passwordEncoder() {\r\n        return new BCryptPasswordEncoder();\r\n    }\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/conf/SecurityConfig.java b/src/main/java/com/example/gestionticket/conf/SecurityConfig.java
+--- a/src/main/java/com/example/gestionticket/conf/SecurityConfig.java	(revision 4423728d90410d7b953d9b4d344dd4c3a8f589bb)
++++ b/src/main/java/com/example/gestionticket/conf/SecurityConfig.java	(date 1714981024002)
+@@ -39,7 +39,7 @@
+     @Bean
+     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+         http.authorizeRequests((authz) -> authz
+-                .requestMatchers("/registration", "/index","/static/css/**", "/static/images/**" ,"/static/js/**").permitAll() // Allow access to /registration without authentication
++                .requestMatchers("/registration", "/","/static/css/**", "/static/images/**" ,"/static/js/**").permitAll() // Allow access to /registration without authentication
+                 .anyRequest().authenticated()
+         );
+ 
+Index: src/main/java/com/example/gestionticket/services/UserServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.services;\r\n\r\nimport com.example.gestionticket.Entities.User;\r\nimport com.example.gestionticket.Repository.UserRepository;\r\nimport com.example.gestionticket.web.dto.UserUpdateDto;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.security.core.authority.SimpleGrantedAuthority;\r\nimport org.springframework.security.core.userdetails.UserDetails;\r\nimport org.springframework.security.core.userdetails.UserDetailsService;\r\nimport org.springframework.security.core.userdetails.UsernameNotFoundException;\r\nimport org.springframework.stereotype.Service;\r\nimport java.util.ArrayList;\r\nimport java.util.Arrays;\r\nimport java.util.List;\r\n\r\n@Service\r\npublic class UserServiceImpl implements UserService, UserDetailsService {\r\n\r\n    @Autowired\r\n    private UserRepository userRepository;\r\n\r\n\r\n    public UserServiceImpl(UserRepository userRepository) {\r\n        this.userRepository = userRepository;\r\n    }\r\n\r\n    @Override\r\n    public User findByUsername(String username) {\r\n        return userRepository.findByUsername(username);\r\n    }\r\n\r\n\r\n    @Override\r\n    public void updateUserProfile(UserUpdateDto updatedUser, byte[] avatar) {\r\n    if (updatedUser.getId() == null) {\r\n        throw new IllegalArgumentException(\"Updated user must have a valid id\");\r\n    }\r\n\r\n    // Load the existing user from the database\r\n    User existingUser = userRepository.findById(updatedUser.getId())\r\n            .orElseThrow(() -> new RuntimeException(\"User not found\"));\r\n\r\n    // Update the fields of the existing user with the new information only if they have changed\r\n    if (updatedUser.getUsername() != null && !updatedUser.getUsername().equals(existingUser.getUsername())) {\r\n        existingUser.setUsername(updatedUser.getUsername());\r\n    }\r\n    if (updatedUser.getNom() != null && !updatedUser.getNom().equals(existingUser.getNom())) {\r\n        existingUser.setNom(updatedUser.getNom());\r\n    }\r\n    if (updatedUser.getPrenom() != null && !updatedUser.getPrenom().equals(existingUser.getPrenom())) {\r\n        existingUser.setPrenom(updatedUser.getPrenom());\r\n    }\r\n    if (updatedUser.getEmail() != null && !updatedUser.getEmail().equals(existingUser.getEmail())) {\r\n        existingUser.setEmail(updatedUser.getEmail());\r\n    }\r\n    if (updatedUser.getPassword() != null && !updatedUser.getPassword().equals(existingUser.getPassword())) {\r\n        existingUser.setPassword(updatedUser.getPassword());\r\n    }\r\n    if (updatedUser.getVille() != null && !updatedUser.getVille().equals(existingUser.getVille())) {\r\n        existingUser.setVille(updatedUser.getVille());\r\n    }\r\n    if (updatedUser.getTelephone() != null && !updatedUser.getTelephone().equals(existingUser.getTelephone())) {\r\n        existingUser.setTelephone(updatedUser.getTelephone());\r\n    }\r\n    if (avatar != null && (existingUser.getAvatar() == null || !Arrays.equals(avatar, existingUser.getAvatar()))) {\r\n        existingUser.setAvatar(avatar);\r\n    }\r\n    // For boolean fields, you can check if the updatedUser's field is different from the existingUser's field\r\n    if (updatedUser.isActive() != existingUser.isActive()) {\r\n        existingUser.setActive(updatedUser.isActive());\r\n    }\r\n    if (updatedUser.getRole() != null && !updatedUser.getRole().equals(existingUser.getRole())) {\r\n        existingUser.setRole(updatedUser.getRole());\r\n    }\r\n\r\n    // Save the updated user back to the database\r\n    userRepository.save(existingUser);\r\n}\r\n\r\n    public boolean userExists(String username) {\r\n    return userRepository.findByUsername(username) != null;\r\n}\r\n\r\n    @Override\r\n    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {\r\n\r\n        User user = userRepository.findByUsername(username);\r\n        if(user == null) {\r\n            throw new UsernameNotFoundException(\"Invalid username\");\r\n        }\r\n\r\n        List<SimpleGrantedAuthority> authorities = new ArrayList<>();\r\n        authorities.add(new SimpleGrantedAuthority(user.getRole()));\r\n\r\n        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), authorities);\r\n    }\r\n\r\n\r\n    @Override\r\n    public User save(User user) {\r\n        return userRepository.save(user);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/services/UserServiceImpl.java b/src/main/java/com/example/gestionticket/services/UserServiceImpl.java
+--- a/src/main/java/com/example/gestionticket/services/UserServiceImpl.java	(revision 4423728d90410d7b953d9b4d344dd4c3a8f589bb)
++++ b/src/main/java/com/example/gestionticket/services/UserServiceImpl.java	(date 1714981762904)
+@@ -21,11 +21,13 @@
+ 
+ 
+     public UserServiceImpl(UserRepository userRepository) {
++
+         this.userRepository = userRepository;
+     }
+ 
+     @Override
+     public User findByUsername(String username) {
++
+         return userRepository.findByUsername(username);
+     }
+ 
+@@ -78,7 +80,8 @@
+ }
+ 
+     public boolean userExists(String username) {
+-    return userRepository.findByUsername(username) != null;
++
++        return userRepository.findByUsername(username) != null;
+ }
+ 
+     @Override
+Index: target/classes/templates/Interfaces/userProfile.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>Profile</title>\r\n    <link href=\"/static/css/bootstrap.css\" rel=\"stylesheet\">\r\n</head>\r\n<body>\r\n<form th:action=\"@{/userProfile}\" method=\"post\" th:object=\"${update}\" enctype=\"multipart/form-data\">\r\n    <input type=\"hidden\" th:field=\"*{id}\">\r\n<div class=\"container d-flex justify-content-center align-items-center\" style=\"height: 100vh;\">\r\n    <div class=\"row gutters\">\r\n        <div class=\"col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12\">\r\n            <div class=\"card h-100\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"account-settings\">\r\n                        <div class=\"user-profile\">\r\n                           <div class=\"user-avatar d-flex justify-content-center align-items-center\">\r\n                               <img width=\"250\" height=\"250\" th:src=\"${imageBase64 != null} ? 'data:image/png;base64,'+${imageBase64} : 'https://img.icons8.com/nolan/250/user-default.png'\" alt=\"user-default\"/>\r\n                           </div>\r\n                           <div class=\"d-flex justify-content-center align-items-center\">\r\n\r\n                            </div>\r\n                            <br>\r\n                            <div class=\"d-flex justify-content-center align-items-center\">\r\n                                <input type=\"file\" id=\"image\" name=\"image\" accept=\"image/png, image/jpeg\" style=\"display: none;\"/>\r\n                                <button type=\"button\" class=\"btn btn-primary\" onclick=\"document.getElementById('image').click();\">Change Photo</button>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12\">\r\n            <div class=\"card h-100\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"row gutters\">\r\n                        <div th:if=\"${success}\" class=\"alert alert-success\" role=\"alert\">\r\n                            <p th:text=\"${success}\"></p>\r\n                        </div>\r\n                        <div th:if=\"${error}\" class=\"alert alert-danger\" role=\"alert\">\r\n                            <p th:text=\"${error}\"></p>\r\n                        </div>\r\n                        <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                            <h6 class=\"mb-2 text-primary\">Personal Details</h6>\r\n                        </div>\r\n                        <div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12\">\r\n                            <div class=\"form-group\">\r\n                            <label for=\"Username\" class=\"me-2\">Username :</label>\r\n                            <input type=\"text\" class=\"form-control\" th:value=\"${update.username}\" id=\"Username\" placeholder=\"Enter the username\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12\">\r\n                            <div class=\"form-group\">\r\n                                <label for=\"prenom\">Prenom</label>\r\n                                <input type=\"text\" class=\"form-control\" th:value=\"${update.prenom}\" th:field=\"${update.prenom}\" id=\"prenom\" placeholder=\"Entrer le prenom\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12\">\r\n                            <div class=\"form-group\">\r\n                                <label for=\"nom\">Nom</label>\r\n                                <input type=\"text\" class=\"form-control\" th:value=\"${update.nom}\" th:field=\"${update.nom}\" id=\"nom\" placeholder=\"Entrer le nom\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12\">\r\n                            <div class=\"form-group\">\r\n                                <label for=\"Email\">Email</label>\r\n                                <input type=\"email\" class=\"form-control\" th:value=\"${update.email}\" th:field=\"${update.email}\" id=\"Email\" placeholder=\"Entrer le Email\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12\">\r\n                            <div class=\"form-group\">\r\n                                <label for=\"Telephone\">Telephone</label>\r\n                                <input type=\"tel\" class=\"form-control\" th:value=\"${update.telephone}\" th:field=\"${update.telephone}\" id=\"Telephone\" placeholder=\"Entrer le Nombre Telephone\">\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row gutters\">\r\n                    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                        <h6 class=\"mb-2 text-primary\">Password Management</h6>\r\n                    </div>\r\n                        <div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12\">\r\n                        <button type=\"button\" class=\"btn btn-primary link-light\" id=\"resetPasswordButton\"><a th:href=\"@{/resetPassword}\">Reset Password</a></button>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row gutters\">\r\n                        <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                            <h6 class=\"mt-3 mb-2 text-primary\">Address</h6>\r\n                        </div>\r\n                        <div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12\">\r\n                            <div class=\"form-group\">\r\n                                <label for=\"Ville\">Ville</label>\r\n                                <input type=\"text\" class=\"form-control\" th:value=\"${update.ville}\" th:field=\"${update.ville}\" id=\"Ville\" placeholder=\"Entrer la ville\">\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <br>\r\n                    <div class=\"row gutters\">\r\n                        <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                            <div class=\"text-right\">\r\n                                <button type=\"submit\" name=\"submit\" class=\"btn btn-secondary\">Cancel</button>\r\n                                <button type=\"submit\" name=\"submit\" class=\"btn btn-primary\">Update</button>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n</form>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/templates/Interfaces/userProfile.html b/target/classes/templates/Interfaces/userProfile.html
+--- a/target/classes/templates/Interfaces/userProfile.html	(revision 4423728d90410d7b953d9b4d344dd4c3a8f589bb)
++++ b/target/classes/templates/Interfaces/userProfile.html	(date 1714980730601)
+@@ -3,7 +3,7 @@
+ <head>
+     <meta charset="UTF-8">
+     <title>Profile</title>
+-    <link href="/static/css/bootstrap.css" rel="stylesheet">
++    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+ </head>
+ <body>
+ <form th:action="@{/userProfile}" method="post" th:object="${update}" enctype="multipart/form-data">
+@@ -16,15 +16,11 @@
+                     <div class="account-settings">
+                         <div class="user-profile">
+                            <div class="user-avatar d-flex justify-content-center align-items-center">
+-                               <img width="250" height="250" th:src="${imageBase64 != null} ? 'data:image/png;base64,'+${imageBase64} : 'https://img.icons8.com/nolan/250/user-default.png'" alt="user-default"/>
++                            <img width="250" height="250" th:src="${update.avatar != null && #arrays.length(update.avatar) > 0} ? ${'data:image/png;base64,' + T(org.springframework.util.Base64Utils).encodeToString(update.avatar)} : 'https://img.icons8.com/nolan/250/user-default.png'" alt="user-default"/>
+                            </div>
+-                           <div class="d-flex justify-content-center align-items-center">
+-
+-                            </div>
+-                            <br>
+                             <div class="d-flex justify-content-center align-items-center">
+-                                <input type="file" id="image" name="image" accept="image/png, image/jpeg" style="display: none;"/>
+-                                <button type="button" class="btn btn-primary" onclick="document.getElementById('image').click();">Change Photo</button>
++                                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" style="display: none;"/>
++                                <button type="button" class="btn btn-primary" onclick="document.getElementById('avatar').click();">Change Photo</button>
+                             </div>
+                         </div>
+                     </div>
+@@ -35,23 +31,12 @@
+             <div class="card h-100">
+                 <div class="card-body">
+                     <div class="row gutters">
+-                        <div th:if="${success}" class="alert alert-success" role="alert">
+-                            <p th:text="${success}"></p>
+-                        </div>
+-                        <div th:if="${error}" class="alert alert-danger" role="alert">
+-                            <p th:text="${error}"></p>
+-                        </div>
++                    <div class="row gutters">
+                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                             <h6 class="mb-2 text-primary">Personal Details</h6>
+                         </div>
+                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                             <div class="form-group">
+-                            <label for="Username" class="me-2">Username :</label>
+-                            <input type="text" class="form-control" th:value="${update.username}" id="Username" placeholder="Enter the username">
+-                            </div>
+-                        </div>
+-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+-                            <div class="form-group">
+                                 <label for="prenom">Prenom</label>
+                                 <input type="text" class="form-control" th:value="${update.prenom}" th:field="${update.prenom}" id="prenom" placeholder="Entrer le prenom">
+                             </div>
+@@ -73,14 +58,6 @@
+                                 <label for="Telephone">Telephone</label>
+                                 <input type="tel" class="form-control" th:value="${update.telephone}" th:field="${update.telephone}" id="Telephone" placeholder="Entrer le Nombre Telephone">
+                             </div>
+-                        </div>
+-                    </div>
+-                    <div class="row gutters">
+-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+-                        <h6 class="mb-2 text-primary">Password Management</h6>
+-                    </div>
+-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+-                        <button type="button" class="btn btn-primary link-light" id="resetPasswordButton"><a th:href="@{/resetPassword}">Reset Password</a></button>
+                         </div>
+                     </div>
+                     <div class="row gutters">
+@@ -94,7 +71,7 @@
+                             </div>
+                         </div>
+                     </div>
+-                    <br>
++                        <br>
+                     <div class="row gutters">
+                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                             <div class="text-right">
+@@ -108,6 +85,7 @@
+                 </div>
+             </div>
+         </div>
++    </div>
+ </form>
+ </body>
+ </html>
+\ No newline at end of file
+Index: target/classes/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.application.name=GestionTicket\r\n\r\nserver.port=8080\r\n\r\n\r\nspring.datasource.url=jdbc:sqlserver://localhost:1433;serverName=EVILLBOX;encrypt=true;trustServerCertificate=true;databaseName=GestionTickets\r\nspring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver\r\nspring.datasource.username=sa\r\nspring.datasource.password=admin\r\nspring.jpa.show-sql=true\r\n\r\n# Enable SQL formatting for Hibernate\r\nspring.jpa.properties.hibernate.format_sql=true\r\n\r\n# Hibernate Configuration\r\nspring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServerDialect\r\nspring.jpa.hibernate.ddl-auto=update\r\n\r\nspring.thymeleaf.prefix=classpath:/templates/\r\nspring.thymeleaf.suffix=.html\r\nspring.thymeleaf.cache=false\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/target/classes/application.properties b/target/classes/application.properties
+--- a/target/classes/application.properties	(revision 4423728d90410d7b953d9b4d344dd4c3a8f589bb)
++++ b/target/classes/application.properties	(date 1714980898351)
+@@ -3,10 +3,10 @@
+ server.port=8080
+ 
+ 
+-spring.datasource.url=jdbc:sqlserver://localhost:1433;serverName=EVILLBOX;encrypt=true;trustServerCertificate=true;databaseName=GestionTickets
++spring.datasource.url=jdbc:sqlserver://localhost:1433;serverName=DESKTOP-20S92JL;encrypt=true;trustServerCertificate=true;databaseName=GestionTickets
+ spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+ spring.datasource.username=sa
+-spring.datasource.password=admin
++spring.datasource.password=123
+ spring.jpa.show-sql=true
+ 
+ # Enable SQL formatting for Hibernate
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"849cda33-1aee-49fc-965d-1910467d5656\" name=\"Changes\" comment=\"updated user profile\">\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/uiDesigner.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EvenementServiceImpl.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/templates/Event/UpdateEvenement.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/Evenement.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/Evenement.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/EvenementRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/EvenementRepository.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/gestionticket/conf/SecurityConfig.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/gestionticket/conf/SecurityConfig.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EvenementService.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EvenementService.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/EvenementController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/EvenementController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/application.properties\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/application.properties\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/templates/Event/Evenement.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/templates/Event/Evenement.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/templates/Interfaces/index.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/templates/Interfaces/index.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/application.properties\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/application.properties\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/gestionticket/conf/SecurityConfig.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/gestionticket/conf/SecurityConfig.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/templates/Interfaces/index.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/templates/Interfaces/index.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/templates/Interfaces/userProfile.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/templates/Interfaces/userProfile.html\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"CSS File\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"Interface\" />\r\n        <option value=\"HTML File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PREVIOUS_COMMIT_AUTHORS\">\r\n      <list>\r\n        <option value=\"ANOSSE &lt;obinosse@gmail.com&gt;\" />\r\n      </list>\r\n    </option>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"pavilion\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;Anosse-7&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/Anosse-7/GestionTickets.git&quot;,\r\n    &quot;accountId&quot;: &quot;9b98dda5-7937-46f9-b892-ffd7b5c1f04e&quot;\r\n  },\r\n  &quot;recentNewPullRequestHead&quot;: {\r\n    &quot;server&quot;: {\r\n      &quot;useHttp&quot;: false,\r\n      &quot;host&quot;: &quot;github.com&quot;,\r\n      &quot;port&quot;: null,\r\n      &quot;suffix&quot;: null\r\n    },\r\n    &quot;owner&quot;: &quot;Anosse-7&quot;,\r\n    &quot;repository&quot;: &quot;GestionTickets&quot;\r\n  }\r\n}</component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserRegistrationController.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n    <option name=\"importingSettings\">\r\n      <MavenImportingSettings>\r\n        <option name=\"downloadAnnotationsAutomatically\" value=\"true\" />\r\n        <option name=\"downloadDocsAutomatically\" value=\"true\" />\r\n        <option name=\"downloadSourcesAutomatically\" value=\"true\" />\r\n        <option name=\"workspaceImportForciblyTurnedOn\" value=\"true\" />\r\n      </MavenImportingSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2f0YgUJXIiCgtxNH5yxCJzMs2Nh\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\r\n    \"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"DefaultHtmlFileTemplate\": \"HTML File\",\r\n    \"RequestMappingsPanelOrder0\": \"0\",\r\n    \"RequestMappingsPanelOrder1\": \"1\",\r\n    \"RequestMappingsPanelWidth0\": \"75\",\r\n    \"RequestMappingsPanelWidth1\": \"75\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"Spring Boot.GestionTicketApplication.executor\": \"Run\",\r\n    \"git-widget-placeholder\": \"#5 on anass\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"D:/GestionTickets/src/main/resources/static/js\",\r\n    \"list.type.of.created.stylesheet\": \"CSS\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.stylelint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.stylelint\": \"\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Project\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"run.code.analysis.last.selected.profile\": \"pProject Default\",\r\n    \"settings.editor.selected.configurable\": \"reference.settings.project.maven.importing\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  },\r\n  \"keyToStringList\": {\r\n    \"DatabaseDriversLRU\": [\r\n      \"sqlserver\"\r\n    ]\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\GestionTickets\\src\\main\\resources\\static\\js\" />\r\n      <recent name=\"D:\\GestionTickets\\src\\main\\resources\\static\\css\" />\r\n      <recent name=\"C:\\Users\\obino\\OneDrive - Ecole Marocaine des Sciences de l'Ingénieur\\Documents\\demo\\GestionTicket\\target\\classes\\CSS\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\GestionTickets\\src\\main\\resources\\static\\assets\\img\" />\r\n      <recent name=\"D:\\GestionTickets\\src\\main\\resources\\static\\assets\\img\\userImg\" />\r\n      <recent name=\"D:\\GestionTickets\\src\\main\\resources\\static\" />\r\n      <recent name=\"D:\\GestionTickets\\src\\main\\resources\\static\\\" />\r\n      <recent name=\"D:\\GestionTickets\\src\\main\\resources\\templates\\Interfaces\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"com.example.gestionticket.web\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"GestionTicketApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" nameIsGenerated=\"true\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"openjdk-22\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <option name=\"FRAME_DEACTIVATION_UPDATE_POLICY\" value=\"UpdateClassesAndResources\" />\r\n      <module name=\"GestionTicket\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.example.gestionticket.GestionTicketApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150\" />\r\n        <option value=\"bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"849cda33-1aee-49fc-965d-1910467d5656\" name=\"Changes\" comment=\"\" />\r\n      <created>1712939573685</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1712939573685</updated>\r\n      <workItem from=\"1712939574740\" duration=\"16572000\" />\r\n      <workItem from=\"1713206443258\" duration=\"135000\" />\r\n      <workItem from=\"1713206595666\" duration=\"1908000\" />\r\n      <workItem from=\"1713208937694\" duration=\"2576000\" />\r\n      <workItem from=\"1713211557926\" duration=\"147000\" />\r\n      <workItem from=\"1713211713477\" duration=\"159000\" />\r\n      <workItem from=\"1713211880118\" duration=\"139000\" />\r\n      <workItem from=\"1713212026431\" duration=\"367000\" />\r\n      <workItem from=\"1713212403982\" duration=\"2823000\" />\r\n      <workItem from=\"1713216231638\" duration=\"1530000\" />\r\n      <workItem from=\"1713217790048\" duration=\"3091000\" />\r\n      <workItem from=\"1713220922386\" duration=\"1138000\" />\r\n      <workItem from=\"1713296539487\" duration=\"4285000\" />\r\n      <workItem from=\"1713300844126\" duration=\"9199000\" />\r\n      <workItem from=\"1713359021494\" duration=\"7444000\" />\r\n      <workItem from=\"1713369694987\" duration=\"5657000\" />\r\n      <workItem from=\"1713375485877\" duration=\"6138000\" />\r\n      <workItem from=\"1713548925481\" duration=\"1156000\" />\r\n      <workItem from=\"1713551802206\" duration=\"67000\" />\r\n      <workItem from=\"1713551917623\" duration=\"7490000\" />\r\n      <workItem from=\"1713797825470\" duration=\"524000\" />\r\n      <workItem from=\"1713798370041\" duration=\"573000\" />\r\n      <workItem from=\"1713799275080\" duration=\"185000\" />\r\n      <workItem from=\"1713799471691\" duration=\"239000\" />\r\n      <workItem from=\"1713799723645\" duration=\"633000\" />\r\n      <workItem from=\"1713800730492\" duration=\"234000\" />\r\n      <workItem from=\"1713824947970\" duration=\"292000\" />\r\n      <workItem from=\"1713881797710\" duration=\"140000\" />\r\n      <workItem from=\"1713882236857\" duration=\"721000\" />\r\n      <workItem from=\"1713907515493\" duration=\"333000\" />\r\n      <workItem from=\"1714149050470\" duration=\"15310000\" />\r\n      <workItem from=\"1714299180626\" duration=\"5211000\" />\r\n      <workItem from=\"1714391238661\" duration=\"14674000\" />\r\n      <workItem from=\"1714407925935\" duration=\"531000\" />\r\n      <workItem from=\"1714408541673\" duration=\"67000\" />\r\n      <workItem from=\"1714409655183\" duration=\"4193000\" />\r\n      <workItem from=\"1714479378834\" duration=\"375000\" />\r\n      <workItem from=\"1714479766971\" duration=\"2195000\" />\r\n      <workItem from=\"1714493770597\" duration=\"259000\" />\r\n      <workItem from=\"1714560588572\" duration=\"10932000\" />\r\n      <workItem from=\"1714597333831\" duration=\"807000\" />\r\n      <workItem from=\"1714645512313\" duration=\"6272000\" />\r\n      <workItem from=\"1714652175818\" duration=\"6160000\" />\r\n      <workItem from=\"1714660519378\" duration=\"152000\" />\r\n      <workItem from=\"1714677214688\" duration=\"2691000\" />\r\n      <workItem from=\"1714751080214\" duration=\"10693000\" />\r\n      <workItem from=\"1714815568414\" duration=\"2559000\" />\r\n      <workItem from=\"1714819923639\" duration=\"6752000\" />\r\n      <workItem from=\"1714827820459\" duration=\"96000\" />\r\n      <workItem from=\"1714909410146\" duration=\"13000\" />\r\n      <workItem from=\"1714929281232\" duration=\"1121000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"commit uncommplite registration\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713308951720</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713308951720</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"commit second version uncommplite registration\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713309486655</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713309486655</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"commit second version uncommplite registration\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713310010468</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713310010468</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"non therd version finish authentication\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713381404602</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713381404602</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"non therd version finish authentication\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713381721309</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713381721309</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"non therd version finish authentication\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713381762134</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713381762134</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"non therd version finish authentication\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713381769843</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713381769843</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"non therd version finish authentication\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713381776634</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713381776634</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Merge remote-tracking branch\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713825038527</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713825038527</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"index page commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713825113350</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713825113350</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"premier prototype\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714304798664</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714304798664</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"premier prototype\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714304835655</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714304835655</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"uncomplite update immplementation\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714783544417</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714783544417</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Merge remote-tracking branch 'origin/pavilion' into pavilion&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources/71392396-3889-48be-894b-abe4da59c69a.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/example/gestionticket/Entities/User.java&#10;#&#9;src/main/java/com/example/gestionticket/services/UserService.java&#10;#&#9;src/main/java/com/example/gestionticket/services/UserServiceImpl.java&#10;#&#9;src/main/java/com/example/gestionticket/web/Controllers/UserProfileController.java&#10;#&#9;src/main/resources/templates/Interfaces/userProfile.html&#10;#&#9;target/classes/com/example/gestionticket/Entities/User$UserBuilder.class&#10;#&#9;target/classes/com/example/gestionticket/Entities/User.class&#10;#&#9;target/classes/com/example/gestionticket/services/UserService.class&#10;#&#9;target/classes/com/example/gestionticket/services/UserServiceImpl.class&#10;#&#9;target/classes/com/example/gestionticket/web/Controllers/LoginController.class\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714783574882</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714783574882</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"working proto for userProfileUpdate\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714783664425</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714783664425</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"working proto for userProfileUpdate\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714783675928</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714783675928</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"updated user profile\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714827883892</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714827883892</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"18\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"commit uncommplite registration\" />\r\n    <MESSAGE value=\"commit second version uncommplite registration\" />\r\n    <MESSAGE value=\"the first functionnale demo\" />\r\n    <MESSAGE value=\"first registration functionality\" />\r\n    <MESSAGE value=\"non therd version finish authentication\" />\r\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/main/resources/application.properties\" />\r\n    <MESSAGE value=\"Merge remote-tracking branch\" />\r\n    <MESSAGE value=\"index page commit\" />\r\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/master'\" />\r\n    <MESSAGE value=\"premier prototype\" />\r\n    <MESSAGE value=\"premier prototype working\" />\r\n    <MESSAGE value=\"uncomplite update immplementation\" />\r\n    <MESSAGE value=\"working prototype of userProfile update\" />\r\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/pavilion' into pavilion&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources/71392396-3889-48be-894b-abe4da59c69a.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/com/example/gestionticket/Entities/User.java&#10;#&#9;src/main/java/com/example/gestionticket/services/UserService.java&#10;#&#9;src/main/java/com/example/gestionticket/services/UserServiceImpl.java&#10;#&#9;src/main/java/com/example/gestionticket/web/Controllers/UserProfileController.java&#10;#&#9;src/main/resources/templates/Interfaces/userProfile.html&#10;#&#9;target/classes/com/example/gestionticket/Entities/User$UserBuilder.class&#10;#&#9;target/classes/com/example/gestionticket/Entities/User.class&#10;#&#9;target/classes/com/example/gestionticket/services/UserService.class&#10;#&#9;target/classes/com/example/gestionticket/services/UserServiceImpl.class&#10;#&#9;target/classes/com/example/gestionticket/web/Controllers/LoginController.class\" />\r\n    <MESSAGE value=\"working proto for userProfileUpdate\" />\r\n    <MESSAGE value=\"updated userprofile\" />\r\n    <MESSAGE value=\"Merge pull request #3 from Anosse-7/pavilion&#10;&#10;Pavilion\" />\r\n    <MESSAGE value=\"updated user profile\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"updated user profile\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.IllegalArgumentException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 4423728d90410d7b953d9b4d344dd4c3a8f589bb)
++++ b/.idea/workspace.xml	(date 1714983390198)
+@@ -5,22 +5,32 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="updated user profile">
+-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EvenementServiceImpl.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Event/UpdateEvenement.html" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/AddEventController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Event/addEvent.html" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_4_2024_11_33_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_4_2024_11_33_AM__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2024_11_33_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2024_11_33_AM__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/Evenement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/Evenement.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/EvenementRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/EvenementRepository.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/User.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/conf/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/conf/SecurityConfig.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EvenementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EvenementService.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserServiceImpl.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/EvenementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/EvenementController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/IndexController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserRegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserRegistrationController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Event/Evenement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Event/Evenement.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/index.html" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User$UserBuilder.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/UserRepository.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/UserRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/UserRepositoryImpl.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/conf/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/conf/SecurityConfig.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Interfaces/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Interfaces/index.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserServiceImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/IndexController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/LoginController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserRegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserRegistrationController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/dto/UserRegistrationDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/dto/UserRegistrationDto.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/templates/Interfaces/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Interfaces/userProfile.html" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -32,8 +42,8 @@
+     <option name="RECENT_TEMPLATES">
+       <list>
+         <option value="CSS File" />
+-        <option value="Class" />
+         <option value="Interface" />
++        <option value="Class" />
+         <option value="HTML File" />
+       </list>
+     </option>
+@@ -46,7 +56,7 @@
+     </option>
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="pavilion" />
++        <entry key="$PROJECT_DIR$" value="master" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -77,17 +87,11 @@
+     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserRegistrationController.java" root0="FORCE_HIGHLIGHTING" />
+   </component>
+   <component name="MavenImportPreferences">
+-    <option name="generalSettings">
+-      <MavenGeneralSettings>
+-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+-      </MavenGeneralSettings>
+-    </option>
+     <option name="importingSettings">
+       <MavenImportingSettings>
+         <option name="downloadAnnotationsAutomatically" value="true" />
+         <option name="downloadDocsAutomatically" value="true" />
+         <option name="downloadSourcesAutomatically" value="true" />
+-        <option name="workspaceImportForciblyTurnedOn" value="true" />
+       </MavenImportingSettings>
+     </option>
+   </component>
+@@ -117,7 +121,7 @@
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "Spring Boot.GestionTicketApplication.executor": "Run",
+-    "git-widget-placeholder": "#5 on anass",
++    "git-widget-placeholder": "anass",
+     "ignore.virus.scanning.warn.message": "true",
+     "kotlin-language-version-configured": "true",
+     "last_opened_file_path": "D:/GestionTickets/src/main/resources/static/js",
+Index: src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.application.name=GestionTicket\r\n\r\nserver.port=8080\r\n\r\n\r\nspring.datasource.url=jdbc:sqlserver://localhost:1433;serverName=EVILLBOX;encrypt=true;trustServerCertificate=true;databaseName=GestionTickets\r\nspring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver\r\nspring.datasource.username=sa\r\nspring.datasource.password=admin\r\nspring.jpa.show-sql=true\r\n\r\n# Enable SQL formatting for Hibernate\r\nspring.jpa.properties.hibernate.format_sql=true\r\n\r\n# Hibernate Configuration\r\nspring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServerDialect\r\nspring.jpa.hibernate.ddl-auto=update\r\n\r\nspring.thymeleaf.prefix=classpath:/templates/\r\nspring.thymeleaf.suffix=.html\r\nspring.thymeleaf.cache=false\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/application.properties b/src/main/resources/application.properties
+--- a/src/main/resources/application.properties	(revision 4423728d90410d7b953d9b4d344dd4c3a8f589bb)
++++ b/src/main/resources/application.properties	(date 1714980895678)
+@@ -3,10 +3,10 @@
+ server.port=8080
+ 
+ 
+-spring.datasource.url=jdbc:sqlserver://localhost:1433;serverName=EVILLBOX;encrypt=true;trustServerCertificate=true;databaseName=GestionTickets
++spring.datasource.url=jdbc:sqlserver://localhost:1433;serverName=DESKTOP-20S92JL;encrypt=true;trustServerCertificate=true;databaseName=GestionTickets
+ spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+ spring.datasource.username=sa
+-spring.datasource.password=admin
++spring.datasource.password=123
+ spring.jpa.show-sql=true
+ 
+ # Enable SQL formatting for Hibernate
+Index: src/main/java/com/example/gestionticket/web/Controllers/UserRegistrationController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.web.Controllers;\r\n\r\nimport com.example.gestionticket.Entities.User;\r\nimport com.example.gestionticket.services.UserService;\r\nimport com.example.gestionticket.web.dto.UserRegistrationDto;\r\nimport org.slf4j.Logger;\r\nimport org.slf4j.LoggerFactory;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.ui.Model;\r\nimport org.springframework.validation.BindingResult;\r\nimport org.springframework.web.bind.annotation.GetMapping;\r\nimport org.springframework.web.bind.annotation.ModelAttribute;\r\nimport org.springframework.web.bind.annotation.PostMapping;\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\n\r\nimport javax.validation.Valid;\r\n\r\n@Controller\r\n@RequestMapping(\"/registration\")\r\npublic class UserRegistrationController {\r\n\r\n    private final UserService userService;\r\n    private final Logger logger = LoggerFactory.getLogger(UserRegistrationController.class);\r\n    private static final Logger log = LoggerFactory.getLogger(UserRegistrationController.class);\r\n\r\n    @Autowired\r\n    public UserRegistrationController(UserService userService){\r\n        this.userService = userService;\r\n    }\r\n\r\n    @ModelAttribute(\"user\")\r\n    public UserRegistrationDto userRegistrationDto() {\r\n        return new UserRegistrationDto();\r\n    }\r\n\r\n    @GetMapping\r\n    public String showRegistrationForm(Model model) {\r\n        model.addAttribute(\"user\", new UserRegistrationDto());\r\n        return \"Registration/registration\";\r\n    }\r\n\r\n    @PostMapping\r\n    public String registerUserAccount(@ModelAttribute(\"user\") @Valid UserRegistrationDto registrationDto, BindingResult result) {\r\n        User existingUser = userService.findByUsername(registrationDto.getUsername());\r\n        if (existingUser != null) {\r\n            result.rejectValue(\"username\", null, \"There is already an account registered with that username\");\r\n        }\r\n\r\n        if (!registrationDto.getPassword().equals(registrationDto.getRepeatPassword())) {\r\n            result.rejectValue(\"repeatPassword\", null, \"Passwords don't match\");\r\n        }\r\n\r\n        if (result.hasErrors()) {\r\n            return \"Registration/registration\";\r\n        }\r\n\r\n        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();\r\n        String encodedPassword = passwordEncoder.encode(registrationDto.getPassword());\r\n\r\n        User user = registrationDto.toUser();\r\n        user.setPassword(encodedPassword);\r\n        User savedUser = userService.save(user);\r\n        if (savedUser == null) {\r\n            logger.error(\"User could not be saved\");\r\n            result.rejectValue(\"username\", null, \"User could not be saved\");\r\n            return \"Registration/registration\";\r\n        }\r\n        return \"redirect:/registration?success\";\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/web/Controllers/UserRegistrationController.java b/src/main/java/com/example/gestionticket/web/Controllers/UserRegistrationController.java
+--- a/src/main/java/com/example/gestionticket/web/Controllers/UserRegistrationController.java	(revision 4423728d90410d7b953d9b4d344dd4c3a8f589bb)
++++ b/src/main/java/com/example/gestionticket/web/Controllers/UserRegistrationController.java	(date 1714981828187)
+@@ -27,11 +27,13 @@
+ 
+     @Autowired
+     public UserRegistrationController(UserService userService){
++
+         this.userService = userService;
+     }
+ 
+     @ModelAttribute("user")
+     public UserRegistrationDto userRegistrationDto() {
++
+         return new UserRegistrationDto();
+     }
+ 
+@@ -65,7 +67,7 @@
+         if (savedUser == null) {
+             logger.error("User could not be saved");
+             result.rejectValue("username", null, "User could not be saved");
+-            return "Registration/registration";
++            return "redirect:/registration?error";
+         }
+         return "redirect:/registration?success";
+     }
+Index: src/main/java/com/example/gestionticket/web/Controllers/AddEventController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/web/Controllers/AddEventController.java b/src/main/java/com/example/gestionticket/web/Controllers/AddEventController.java
+new file mode 100644
+--- /dev/null	(date 1714984029578)
++++ b/src/main/java/com/example/gestionticket/web/Controllers/AddEventController.java	(date 1714984029578)
+@@ -0,0 +1,30 @@
++package com.example.gestionticket.web.Controllers;
++
++import com.example.gestionticket.Entities.Evenement;
++import com.example.gestionticket.services.EvenementService;
++import jdk.jfr.Event;
++import org.springframework.stereotype.Controller;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.ModelAttribute;
++import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.bind.annotation.RequestMapping;
++
++@Controller
++@RequestMapping("/addEvent")
++public class AddEventController {
++
++    private EvenementService eventService = null;
++    @GetMapping
++    public String returnEvent(){
++        return "/Event/addEvent";
++    }
++
++    @PostMapping
++    public String addEvent(@ModelAttribute("addEvent") Evenement currentEvent){
++        if(currentEvent.getId() != null){
++            eventService.getCurrentEvent(currentEvent.getId());
++        }
++
++        return "/Event/addEvent";
++    }
++}
+Index: .idea/dataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DataSourceManagerImpl\" format=\"xml\" multifile-model=\"true\">\r\n    <data-source source=\"LOCAL\" name=\"Gestionticket@localhost\" uuid=\"8a7ddec7-a184-4c92-af1a-3b67c1d83f1d\">\r\n      <driver-ref>sqlserver.ms</driver-ref>\r\n      <synchronize>true</synchronize>\r\n      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>\r\n      <jdbc-url>jdbc:sqlserver://localhost:1433;database=Gestionticket</jdbc-url>\r\n      <working-dir>$ProjectFileDir$</working-dir>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.xml b/.idea/dataSources.xml
+--- a/.idea/dataSources.xml	(revision 4423728d90410d7b953d9b4d344dd4c3a8f589bb)
++++ b/.idea/dataSources.xml	(date 1714981455538)
+@@ -1,11 +1,11 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+-    <data-source source="LOCAL" name="Gestionticket@localhost" uuid="8a7ddec7-a184-4c92-af1a-3b67c1d83f1d">
++    <data-source source="LOCAL" name="GestionTickets@localhost" uuid="1743a149-6aeb-4d83-9abc-39575d776e71">
+       <driver-ref>sqlserver.ms</driver-ref>
+       <synchronize>true</synchronize>
+       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+-      <jdbc-url>jdbc:sqlserver://localhost:1433;database=Gestionticket</jdbc-url>
++      <jdbc-url>jdbc:sqlserver://localhost:1433;database=GestionTickets</jdbc-url>
+       <working-dir>$ProjectFileDir$</working-dir>
+     </data-source>
+   </component>
+Index: src/main/java/com/example/gestionticket/web/Controllers/IndexController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.gestionticket.web.Controllers;\r\n\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.web.bind.annotation.GetMapping;\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\n\r\n@Controller\r\n@RequestMapping(\"/index\")\r\npublic class IndexController {\r\n\r\n    @GetMapping\r\n    public String indexPage () {\r\n        return \"Interfaces/index\";\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/gestionticket/web/Controllers/IndexController.java b/src/main/java/com/example/gestionticket/web/Controllers/IndexController.java
+--- a/src/main/java/com/example/gestionticket/web/Controllers/IndexController.java	(revision 4423728d90410d7b953d9b4d344dd4c3a8f589bb)
++++ b/src/main/java/com/example/gestionticket/web/Controllers/IndexController.java	(date 1714981023985)
+@@ -5,7 +5,7 @@
+ import org.springframework.web.bind.annotation.RequestMapping;
+ 
+ @Controller
+-@RequestMapping("/index")
++@RequestMapping("/")
+ public class IndexController {
+ 
+     @GetMapping
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\" created-in=\"IU-241.15989.150\">\r\n    <data-source name=\"Gestionticket@localhost\" uuid=\"8a7ddec7-a184-4c92-af1a-3b67c1d83f1d\">\r\n      <database-info product=\"\" version=\"\" jdbc-version=\"\" driver-name=\"\" driver-version=\"\" dbms=\"MSSQL\" />\r\n      <schema-mapping />\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+--- a/.idea/dataSources.local.xml	(revision 4423728d90410d7b953d9b4d344dd4c3a8f589bb)
++++ b/.idea/dataSources.local.xml	(date 1714981763131)
+@@ -1,9 +1,21 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="dataSourceStorageLocal" created-in="IU-241.15989.150">
+-    <data-source name="Gestionticket@localhost" uuid="8a7ddec7-a184-4c92-af1a-3b67c1d83f1d">
+-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MSSQL" />
+-      <schema-mapping />
++  <component name="dataSourceStorageLocal" created-in="IU-232.10300.40">
++    <data-source name="GestionTickets@localhost" uuid="1743a149-6aeb-4d83-9abc-39575d776e71">
++      <database-info product="Microsoft SQL Server" version="16.00.1115" jdbc-version="4.2" driver-name="Microsoft JDBC Driver 12.2 for SQL Server" driver-version="12.2.0.0" dbms="MSSQL" exact-version="16.0.1115" exact-driver-version="12.2">
++        <extra-name-characters>$#@</extra-name-characters>
++        <identifier-quote-string>&quot;</identifier-quote-string>
++      </database-info>
++      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
++      <secret-storage>master_key</secret-storage>
++      <user-name>sa</user-name>
++      <schema-mapping>
++        <introspection-scope>
++          <node kind="database" qname="@">
++            <node kind="schema" qname="@" />
++          </node>
++        </introspection-scope>
++      </schema-mapping>
+     </data-source>
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/resources/templates/Event/addEvent.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/Event/addEvent.html b/src/main/resources/templates/Event/addEvent.html
+new file mode 100644
+--- /dev/null	(date 1714983389057)
++++ b/src/main/resources/templates/Event/addEvent.html	(date 1714983389057)
+@@ -0,0 +1,42 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>Add Event</title>
++</head>
++<body>
++<section class="vh-100 bg-image"
++         style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
++    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
++        <div class="container h-100">
++            <div class="row d-flex justify-content-center align-items-center h-100">
++                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
++                    <div class="card" style="border-radius: 15px;">
++                        <div class="card-body p-5">
++                            <h2 class="text-uppercase text-center mb-5">Create an account</h2>
++
++                            <form th:action="@{/addEvent}" method="post" th:object="${user}">
++                                <!-- success message -->
++                                <div th:if="${param.success}" class="alert alert-success">
++                                    You have been registered successfully
++                                </div>
++                                <div data-mdb-input-init class="form-outline mb-4">
++                                    <label class="form-label" for="form3Example7cg">Username</label>
++                                    <input type="text" id="form3Example7cg" th:field="${user.username}" class="form-control form-control-lg" placeholder="Username">
++                                    <p class="alert alert-danger" th:if="${#fields.hasErrors('username')}" th:errors="${user.username}"></p>
++                                </div>
++                                <div class="d-flex justify-content-center">
++                                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
++                                </div>
++
++                                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
++                            </form>
++                        </div>
++                    </div>
++                </div>
++            </div>
++        </div>
++    </div>
++</section>
++</body>
++</html>
+\ No newline at end of file
