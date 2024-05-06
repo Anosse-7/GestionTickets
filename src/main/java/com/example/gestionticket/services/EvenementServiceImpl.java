@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 
-@Service
+@Service("evenementServiceImpl")
 public class EvenementServiceImpl implements EvenementService{
 
     @Autowired
