@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to my event</title>
+    <!-- Inclure le lien vers Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.css"/>
+</head>
+<body id="page-top">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container px-5">
+        <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" th:href="@{/registration}">Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/login}">Log In</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid text-center">
+    <div><h2>Welcome to our website</h2></div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date</th>
+                <th>Type</th>
+            </tr>
+            </thead>
+<tbody>
+<th:block th:each="evenement : ${listEvenements}">
+   <tr>
+    <td>[[${evenement.id}}</td>
+   </tr>
+</th:block>
+</tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

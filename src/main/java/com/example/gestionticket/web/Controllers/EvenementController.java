@@ -18,19 +18,9 @@ public class EvenementController {
     }
 
     @GetMapping("/{eventId}")
-    public String Event(Model model, @PathVariable Long eventId) {
+    public String Event(@PathVariable Long eventId, Model model) {
         Evenement currentEvent = evenementServiceImpl.getCurrentEvent(eventId);
         model.addAttribute("currentEvent", currentEvent);
         return "/Event/Evenement";
-    }
-
-    @PostMapping("/{eventId}/addEvent")
-    public String addEvent(@ModelAttribute("event") Evenement evenement) {
-        if(evenement.getId() == null) {
-            evenementServiceImpl.addEvent(evenement);
-        } else {
-            evenementServiceImpl.updateEvent(evenement);
-        }
-        return "redirect:/Evenement";
     }
 }
