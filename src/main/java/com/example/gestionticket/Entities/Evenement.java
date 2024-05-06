@@ -2,6 +2,7 @@ package com.example.gestionticket.Entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -18,22 +19,18 @@ public class Evenement {
     private Long id;
 
     @Column(length = 45, nullable = false, name = "nom")
-    private String nom;
+    private String titre;
 
-    @Column(length = 45, nullable = false, name = "prenom")
-    private String prenom;
-
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateEvenement;
 
     @Column
     private String typeEvenement;
 
-    // Constructeurs, getters et setters...
 
-    public Evenement(String nom, String prenom, Date dateEvenement, String typeEvenement) {
-        this.nom = nom;
-        this.prenom = prenom;
+    public Evenement(String titre, Date dateEvenement, String typeEvenement) {
+        this.titre = titre;
         this.dateEvenement = dateEvenement;
         this.typeEvenement = typeEvenement;
     }

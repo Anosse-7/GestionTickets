@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="GestionTickets@localhost">
-  <database-model serializer="dbm" dbms="MSSQL" family-id="MSSQL" format-version="4.49">
+  <database-model serializer="dbm" dbms="MSSQL" family-id="MSSQL" format-version="4.52">
     <root id="1">
       <Grants>2|||2|connect|G
 3|||2|connect|G
@@ -16893,8 +16893,7 @@
     </schema>
     <schema id="5576" parent="5510" name="dbo">
       <Current>1</Current>
-      <IntrospectionTimestamp>2024-05-06.09:53:58.573</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-05-06.07:53:58</LocalIntrospectionTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-05-06.07:53:58</LastIntrospectionLocalTimestamp>
       <ObjectId>1</ObjectId>
     </schema>
     <schema id="5577" parent="5510" name="guest">

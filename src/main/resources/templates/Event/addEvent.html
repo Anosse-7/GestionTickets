@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Event</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 <section class="vh-100 bg-image"
@@ -15,21 +16,43 @@
                         <div class="card-body p-5">
                             <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-                            <form th:action="@{/addEvent}" method="post" th:object="${addEvent}">
+                            <form th:action="@{/addEvent}" method="post" th:object="${evenement}" class="row g-3">
                                 <!-- success message -->
-                                <div th:if="${param.success}" class="alert alert-success">
-                                    You have been registered successfully
+                                <div th:if="${param.success}" class="alert alert-success col-12">
+                                    You have added the event successfully
                                 </div>
-                                <div data-mdb-input-init class="form-outline mb-4">
-                                    <label class="form-label" for="form3Example7cg">Ajouter Evenement</label>
-                                    <input type="text" id="form3Example7cg" th:field="${addEvent.nom}" class="form-control form-control-lg" placeholder="Ajouter Evenement">
-                                    <p class="alert alert-danger" th:if="${#fields.hasErrors('nom')}" th:errors="${addEvent.nom}"></p>
+                                <div class="col-md-6">
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label" for="titre">Event Title</label>
+                                        <input type="text" id="titre" th:field="*{titre}" class="form-control form-control-lg" placeholder="Event Title">
+                                        <p class="alert alert-danger" th:if="${#fields.hasErrors('titre')}" th:errors="*{titre}"></p>
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label" for="dateEvenement">Event Date</label>
+                                        <input type="date" id="dateEvenement" th:field="*{dateEvenement}" class="form-control form-control-lg" placeholder="Event Date">
+                                        <p class="alert alert-danger" th:if="${#fields.hasErrors('dateEvenement')}" th:errors="*{dateEvenement}"></p>
+                                    </div>
                                 </div>
-                                <div class="d-flex justify-content-center">
-                                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                                <div class="col-md-6">
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label" for="typeEvenement">Event Type</label>
+                                        <select id="typeEvenement" th:field="*{typeEvenement}" class="form-select form-select-lg">
+                                            <option value="" disabled selected>Sélectionnez le type d'événement</option>
+                                            <option value="Concert">Concert</option>
+                                            <option value="Festival">Festival</option>
+                                            <option value="Théâtre">Théâtre</option>
+                                            <option value="Cinéma">Cinéma</option>
+                                            <option value="Spectacle">Spectacle</option>
+                                            <option value="Match">Match</option>
+                                            <option value="Conférence avec billets">Conférence avec billets</option>
+                                            <option value="Salon avec billets">Salon avec billets</option>
+                                        </select>
+                                        <p class="alert alert-danger" th:if="${#fields.hasErrors('typeEvenement')}" th:errors="*{typeEvenement}"></p>
+                                    </div>
                                 </div>
-
-                                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
+                                <div class="col-12 d-flex justify-content-center">
+                                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Add Event</button>
+                                </div>
                             </form>
                         </div>
                     </div>

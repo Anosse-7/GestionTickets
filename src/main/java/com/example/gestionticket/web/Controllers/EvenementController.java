@@ -6,21 +6,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Objects;
+
 @Controller
 @RequestMapping("/Evenement")
 public class EvenementController {
 
-    private final EvenementServiceImpl evenementServiceImpl;
+    private final EvenementServiceImpl evenementService;
 
     @Autowired
     public EvenementController(EvenementServiceImpl evenementServiceImpl) {
-        this.evenementServiceImpl = evenementServiceImpl;
+        this.evenementService = evenementServiceImpl;
     }
 
     @GetMapping("/{eventId}")
     public String Event(@PathVariable Long eventId, Model model) {
-        Evenement currentEvent = evenementServiceImpl.getCurrentEvent(eventId);
+        if(!Objects.equals(eventId, evenementService.getCurrentEvent(eventId).getId())){
+            return "redirect:/noEvent";
+        }
+        Evenement currentEvent = evenementService.getCurrentEvent(eventId);
         model.addAttribute("currentEvent", currentEvent);
-        return "/Event/Evenement";
+        return "Event/Evenement";
     }
 }
