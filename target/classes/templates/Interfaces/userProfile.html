@@ -120,17 +120,17 @@
         allowDropdown: true,
         initialCountry: "auto",
         separateDialCode: true,
-        
+        responseFields: "iso2",
+        formatOnDisplay: true,
+
+
         geoIpLookup: function(success, failure) {
             $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-                var countryCode = (resp && resp.country) ? resp.country : "";
+                var countryCode = (resp && resp.country) ? resp.country : "MA";
                 success(countryCode);
             });
         },
     });
-
-    // Add the 'large-input' class to the input field
-    input.classList.add("large-input");
 </script>
 </body>
 </html>

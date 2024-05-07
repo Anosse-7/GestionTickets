@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_5_7_2024_11_18_PM_[Changes]" date="1715120286187" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_7_2024_11_18_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 5/7/2024 11:18 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/dataSources/1743a149-6aeb-4d83-9abc-39575d776e71/storage_v2/_src_/database/GestionTickets.3iKN3Q.meta" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/dataSources/1743a149-6aeb-4d83-9abc-39575d776e71/storage_v2/_src_/database/GestionTickets.3iKN3Q/schema/dbo.sYMBAA.meta" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/dataSources/1743a149-6aeb-4d83-9abc-39575d776e71/storage_v2/_src_/database/GestionTickets.3iKN3Q/schema/sys.zb4BAA.meta" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/dataSources/1743a149-6aeb-4d83-9abc-39575d776e71/storage_v2/_src_/database/GestionTickets.3iKN3Q/schema/INFORMATION_SCHEMA.NBgcMw.meta" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>

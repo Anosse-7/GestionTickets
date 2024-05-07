@@ -4,37 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="crud Evenement 4">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/PhoneNumberService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/PhoneNumberServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/71392396-3889-48be-894b-abe4da59c69a.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/71392396-3889-48be-894b-abe4da59c69a/storage_v2/_src_/database/GestionTicket.NWRf7g.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/71392396-3889-48be-894b-abe4da59c69a/storage_v2/_src_/database/GestionTicket.NWRf7g/schema/dbo.sYMBAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/71392396-3889-48be-894b-abe4da59c69a/storage_v2/_src_/database/GestionTicket.NWRf7g/schema/dbo.sYMBAA.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/classes/com/example/gestionticket/web/Controllers/ResetPasswordController.class&#10;#&#9;target/classes/templates/Interfaces/resetPassword.html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/ResetPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/ResetPasswordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/resetPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/resetPassword.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/userProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Registration/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Registration/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User$UserBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/ResetPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/ResetPasswordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Interfaces/resetPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Interfaces/resetPassword.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/Interfaces/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Interfaces/userProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Registration/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Registration/registration.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +32,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="pavilion" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -130,7 +103,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.GestionTicketApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;seconMaster&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/GestionTickets/src/main/resources/static/js&quot;,
@@ -255,6 +228,8 @@
       <workItem from="1715100174365" duration="3437000" />
       <workItem from="1715112568060" duration="679000" />
       <workItem from="1715113879500" duration="5506000" />
+      <workItem from="1715119965758" duration="1625000" />
+      <workItem from="1715198031151" duration="682000" />
     </task>
     <task id="LOCAL-00001" summary="commit uncommplite registration">
       <option name="closed" value="true" />
@@ -392,7 +367,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714827883892</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/classes/com/example/gestionticket/web/Controllers/ResetPasswordController.class&#10;#&#9;target/classes/templates/Interfaces/resetPassword.html">
+      <option name="closed" value="true" />
+      <created>1715120962602</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1715120962602</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +412,9 @@
     <MESSAGE value="updated userprofile" />
     <MESSAGE value="Merge pull request #3 from Anosse-7/pavilion&#10;&#10;Pavilion" />
     <MESSAGE value="updated user profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated user profile" />
+    <MESSAGE value="updated user Profile 5" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/classes/com/example/gestionticket/web/Controllers/ResetPasswordController.class&#10;#&#9;target/classes/templates/Interfaces/resetPassword.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/classes/com/example/gestionticket/web/Controllers/ResetPasswordController.class&#10;#&#9;target/classes/templates/Interfaces/resetPassword.html" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
