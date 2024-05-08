@@ -126,11 +126,14 @@
 
         geoIpLookup: function(success, failure) {
             $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-                var countryCode = (resp && resp.country) ? resp.country : "MA";
+                var countryCode = (resp && resp.country) ? resp.country : "";
                 success(countryCode);
             });
         },
     });
+
+    // Add the 'large-input' class to the input field
+    input.classList.add("large-input");
 </script>
 </body>
 </html>
