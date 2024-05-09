@@ -45,6 +45,9 @@ public class UserRegistrationController {
 
     @PostMapping
     public String registerUserAccount(@ModelAttribute("user") @Valid UserRegistrationDto registrationDto, BindingResult result) {
+
+        String imagePath = "";
+
         User existingUser = userService.findByUsername(registrationDto.getUsername());
         if (existingUser != null) {
             result.rejectValue("username", null, "There is already an account registered with that username");
@@ -63,6 +66,10 @@ public class UserRegistrationController {
 
         User user = registrationDto.toUser();
         user.setPassword(encodedPassword);
+        if (registrationDto.getProfileImage() == null || registrationDto.getProfileImage().isEmpty()) {
+            imagePath = "/ProfileImgs/user.png";
+            System.out.println("Image path Success: " + imagePath);
+        }
         User savedUser = userService.save(user);
         if (savedUser == null) {
             logger.error("User could not be saved");
