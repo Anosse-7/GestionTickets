@@ -19,7 +19,7 @@
                     <div class="account-settings">
                         <div class="user-profile">
                             <div class="user-avatar d-flex justify-content-center align-items-center">
-                                <img style="height: 250px; width: 250px; object-fit: cover; border-radius: 50%;" th:src="${imageBase64 != null} ? 'data:image/png;base64,'+${imageBase64} : 'https://img.icons8.com/nolan/250/user-default.png'" alt="user-default"/>
+                                <img th:src="@{imagePath}" alt="User Profile Image">
                             </div>
                            <div class="d-flex justify-content-center align-items-center">
 
@@ -77,6 +77,8 @@
                                 <div class="input-group">
                                     <input type="tel" class="form-control w-100" th:value="${update.telephone}" th:field="${update.telephone}" id="Telephone" placeholder="Entrer le Nombre Telephone">
                                 </div>
+                                <input type="hidden" id="phoneNumber" name="phoneNumber">
+                                <input type="hidden" id="countryCode" name="countryCode">
                             </div>
                         </div>
                         <br>
@@ -117,20 +119,22 @@
 <script>
     var input = document.querySelector("#Telephone");
     var iti = window.intlTelInput(input, {
-        allowDropdown: true,
-        initialCountry: "auto",
-        separateDialCode: true,
-        
-        geoIpLookup: function(success, failure) {
-            $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-                var countryCode = (resp && resp.country) ? resp.country : "";
-                success(countryCode);
-            });
-        },
-    });
+    // Your existing options...
 
-    // Add the 'large-input' class to the input field
-    input.classList.add("large-input");
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // Ensure utilsScript is included
+});
+
+    input.addEventListener("countrychange", function() {
+    // Update the hidden fields
+        document.querySelector("#phoneNumber").value = iti.getNumber();
+        document.querySelector("#countryCode").value = iti.getSelectedCountryData().iso2;
+});
+
+    input.addEventListener("keyup", function() {
+    // Update the hidden fields
+        document.querySelector("#phoneNumber").value = iti.getNumber();
+        document.querySelector("#countryCode").value = iti.getSelectedCountryData().iso2;
+});
 </script>
 </body>
 </html>

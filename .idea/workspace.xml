@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="crud Evenement 4" />
+    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="commit 2">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/ProfileImgs/pexels-asim-razan-343717.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/ProfileImgs/user.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b4984863-9728-4695-a528-c7ea1bab0bd8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b4984863-9728-4695-a528-c7ea1bab0bd8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/GestionTicketApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/GestionTicketApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/PhoneNumberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/PhoneNumberServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserManagement/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserManagement/UserProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/img/defaultUser.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/userProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User$UserBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/GestionTicketApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/GestionTicketApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/PhoneNumberServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/PhoneNumberServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserManagement/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserManagement/UserProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/img/defaultUser.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Interfaces/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Interfaces/userProfile.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,43 +107,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.GestionTicketApplication.executor": "Run",
-    "git-widget-placeholder": "#9 on master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/GestionTickets/src/main/resources/static/js",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.GestionTicketApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;seconMaster&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/GestionTickets/src/main/resources/static/js&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\GestionTickets\src\main\resources\static\js" />
@@ -131,11 +151,11 @@
       <recent name="C:\Users\obino\OneDrive - Ecole Marocaine des Sciences de l'Ingénieur\Documents\demo\GestionTicket\target\classes\CSS" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\obino\OneDrive\Documents\GitHub\GestionTickets\src\main\resources\static\ProfileImgs" />
       <recent name="D:\GestionTickets\src\main\resources\static\assets\img" />
       <recent name="D:\GestionTickets\src\main\resources\static\assets\img\userImg" />
       <recent name="D:\GestionTickets\src\main\resources\static" />
       <recent name="D:\GestionTickets\src\main\resources\static\" />
-      <recent name="D:\GestionTickets\src\main\resources\templates\Interfaces" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.gestionticket.web" />
@@ -224,6 +244,8 @@
       <workItem from="1715100174365" duration="3437000" />
       <workItem from="1715112568060" duration="679000" />
       <workItem from="1715113879500" duration="5506000" />
+      <workItem from="1715291031595" duration="29000" />
+      <workItem from="1715291075972" duration="2707000" />
     </task>
     <task id="LOCAL-00001" summary="commit uncommplite registration">
       <option name="closed" value="true" />

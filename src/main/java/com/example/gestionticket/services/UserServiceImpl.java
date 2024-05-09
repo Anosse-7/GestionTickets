@@ -10,7 +10,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -77,24 +81,31 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         userRepository.save(existingUser);
     }
 
-    @Override
-    public void saveProfileImage(User updateUser, MultipartFile file) throws IOException {
-        if (updateUser.getId() == null) {
-            throw new IllegalArgumentException("Updated user must have a valid id");
-        }
-
-        User existingUser = userRepository.findById(updateUser.getId())
-                .orElseThrow(() -> new RuntimeException("User not found"));
-
-        // Convert the MultipartFile to a byte array
-        byte[] newProfileImage = file.getBytes();
-
-        // Check if the new profile image is not null and if it's different from the existing profile image
-        if (!Arrays.equals(newProfileImage, existingUser.getProfileImage())) {
-            existingUser.setProfileImage(newProfileImage);
-            userRepository.save(existingUser);
-        }
+@Override
+public void saveProfileImage(User updateUser, MultipartFile file) throws IOException {
+    if (updateUser.getId() == null) {
+        throw new IllegalArgumentException("Updated user must have a valid id");
     }
+
+    User existingUser = userRepository.findById(updateUser.getId())
+            .orElseThrow(() -> new RuntimeException("User not found"));
+
+    if (!file.isEmpty()) {
+        // Save the image file to a permanent location
+        String fileName = file.getOriginalFilename();
+        String directory = "src/main/resources/static/ProfileImgs";
+        String filePath = Paths.get(directory, fileName).toString();
+
+        BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(filePath)));
+        stream.write(file.getBytes());
+        stream.close();
+
+        // Store the relative path to the image file in the database
+        String relativePath = "/ProfileImgs/" + fileName;
+        existingUser.setProfileImage(relativePath);
+        userRepository.save(existingUser);
+    }
+}
 
     public boolean userExists(String username) {
         return userRepository.findByUsername(username) != null;

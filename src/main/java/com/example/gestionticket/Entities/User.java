@@ -49,12 +49,12 @@ public class User implements UserDetails {
     @Column(name = "telephone")
     private String telephone;
 
-    @Column
+    @Column(name = "country_code")
     private String countryCode;
 
-    @Lob
+
     @Column(name = "profile_image")
-    private byte[] profileImage;
+    private String profileImage;
 
     @Column(nullable = false,name = "active")
     private boolean active;

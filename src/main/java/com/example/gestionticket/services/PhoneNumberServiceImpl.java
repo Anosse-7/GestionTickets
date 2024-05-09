@@ -17,6 +17,7 @@ public class PhoneNumberServiceImpl  implements PhoneNumberService{
             Phonenumber.PhoneNumber numberProto = phoneNumberUtil.parse(phoneNumber, countryCode);
             return phoneNumberUtil.isValidNumber(numberProto);
         } catch (NumberParseException e) {
+            e.printStackTrace();
             return false;
         }
     }
