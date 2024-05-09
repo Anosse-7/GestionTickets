@@ -42,6 +42,8 @@ public class UserProfileController {
         } else {
             imagePath = currentUser.getProfileImage();
         }
+        System.out.println("Current User: " + currentUserName);
+        System.out.println("Image Path: " + imagePath);
         model.addAttribute("imagePath", imagePath);
         model.addAttribute("update", currentUser);
         return "Interfaces/userProfile";
@@ -72,8 +74,10 @@ public class UserProfileController {
             if (updatedUser.getProfileImage() == null || updatedUser.getProfileImage().isEmpty()) {
                 // Set the image path to the default image if the user's profile image is null or empty
                 imagePath = "/ProfileImgs/user.png";
+                System.out.println("Image Path default: " + imagePath);
             } else {
                 imagePath = updatedUser.getProfileImage();
+                System.out.println("Image Path accepted: " + imagePath);
             }
 
             // Add the image path to the model
