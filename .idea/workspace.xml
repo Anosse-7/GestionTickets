@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="commit 3">
+    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="commit 4">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_4_2024_11_33_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_4_2024_11_33_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_7_04_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_7_04_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2024_11_33_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2024_11_33_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserManagement/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserManagement/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserManagement/UserRegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserManagement/UserRegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/dto/UserRegistrationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/dto/UserRegistrationDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/userProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserManagement/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserManagement/UserProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserManagement/UserRegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserManagement/UserRegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Interfaces/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Interfaces/userProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/dto/UserRegistrationDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/dto/UserRegistrationDto.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +235,8 @@
       <workItem from="1715112568060" duration="679000" />
       <workItem from="1715113879500" duration="5506000" />
       <workItem from="1715291031595" duration="29000" />
-      <workItem from="1715291075972" duration="6464000" />
+      <workItem from="1715291075972" duration="6716000" />
+      <workItem from="1715538489044" duration="300000" />
     </task>
     <task id="LOCAL-00001" summary="commit uncommplite registration">
       <option name="closed" value="true" />
@@ -380,7 +382,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715294937917</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="commit 4">
+      <option name="closed" value="true" />
+      <created>1715297826410</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1715297826412</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,7 +428,8 @@
     <MESSAGE value="Merge pull request #3 from Anosse-7/pavilion&#10;&#10;Pavilion" />
     <MESSAGE value="updated user profile" />
     <MESSAGE value="commit 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 3" />
+    <MESSAGE value="commit 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
