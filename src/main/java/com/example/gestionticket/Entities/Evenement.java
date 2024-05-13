@@ -5,6 +5,10 @@ import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
+
+// If Ticket class is in a different package, import it
+import com.example.gestionticket.Entities.Ticket;
 
 @Entity
 @Table(name = "Event")
@@ -28,10 +32,12 @@ public class Evenement {
     @Column
     private String typeEvenement;
 
+    @Column
+    private String description;
 
-    public Evenement(String titre, Date dateEvenement, String typeEvenement) {
-        this.titre = titre;
-        this.dateEvenement = dateEvenement;
-        this.typeEvenement = typeEvenement;
-    }
+    @Column
+    private String photo;
+
+    @OneToMany(mappedBy = "evenement", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Ticket> tickets;
 }

@@ -4,16 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="commit 4">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_4_2024_11_33_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_4_2024_11_33_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_7_04_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_7_04_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2024_11_33_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2024_11_33_AM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="commit 5">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/Ticket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/placeholder.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_05_2024_08_31_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_05_2024_08_31__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_05_2024_08_32_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_05_2024_08_32__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_20_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_20_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_26_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_26_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_30_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_30_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_37_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_37_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_5_2024_9_28_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_5_2024_9_28_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_5_2024_9_38_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_5_2024_9_38_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/IndexController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/UserRegistrationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/UserRegistrationDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/UserRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/userProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/dto/UserRegistrationDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/dto/UserRegistrationDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/Evenement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/Evenement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EvenementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EvenementServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Event/addEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Event/addEvent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Login/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Registration/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Registration/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Evenement$EvenementBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Evenement$EvenementBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Evenement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Evenement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User$UserBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/EvenementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/EvenementServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Event/addEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Event/addEvent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Registration/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Registration/registration.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +275,13 @@
       <workItem from="1715113879500" duration="5506000" />
       <workItem from="1715291031595" duration="29000" />
       <workItem from="1715291075972" duration="6716000" />
-      <workItem from="1715538489044" duration="300000" />
+      <workItem from="1715538489044" duration="701000" />
+      <workItem from="1715551535557" duration="689000" />
+      <workItem from="1715619540612" duration="540000" />
+      <workItem from="1715622190570" duration="6250000" />
+      <workItem from="1715631725706" duration="1487000" />
+      <workItem from="1715635341461" duration="876000" />
+      <workItem from="1715636268300" duration="2790000" />
     </task>
     <task id="LOCAL-00001" summary="commit uncommplite registration">
       <option name="closed" value="true" />
@@ -390,7 +435,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715297826412</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="commit 5">
+      <option name="closed" value="true" />
+      <created>1715539076181</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1715539076181</updated>
+    </task>
+    <task id="LOCAL-00021" summary="commit 5">
+      <option name="closed" value="true" />
+      <created>1715539086938</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1715539086938</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +490,8 @@
     <MESSAGE value="updated user profile" />
     <MESSAGE value="commit 3" />
     <MESSAGE value="commit 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 4" />
+    <MESSAGE value="commit 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

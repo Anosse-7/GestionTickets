@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 
 @Entity
@@ -61,6 +62,7 @@ public class User implements UserDetails {
 
     @Column(nullable = false,name = "role")
     private String role;
+
 
 
 
