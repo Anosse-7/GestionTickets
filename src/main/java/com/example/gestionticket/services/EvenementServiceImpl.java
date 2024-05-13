@@ -1,9 +1,13 @@
 package com.example.gestionticket.services;
 
 import com.example.gestionticket.Entities.Evenement;
+import com.example.gestionticket.Entities.User;
 import com.example.gestionticket.Repository.EvenementRepository;
+import com.example.gestionticket.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,6 +19,8 @@ public class EvenementServiceImpl implements EvenementService{
 
     @Autowired
     private EvenementRepository eventRepository;
+    @Autowired
+    private UserRepository userRepository;
     private Model model;
 
     @Override
@@ -29,8 +35,16 @@ public class EvenementServiceImpl implements EvenementService{
 
     @Override
     public Evenement addEvent(Evenement evenement){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
 
-        return eventRepository.save(evenement);
+        User user = userRepository.findByUsername(currentPrincipalName); // Assuming you have a method to get user by username
+
+        if(user.getRole().equals("organizator")) {
+            return eventRepository.save(evenement);
+        } else {
+            throw new RuntimeException("Only users with the 'organizator' role can add events");
+        }
     }
 
     @Override
@@ -40,6 +54,4 @@ public class EvenementServiceImpl implements EvenementService{
         }
         return null;
     }
-
-
 }
