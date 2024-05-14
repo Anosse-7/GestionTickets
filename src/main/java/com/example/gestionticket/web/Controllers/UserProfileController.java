@@ -1,4 +1,4 @@
-package com.example.gestionticket.web.Controllers.UserManagement;
+package com.example.gestionticket.web.Controllers;
 
 import com.example.gestionticket.Entities.User;
 import com.example.gestionticket.Repository.UserRepository;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.Base64;
 
 @Controller
 @RequestMapping("/userProfile")
