@@ -55,7 +55,7 @@
                                         <select class="form-control" id="role" th:field="${user.role}">
                                         <option value="">Select Role</option>
                                         <option value="Client">User</option>
-                                        <option value="Organizateur">Organizateur</option>
+                                        <option value="organisateur">Organisateur</option>
                                     </select>
                                         <label for="role"> Select Role </label>
                                     </div>
@@ -99,7 +99,6 @@
                                         <div class="form-floating mb-3">
                                             <input type="password" id="form6Example4cdg" class="form-control" th:field="${user.repeatPassword}" placeholder="Repeter le mot de passe" required>
                                             <label class="form-label" for="form6Example4cdg">Repeter le mot de passe</label>
-                                            <span th:if="${#fields.hasErrors('repeatPassword')}" th:errors="*{repeatPassword}" class="text-danger">Passwords don't match!</span>
                                         </div>
                                     </div>
                                 <div class="col-12">

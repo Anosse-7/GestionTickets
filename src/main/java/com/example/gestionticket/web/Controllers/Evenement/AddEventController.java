@@ -34,7 +34,7 @@ public class AddEventController {
                            BindingResult result,
                            RedirectAttributes redirectAttributes) {
         if (result.hasErrors()) {
-            return "Event/addEvent"; // Return the view name directly
+            return "redirect:/addEvent?error"; // Return the view name directly
         }
 
         eventService.addEvent(evenement);

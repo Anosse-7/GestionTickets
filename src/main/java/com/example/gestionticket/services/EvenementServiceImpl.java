@@ -40,11 +40,7 @@ public class EvenementServiceImpl implements EvenementService{
 
         User user = userRepository.findByUsername(currentPrincipalName); // Assuming you have a method to get user by username
 
-        if(user.getRole().equals("organizator")) {
-            return eventRepository.save(evenement);
-        } else {
-            throw new RuntimeException("Only users with the 'organizator' role can add events");
-        }
+        return eventRepository.save(evenement);
     }
 
     @Override
