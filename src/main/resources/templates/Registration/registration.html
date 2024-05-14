@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                         </div>
-                        <form th:action="@{/registration}" method="post" th:object="${user}">
+                        <form th:action="@{/registration}" method="post" th:object="${user}" onsubmit="return validatePassword()">
                             <div class="row gy-3 overflow-hidden">
                                 <div class="col-12">
                                     <div class="form-floating mb-3">
@@ -153,5 +153,18 @@
         </div>
     </div>
 </section>
+<script>
+    function validatePassword() {
+    var password = document.getElementById("form5Example4cdg");
+    var repeatPassword = document.getElementById("form6Example4cdg");
+
+    if(password.value !== repeatPassword.value) {
+        alert("Passwords do not match.");
+        return false;
+    } else {
+        return true;
+    }
+}
+</script>
 </body>
 </html>
