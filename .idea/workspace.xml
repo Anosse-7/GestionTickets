@@ -5,34 +5,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="crud Evenement 3">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/CartItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/CartRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/CartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/CartServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/CartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Cart/cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1743a149-6aeb-4d83-9abc-39575d776e71.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_6_59_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_6_59_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_7_04_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_7_04_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_20_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_20_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_26_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_26_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_30_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_30_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_37_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_37_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_5_2024_9_28_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_5_2024_9_28_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_5_2024_9_38_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_5_2024_9_38_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_7_40_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_7_40_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1743a149-6aeb-4d83-9abc-39575d776e71/storage_v2/_src_/database/GestionTickets.3iKN3Q/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1743a149-6aeb-4d83-9abc-39575d776e71/storage_v2/_src_/database/GestionTickets.3iKN3Q/schema/dbo.sYMBAA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_05_2024_08_31_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_05_2024_08_31__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_05_2024_08_32_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_05_2024_08_32__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_4_2024_11_33_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_4_2024_11_33_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_7_04_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_7_04_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_20_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_20_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_26_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_26_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_30_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_30_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_37_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_9_37_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_5_2024_9_28_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_5_2024_9_28_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_5_2024_9_38_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_5_2024_9_38_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/IndexController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/UserRegistrationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/UserRegistrationDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/UserRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_09_27__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2024_11_33_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2024_11_33_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EvenementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EvenementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EvenementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EvenementServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/AddEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/AddEventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/EvenementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/EvenementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Event/Evenement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Event/Evenement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Evenement$EvenementBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Evenement$EvenementBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Evenement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Evenement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/UserRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/UserRepositoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/conf/MvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/conf/MvcConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/EvenementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/EvenementService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/EvenementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/EvenementServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/AddEventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/AddEventController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/EvenementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/EvenementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Event/Evenement.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Event/Evenement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Interfaces/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Interfaces/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +77,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
         <option value="HTML File" />
       </list>
     </option>
@@ -71,8 +105,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Anosse-7/GestionTickets.git&quot;,
-    &quot;accountId&quot;: &quot;9b98dda5-7937-46f9-b892-ffd7b5c1f04e&quot;
+    &quot;url&quot;: &quot;https://github.com/AMJADSRT/GestionTickets.git&quot;,
+    &quot;accountId&quot;: &quot;a2353625-e927-4cfc-9b57-547c2df3688a&quot;
   },
   &quot;recentNewPullRequestHead&quot;: {
     &quot;server&quot;: {
@@ -94,6 +128,7 @@
         <option name="downloadAnnotationsAutomatically" value="true" />
         <option name="downloadDocsAutomatically" value="true" />
         <option name="downloadSourcesAutomatically" value="true" />
+        <option name="workspaceImportForciblyTurnedOn" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -111,57 +146,59 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.GestionTicketApplication.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "anass",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/hp/Documents/GestionTickets/src/main/resources/static/css",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.GestionTicketApplication.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;anass&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hp/Documents/GestionTickets/src/main/resources/static/js&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hp\Documents\GestionTickets\src\main\resources\static\js" />
+      <recent name="C:\Users\hp\Documents\GestionTickets\src\main\resources\static\css" />
       <recent name="D:\GestionTickets\src\main\resources\static\js" />
       <recent name="D:\GestionTickets\src\main\resources\static\css" />
       <recent name="C:\Users\obino\OneDrive - Ecole Marocaine des Sciences de l'Ingénieur\Documents\demo\GestionTicket\target\classes\CSS" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hp\Documents\GestionTickets\src\main\resources\templates\Cart" />
       <recent name="D:\GestionTickets\src\main\resources\static\assets\img" />
       <recent name="D:\GestionTickets\src\main\resources\static\assets\img\userImg" />
       <recent name="D:\GestionTickets\src\main\resources\static" />
       <recent name="D:\GestionTickets\src\main\resources\static\" />
-      <recent name="D:\GestionTickets\src\main\resources\templates\Interfaces" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.gestionticket.web" />
@@ -247,6 +284,15 @@
       <workItem from="1714909410146" duration="13000" />
       <workItem from="1714929281232" duration="1121000" />
       <workItem from="1715002947080" duration="1193000" />
+      <workItem from="1715119436965" duration="58000" />
+      <workItem from="1715242560033" duration="589000" />
+      <workItem from="1715518911775" duration="3884000" />
+      <workItem from="1715524101256" duration="84000" />
+      <workItem from="1715607936415" duration="2317000" />
+      <workItem from="1715672946897" duration="1343000" />
+      <workItem from="1715678982670" duration="2554000" />
+      <workItem from="1715692607562" duration="10553000" />
+      <workItem from="1715719433140" duration="120000" />
     </task>
     <task id="LOCAL-00001" summary="commit uncommplite registration">
       <option name="closed" value="true" />
@@ -408,7 +454,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715027267857</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="crud Evenement 3">
+      <option name="closed" value="true" />
+      <created>1715030886765</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1715030886765</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
