@@ -1,3 +1,4 @@
+// Evenement.java
 package com.example.gestionticket.Entities;
 
 import jakarta.persistence.*;
@@ -6,6 +7,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "Event")
 @Data
@@ -18,6 +21,7 @@ public class Evenement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Setter
     @Column(length = 45, nullable = false, name = "nom")
     private String titre;
 
@@ -28,10 +32,13 @@ public class Evenement {
     @Column
     private String typeEvenement;
 
+    @Setter
+    @Column
+    private String description;
 
-    public Evenement(String titre, Date dateEvenement, String typeEvenement) {
-        this.titre = titre;
-        this.dateEvenement = dateEvenement;
-        this.typeEvenement = typeEvenement;
-    }
+    @Column
+    private Double price; // Changed from 'double' to 'Double'
+
+    // ... rest of the code ...
+
 }

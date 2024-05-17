@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 @Table(name = "Cart")
@@ -24,4 +25,8 @@ public class Cart {
 
     @OneToMany(mappedBy = "cart")
     private List<CartItem> items;
+
+    public Optional<Object> getCartItems() {
+        return Optional.of(items);
+    }
 }

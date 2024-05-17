@@ -19,9 +19,15 @@ public class CartItem {
     @ManyToOne
     private Cart cart;
 
+    @Setter
+    @Getter
     @ManyToOne
     private Evenement evenement;
 
     private int quantity;
     private double price;
-}
+
+    public Evenement getEvent() {
+        return null;
+    }}
+
