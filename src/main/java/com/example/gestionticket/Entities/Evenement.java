@@ -1,79 +1,43 @@
 package com.example.gestionticket.Entities;
 
 import jakarta.persistence.*;
+import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
+import java.util.List;
+
+// If Ticket class is in a different package, import it
+import com.example.gestionticket.Entities.Ticket;
 
 @Entity
 @Table(name = "Event")
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Evenement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(length = 45, nullable = false, name = "nom")
-    private String nom;
+    private String titre;
 
-    @Column(length = 45, nullable = false, name = "prenom")
-    private String prenom;
-
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateEvenement;
 
     @Column
     private String typeEvenement;
 
-    // Constructeurs, getters et setters...
+    @Column
+    private String description;
 
-    public Evenement() {
-        // Constructeur par défaut nécessaire pour JPA
-    }
+    @Column
+    private String photo;
 
-    public Evenement(String nom, String prenom, Date dateEvenement, String typeEvenement) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.dateEvenement = dateEvenement;
-        this.typeEvenement = typeEvenement;
-    }
-
-    // Getters et Setters pour id, nom, prenom, dateEvenement, typeEvenement
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public Date getDateEvenement() {
-        return dateEvenement;
-    }
-
-    public void setDateEvenement(Date dateEvenement) {
-        this.dateEvenement = dateEvenement;
-    }
-
-    public String getTypeEvenement() {
-        return typeEvenement;
-    }
-
-    public void setTypeEvenement(String typeEvenement) {
-        this.typeEvenement = typeEvenement;
-    }
+    @OneToMany(mappedBy = "evenement", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Ticket> tickets;
 }

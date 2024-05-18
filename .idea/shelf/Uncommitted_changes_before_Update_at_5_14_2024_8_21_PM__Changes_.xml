@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Update_at_5_14_2024_8_21_PM_[Changes]" date="1715714480841" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_14_2024_8_21_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 5/14/2024 8:21 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="target/classes/static/ProfileImgs/icons8-user-100.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_14_2024_8_21_PM_[Changes]/icons8-user-100.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/main/resources/static/ProfileImgs/icons8-user-100.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_14_2024_8_21_PM_[Changes]/icons8-user-1001.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="target/classes/com/example/gestionticket/Entities/Ticket$TicketBuilder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_14_2024_8_21_PM_[Changes]/Ticket$TicketBuilder.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="target/classes/com/example/gestionticket/Entities/Ticket.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_14_2024_8_21_PM_[Changes]/Ticket.class" />
+  </binary>
+</changelist>

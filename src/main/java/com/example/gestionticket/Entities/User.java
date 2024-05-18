@@ -24,7 +24,7 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     @Column(nullable = false,length = 50,unique = true,name = "username")
     private String username;
@@ -35,17 +35,27 @@ public class User implements UserDetails {
     @Column(nullable = false,length = 50, name = "prenom")
     private String prenom;
 
+    @Column
+    private String Gender;
+
     @Column(nullable = false,length = 50,unique = true,name = "email")
     private String email;
 
     @NotBlank(message = "Password cannot be blank")
     private String password;
 
-    @Column(length = 50,name = "adresse")
-    private String addresse;
+    @Column(length = 50,name = "ville")
+    private String ville;
 
-    @Column(length = 50,name = "telephone")
+    @Column(name = "telephone")
     private String telephone;
+
+    @Column(name = "country_code")
+    private String countryCode;
+
+
+    @Column(name = "profile_image")
+    private String profileImage;
 
     @Column(nullable = false,name = "active")
     private boolean active;
@@ -54,19 +64,6 @@ public class User implements UserDetails {
     private String role;
 
 
-    public User(String username ,String nom, String prenom, String email, String password, String addresse, String telephone, boolean active , String role) {
-
-        this.username = username;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.email = email;
-        this.password = password;
-        this.addresse = addresse;
-        this.telephone = telephone;
-        this.active = active;
-        this.role = role;
-
-    }
 
 
     @Override

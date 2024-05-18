@@ -1,24 +1,25 @@
 package com.example.gestionticket.services;
 
 import com.example.gestionticket.Entities.User;
-import com.example.gestionticket.web.dto.UserRegistrationDto;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @Service
 public interface UserService extends UserDetailsService {
-
-    User findByEmail(String email);
-
-    UserDetails loadUserByEmail(String email) throws UsernameNotFoundException;
-
-    User save(UserRegistrationDto user);
 
     User save(User user);
 
     User findByUsername(String username);
 
-    User getCurrentUser();
+    void updateUserProfile(User updatedUser);
+
+    boolean userExists(String username);
+
+    void saveProfileImage(User user, MultipartFile file)throws IOException;
+
+
+
 }

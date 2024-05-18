@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/index")
+@RequestMapping("/")
 public class IndexController {
 
     @GetMapping
@@ -13,4 +13,3 @@ public class IndexController {
         return "Interfaces/index";
     }
 }
-

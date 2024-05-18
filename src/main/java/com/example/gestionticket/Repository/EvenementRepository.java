@@ -1,8 +1,10 @@
 package com.example.gestionticket.Repository;
 
 import com.example.gestionticket.Entities.Evenement;
-import jdk.jfr.Event;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EvenementRepository extends CrudRepository<Evenement, Integer> {
+@Repository
+public interface EvenementRepository extends JpaRepository<Evenement, Long> {
+
 }

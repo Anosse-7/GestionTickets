@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-232.10300.40">
-    <data-source name="Gestionticket@localhost" uuid="8a7ddec7-a184-4c92-af1a-3b67c1d83f1d">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MSSQL" exact-version="0" />
+  <component name="dataSourceStorageLocal" created-in="IU-241.15989.150">
+    <data-source name="GestionTickets@localhost" uuid="b4984863-9728-4695-a528-c7ea1bab0bd8">
+      <database-info product="Microsoft SQL Server" version="16.00.1115" jdbc-version="4.2" driver-name="Microsoft JDBC Driver 12.2 for SQL Server" driver-version="12.2.0.0" dbms="MSSQL" exact-version="16.0.1115" exact-driver-version="12.2">
+        <extra-name-characters>$#@</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>
       <user-name>sa</user-name>
-      <schema-mapping />
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
     </data-source>
   </component>
 </project>
