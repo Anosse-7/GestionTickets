@@ -25,7 +25,7 @@ public class Ticket {
     @Column
     private String etat;
     @Column
-    private String type;
+    private Double prix;
 
     @ManyToOne
     @JoinColumn(name = "evenement_id", nullable = false)
