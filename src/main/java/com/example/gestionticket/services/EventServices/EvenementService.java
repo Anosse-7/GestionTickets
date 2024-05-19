@@ -12,15 +12,11 @@ import java.util.Optional;
 @Service("evenementService")
 public interface EvenementService {
 
-    List<Evenement> listAll();
-
-    Evenement getCurrentEvent(Long id);
-
-    String saveEventImage(Evenement updateEvent, MultipartFile file) throws IOException;
+    String saveEventImage(MultipartFile file) throws IOException;
 
     Evenement updateEvent(Evenement evenement);
 
     String addEvent(Evenement evenement, MultipartFile file) throws IOException;
 
-    Optional<Evenement> findById(Long id);
+    Evenement getEventById(Long id);
 }

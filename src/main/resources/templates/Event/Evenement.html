@@ -23,7 +23,7 @@
     <div th:each="event : ${events}" class="col mb-5">
         <div class="card h-100">
             <!-- Product image-->
-            <img class="card-img-top" th:src="@{event.photo}" alt="..." />
+            <img class="card-img-top" th:src="${ '/assets' + event.photo}" alt="" />
             <!-- Product details-->
             <div class="card-body p-4">
                 <div class="text-center">
@@ -33,8 +33,10 @@
             </div>
             <!-- Product actions-->
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                <div class="text-center"><a class="btn btn-outline-dark mt-auto" th:href="@{/eventDetails(id=${event.id})}">Show more</a></div>
             </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto" th:href="@{/addTicket(eventId=${event.id})}">add ticket</a></div>            </div>
         </div>
     </div>
 </div>

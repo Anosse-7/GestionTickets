@@ -16,14 +16,18 @@ public class EvenementController {
     private final EvenementRepository eventRepo;
 
     @Autowired
-    public EvenementController(@Qualifier("EvenementRepository")EvenementRepository eventRepo) {
+    public EvenementController(@Qualifier("EvenementRepository") EvenementRepository eventRepo) {
         this.eventRepo = eventRepo;
     }
 
     @GetMapping("/Evenement")
     public String showEvents(Model model) {
-        List<Evenement> events = eventRepo.findAll(); // Assuming you have an EvenementService with a method to get all events
-        model.addAttribute("events", events);
-        return "Event/Evenement";
+        List<Evenement> events = eventRepo.findAll();
+        if (events.isEmpty()) {
+            return "Event/noEvent";
+        } else {
+            model.addAttribute("events", events);
+            return "Event/Evenement";
+        }
     }
 }

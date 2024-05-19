@@ -28,7 +28,7 @@
                         <div class="card-body p-5">
                             <h2 class="text-uppercase text-center mb-5">Cree Ticket</h2>
 
-                            <form th:action="@{/addTicket}" method="post" th:object="${ticket}" class="row g-3" enctype="multipart/form-data">
+                            <form th:action="@{/addTicket/{eventId}(eventId=${eventId})}" method="post" th:object="${ticket}" class="row g-3" enctype="multipart/form-data">
                                 <!-- success message -->
                                 <div th:if="${param.success}" class="alert alert-success col-12">
                                     You have added the event successfully
@@ -37,6 +37,12 @@
                                     <label class="form-label" for="titre">Titre</label>
                                     <input type="text" id="titre" name="titre" class="form-control form-control-lg">
                                     <p class="alert alert-danger" th:if="${#fields.hasErrors('titre')}" th:errors="*{titre}"></p>
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <label class="form-label" for="description">Discription</label>
+                                    <textarea type="text" id="description" name="titre" class="form-control form-control-lg"></textarea>
+                                    <p class="alert alert-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></p>
                                 </div>
 
                                 <div data-mdb-input-init class="form-outline mb-4">

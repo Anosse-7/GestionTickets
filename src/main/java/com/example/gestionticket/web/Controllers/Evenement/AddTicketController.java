@@ -5,32 +5,49 @@ import com.example.gestionticket.services.TicketsServices.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.validation.Valid;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
+@RequestMapping("/addTicket")
 public class AddTicketController {
+
     @Autowired
     private TicketService ticketService;
 
-    @GetMapping("/addTicket")
-    public String showAddTicketForm(Ticket ticket, Model model) {
-        model.addAttribute("ticket", ticket);
+    @GetMapping
+    public String showAddTicketForm(@RequestParam("eventId") Long eventId, Model model) {
+        System.out.println("Event id: " + eventId);
+        model.addAttribute("ticket", new Ticket());
+        model.addAttribute("eventId", eventId);
         return "Event/addTicket";
     }
 
-    @PostMapping("/addTicket")
-    public String addTicket(@ModelAttribute("ticket") Ticket ticket,
-                            @RequestParam("eventId") Long eventId,
-                            @RequestParam("tickets") List<Ticket> tickets,
-                            @RequestParam("photo") MultipartFile photo) {
+    @PostMapping("{eventId}")
+    public String addTicket(@Valid Ticket ticket, BindingResult bindingResult,
+                            @PathVariable("eventId") Long eventId,
+                            @RequestParam("photo") MultipartFile photo,
+                            RedirectAttributes redirectAttributes) throws IOException {
 
-        ticketService.addTicketsToEvent(eventId, tickets, photo);
-        return "redirect:/events";
+        if (bindingResult.hasErrors()) {
+            System.out.println("Binding errors: " + bindingResult.getAllErrors());
+            return "redirect:/addTicket?error=true";
+        }
+
+        try {
+            ticketService.addTicketsToEvent(eventId, ticket, photo);
+            redirectAttributes.addFlashAttribute("success", "Ticket added successfully!");
+            return "Event/addTicket";
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "An error occurred while adding the ticket: " + e.getMessage());
+            return "Event/addTicket";
+        }
     }
 }
+

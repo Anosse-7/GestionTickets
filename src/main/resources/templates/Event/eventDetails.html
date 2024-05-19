@@ -1,123 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <style>
-        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-        .row.content {height: 1500px}
-
-        /* Set gray background color and 100% height */
-        .sidenav {
-            background-color: #f1f1f1;
-            height: 100%;
-        }
-
-        /* Set black background color, white text and some padding */
-        footer {
-            background-color: #555;
-            color: white;
-            padding: 15px;
-        }
-
-        /* On small screens, set height to 'auto' for sidenav and grid */
-        @media screen and (max-width: 767px) {
-            .sidenav {
-                height: auto;
-                padding: 15px;
-            }
-            .row.content {height: auto;}
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="/static/assets/icon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/static/css/evenement.css" rel="stylesheet" />
 </head>
-<body>
-
-<div class="container-fluid">
-    <div class="row content">
-        <div class="col-sm-3 sidenav">
-            <img th:src="@{'/' + event.photo}" alt="Event Photo" class="img-fluid rounded" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div class="col-sm-9">
-            <section style="background-color: #eee;">
-                <div class="container py-5">
-                    <div class="row justify-content-center mb-3">
-                        <div class="col-md-12 col-xl-10">
-                            <div class="card shadow-0 border rounded-3">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
-                                            <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(4).webp"
-                                                     class="w-100" />
-                                                <a href="#!">
-                                                    <div class="hover-overlay">
-                                                        <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-6 col-xl-6">
-                                            <h5>Quant trident shirts</h5>
-                                            <div class="d-flex flex-row">
-                                                <div class="text-danger mb-1 me-2">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <span>310</span>
-                                            </div>
-                                            <div class="mt-1 mb-0 text-muted small">
-                                                <span>100% cotton</span>
-                                                <span class="text-primary"> • </span>
-                                                <span>Light weight</span>
-                                                <span class="text-primary"> • </span>
-                                                <span>Best finish<br /></span>
-                                            </div>
-                                            <div class="mb-2 text-muted small">
-                                                <span>Unique design</span>
-                                                <span class="text-primary"> • </span>
-                                                <span>For men</span>
-                                                <span class="text-primary"> • </span>
-                                                <span>Casual<br /></span>
-                                            </div>
-                                            <p class="text-truncate mb-4 mb-md-0">
-                                                There are many variations of passages of Lorem Ipsum available, but the
-                                                majority have suffered alteration in some form, by injected humour, or
-                                                randomised words which don't look even slightly believable.
-                                            </p>
-                                        </div>
-                                        <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
-                                            <div class="d-flex flex-row align-items-center mb-1">
-                                                <h4 class="mb-1 me-1">$13.99</h4>
-                                                <span class="text-danger"><s>$20.99</s></span>
-                                            </div>
-                                            <h6 class="text-success">Free shipping</h6>
-                                            <div class="d-flex flex-column mt-4">
-                                                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-sm" type="button">Details</button>
-                                                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary btn-sm mt-2" type="button">
-                                                    Add to wishlist
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+<body style="background-color: #FAD961; background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);">
+<div th:replace="~{Interfaces/index :: navbar}"></div>
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Shop in style</h1>
+            <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
         </div>
     </div>
-</div>
-
-<footer class="container-fluid text-center">
-    <p>Footer Text</p>
+</header>
+<!-- Navigation-->
+<div th:replace="~{Interfaces/index :: navbar}"></div>
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div th:each="ticket : ${tickets}" class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" th:src="@{ticket.photo}" alt="..."/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder" th:text="${ticket.titre}"></h5>
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" th:href="@{/ticketDetails/(id=${ticket.id})}">Show more</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+<footer class="py-5 bg-dark fixed-bottom">
+    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
 </footer>
-
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="/static/js/evenement.js"></script>
 </body>
 </html>
