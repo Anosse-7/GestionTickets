@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="version 1.6">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Event/eventDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Event/eventDetails.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Event/eventDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Event/eventDetails.html" afterDir="false" />
-    </list>
+    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="version 1.6 updated" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -254,7 +250,7 @@
       <workItem from="1716119991335" duration="4200000" />
       <workItem from="1716147294217" duration="5262000" />
       <workItem from="1716152719782" duration="43000" />
-      <workItem from="1716322002462" duration="4784000" />
+      <workItem from="1716322002462" duration="5162000" />
     </task>
     <task id="LOCAL-00001" summary="commit uncommplite registration">
       <option name="closed" value="true" />
@@ -464,7 +460,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716325677381</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="version 1.6 updated">
+      <option name="closed" value="true" />
+      <created>1716327139055</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1716327139055</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,7 +487,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="commit second version uncommplite registration" />
     <MESSAGE value="the first functionnale demo" />
     <MESSAGE value="first registration functionality" />
     <MESSAGE value="non therd version finish authentication" />
@@ -508,7 +511,8 @@
     <MESSAGE value="version 1.4" />
     <MESSAGE value="version 1.5" />
     <MESSAGE value="version 1.6" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1.6" />
+    <MESSAGE value="version 1.6 updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.6 updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
