@@ -21,9 +21,9 @@ public class Ticket {
     @Column
     private String description;
     @Column
-    private String photo;
-    @Column
     private String etat;
+    @Column
+    private String photo;
     @Column
     private Double prix;
 

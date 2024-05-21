@@ -15,33 +15,29 @@ import java.io.IOException;
 import java.util.List;
 
 @Controller
-@RequestMapping("/addTicket")
 public class AddTicketController {
 
     @Autowired
     private TicketService ticketService;
 
-    @GetMapping
+    @GetMapping("/addTicket")
     public String showAddTicketForm(@RequestParam("eventId") Long eventId, Model model) {
-        System.out.println("Event id: " + eventId);
         model.addAttribute("ticket", new Ticket());
         model.addAttribute("eventId", eventId);
         return "Event/addTicket";
     }
 
-    @PostMapping("{eventId}")
+    @PostMapping("/addTicket/{eventId}")
     public String addTicket(@Valid Ticket ticket, BindingResult bindingResult,
                             @PathVariable("eventId") Long eventId,
-                            @RequestParam("photo") MultipartFile photo,
+                            @RequestParam("file") MultipartFile file, // Add this line
                             RedirectAttributes redirectAttributes) throws IOException {
-
         if (bindingResult.hasErrors()) {
             System.out.println("Binding errors: " + bindingResult.getAllErrors());
             return "redirect:/addTicket?error=true";
         }
-
         try {
-            ticketService.addTicketsToEvent(eventId, ticket, photo);
+            ticketService.addTicketToEvent(eventId, ticket, file); // Pass the file to the method
             redirectAttributes.addFlashAttribute("success", "Ticket added successfully!");
             return "Event/addTicket";
         } catch (Exception e) {

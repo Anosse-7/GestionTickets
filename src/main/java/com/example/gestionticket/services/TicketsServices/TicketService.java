@@ -12,5 +12,5 @@ public interface TicketService {
 
     String saveTicketImage(MultipartFile file) throws IOException;
 
-    void addTicketsToEvent(Long eventId, Ticket ticket, MultipartFile photo) throws IOException;
+    void addTicketToEvent(Long eventId, Ticket ticket, MultipartFile file) throws IOException;
 }

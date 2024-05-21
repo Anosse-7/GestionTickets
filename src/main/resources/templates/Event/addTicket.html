@@ -30,8 +30,8 @@
 
                             <form th:action="@{/addTicket/{eventId}(eventId=${eventId})}" method="post" th:object="${ticket}" class="row g-3" enctype="multipart/form-data">
                                 <!-- success message -->
-                                <div th:if="${param.success}" class="alert alert-success col-12">
-                                    You have added the event successfully
+                                <div th:if="${success}" class="alert alert-success col-12">
+                                   [[${success}]]
                                 </div>
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="titre">Titre</label>
@@ -60,10 +60,9 @@
                                     <input id="prix" name="prix" class="form-control form-control-lg">
                                     <p class="alert alert-danger" th:if="${#fields.hasErrors('prix')}" th:errors="*{prix}"></p>
                                 </div>
-
                                 <div data-mdb-input-init class="form-outline mb-4">
-                                    <label class="form-label" for="photo">Event Photo</label>
-                                    <input type="file" id="photo" name="photo" class="form-control form-control-lg">
+                                    <label class="form-label" for="photo">Photo</label>
+                                    <input type="file" id="photo" name="file" class="form-control form-control-lg">
                                     <p class="alert alert-danger" th:if="${#fields.hasErrors('photo')}" th:errors="*{photo}"></p>
                                 </div>
                                 <div class="col-12 d-flex justify-content-center">

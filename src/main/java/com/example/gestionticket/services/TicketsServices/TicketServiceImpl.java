@@ -3,6 +3,7 @@ package com.example.gestionticket.services.TicketsServices;
 import com.example.gestionticket.Entities.Evenement;
 import com.example.gestionticket.Entities.Ticket;
 import com.example.gestionticket.Repository.EvenementRepository;
+import com.example.gestionticket.Repository.TicketsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -12,7 +13,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.util.Optional;
 
 @Service
 public class TicketServiceImpl implements TicketService{
@@ -20,6 +20,9 @@ public class TicketServiceImpl implements TicketService{
 
     @Autowired
     private EvenementRepository eventRepository;
+
+    @Autowired
+    private TicketsRepository ticketRepository;
 
     @Override
     public String saveTicketImage(MultipartFile file) throws IOException {
@@ -40,17 +43,17 @@ public class TicketServiceImpl implements TicketService{
     }
 
     @Override
-    public void addTicketsToEvent(Long eventId, Ticket ticket, MultipartFile photo) throws IOException {
-        Optional<Evenement> optionalEvent = eventRepository.findById(eventId);
-        if (optionalEvent.isPresent()) {
-            Evenement event = optionalEvent.get();
-            event.getTickets().add(ticket);
-            // Store the photo and set its path to the ticket
-            String photoPath = saveTicketImage(photo);
-            ticket.setPhoto(photoPath);
-            eventRepository.save(event);
-        } else {
-            throw new RuntimeException("Event with id " + eventId + " does not exist");
-        }
+    public void addTicketToEvent(Long eventId, Ticket ticket, MultipartFile file) throws IOException {
+        Evenement evenement = eventRepository.findById(eventId)
+                .orElseThrow(() -> new RuntimeException("Event with id " + eventId + " does not exist"));
+
+        String photoPath = saveTicketImage(file); // Save the image file and get the photo path
+        ticket.setPhoto(photoPath); // Set the photo path on the Ticket
+
+        ticket.setEvenement(evenement); // Set the Event on the Ticket
+        evenement.getTickets().add(ticket); // Add the Ticket to the Event's list of tickets
+
+        ticketRepository.save(ticket); // Save the Ticket
+        eventRepository.save(evenement); // Save the Event
     }
 }
