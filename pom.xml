@@ -126,6 +126,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId> <!-- JPA -->
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId> <!-- JPA -->
+        </dependency>
     </dependencies>
     <build>
         <plugins>
