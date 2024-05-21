@@ -67,3 +67,4 @@ public void removeEvenementFromCart(Long cartId, Long evenementId) {
         return cart.getItems().stream().mapToDouble(CartItem::getPrice).sum();
     }
 }
+// Path: src/main/java/com/example/gestionticket/services/CartService.java

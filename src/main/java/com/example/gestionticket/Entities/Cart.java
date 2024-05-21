@@ -26,7 +26,7 @@ public class Cart {
     @OneToMany(mappedBy = "cart")
     private List<CartItem> items;
 
-    public Optional<Object> getCartItems() {
-        return Optional.of(items);
+    public Optional<List<CartItem>> getCartItems() {
+        return Optional.ofNullable(items);
     }
 }

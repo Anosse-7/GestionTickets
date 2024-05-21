@@ -1,6 +1,10 @@
 package com.example.gestionticket.Entities;
 
-// CartItemDetails.java
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class CartItemDetails {
     private String titre;
     private String description;
@@ -14,5 +18,4 @@ public class CartItemDetails {
         this.price = price;
     }
 
-    // getters and setters...
 }

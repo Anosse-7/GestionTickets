@@ -5,26 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="panier 1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/Panier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/PanierItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/PanierItemRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/PanierRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/PanierService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/PanierServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/PanierController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Panier/panier.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Panier$PanierBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Panier.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/PanierItem$PanierItemBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/PanierItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/PanierItemRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/PanierRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/PanierService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/PanierServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/PanierController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/Panier/panier.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Cart/order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/1743a149-6aeb-4d83-9abc-39575d776e71.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1743a149-6aeb-4d83-9abc-39575d776e71.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_6_59_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_5_2024_6_59_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_21_25__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_21_25__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_7_40_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_7_40_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/CartItemDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/CartItemDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/Panier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/PanierItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/PanierItemRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/PanierRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/CartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/PanierService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/PanierServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/PanierController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Cart/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Cart/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Panier/panier.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/CartItemDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/CartItemDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Panier$PanierBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Panier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/PanierItem$PanierItemBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/PanierItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/PanierItemRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/PanierRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/CartService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/PanierService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/PanierServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/PanierController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Cart/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Cart/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Panier/panier.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +50,8 @@
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -159,6 +173,7 @@
       <recent name="D:\GestionTickets\src\main\resources\static\" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.gestionticket.Entities" />
       <recent name="com.example.gestionticket.web" />
     </key>
   </component>
@@ -261,6 +276,8 @@
       <workItem from="1715972509581" duration="3826000" />
       <workItem from="1715986875080" duration="1625000" />
       <workItem from="1716056070316" duration="2573000" />
+      <workItem from="1716296800027" duration="9816000" />
+      <workItem from="1716324276184" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="commit uncommplite registration">
       <option name="closed" value="true" />
