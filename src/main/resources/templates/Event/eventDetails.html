@@ -28,23 +28,39 @@
 <!-- Navigation-->
 <div th:replace="~{Interfaces/index :: navbar}"></div>
 <!-- Section-->
-<section class="py-5">
-    <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div th:each="ticket : ${tickets}" class="col mb-5">
-                <div class="card h-100">
-                    <!-- Product image-->
-                    <img class="card-img-top" th:src="${'/assets' + ticket.photo}" alt="..."/>
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="fw-bolder" th:text="${ticket.titre}"></h5>
+<section>
+    <div class="container py-5">
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-12 col-xl-10">
+                <div class="card shadow-0 border rounded-3">
+                    <div class="card-body">
+                        <div th:each="ticket : ${tickets}" class="row mb-3">
+                            <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                                <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                                    <img th:src="${'/assets' + ticket.photo}" class="w-100" />
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                <h5 th:text="${ticket.titre}"></h5>
+                                <div class="mt-1 mb-0 text-muted small">
+                                    <!-- ticket type -->
+                                </div>
+                                <p th:text="${ticket.description}" class="text-truncate mb-4 mb-md-0"></p>
+                            </div>
+                            <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                                <div class="d-flex flex-row align-items-center mb-1">
+                                    <h4 th:text="${ticket.prix + ' Dh'}" class="mb-1 me-1"></h4>
+                                    <span class="text-danger"><s>$20.99</s></span>
+                                </div>
+                                <div class="d-flex flex-column mt-4">
+                                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-sm" type="button">Details</button>
+                                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary btn-sm mt-2" type="button">
+                                        Add to wishlist
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" th:href="@{/ticketDetails/(id=${ticket.id})}">Show more</a></div>
                     </div>
                 </div>
             </div>
@@ -52,7 +68,7 @@
     </div>
 </section>
 <!-- Footer-->
-<footer class="py-5 bg-dark fixed-bottom">
+<footer class="py-2 bg-dark fixed-bottom">
     <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
 </footer>
 <!-- Bootstrap core JS-->

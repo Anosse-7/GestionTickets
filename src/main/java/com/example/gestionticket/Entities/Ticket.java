@@ -26,6 +26,8 @@ public class Ticket {
     private String photo;
     @Column
     private Double prix;
+    @Column
+    private String reduction;
 
     @ManyToOne
     @JoinColumn(name = "evenement_id", nullable = false)

@@ -16,10 +16,9 @@
         }
     </style>
 </head>
-<body>
+<body  style="background-color: #FAD961; background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);">
 <div th:replace="~{Interfaces/index :: navbar}"></div>
-<section class="vh-100"
-         style="background-color: #FAD961; background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);">
+<section class="vh-100" style="margin-top: 60px;">
     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -31,7 +30,7 @@
                             <form th:action="@{/addTicket/{eventId}(eventId=${eventId})}" method="post" th:object="${ticket}" class="row g-3" enctype="multipart/form-data">
                                 <!-- success message -->
                                 <div th:if="${success}" class="alert alert-success col-12">
-                                   [[${success}]]
+                                    <p th:text="${success}"></p>
                                 </div>
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="titre">Titre</label>
