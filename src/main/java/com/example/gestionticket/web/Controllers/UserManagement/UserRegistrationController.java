@@ -53,10 +53,6 @@ public class UserRegistrationController {
             result.rejectValue("username", null, "There is already an account registered with that username");
         }
 
-        if (!registrationDto.getPassword().equals(registrationDto.getRepeatPassword())) {
-            result.rejectValue("repeatPassword", null, "Passwords don't match");
-        }
-
         if (result.hasErrors()) {
             return "Registration/registration";
         }

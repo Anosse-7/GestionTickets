@@ -12,9 +12,4 @@ public class GestionTicketApplication implements WebMvcConfigurer {
         SpringApplication.run(GestionTicketApplication.class, args);
     }
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/ProfileImgs/**")
-                .addResourceLocations("file:src/main/resources/static/ProfileImgs/");
-    }
 }
