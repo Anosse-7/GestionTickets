@@ -1,7 +1,7 @@
 package com.example.gestionticket.web.Controllers.Evenement;
 
 import com.example.gestionticket.Entities.Evenement;
-import com.example.gestionticket.services.EvenementService;
+import com.example.gestionticket.Repository.EvenementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -13,17 +13,21 @@ import java.util.List;
 @Controller
 public class EvenementController {
 
-    private final EvenementService eventService;
+    private final EvenementRepository eventRepo;
 
     @Autowired
-    public EvenementController(@Qualifier("evenementServiceImpl")EvenementService eventService) {
-        this.eventService = eventService;
+    public EvenementController(@Qualifier("EvenementRepository") EvenementRepository eventRepo) {
+        this.eventRepo = eventRepo;
     }
 
     @GetMapping("/Evenement")
-    public String showEvenements(Model model) {
-        List<Evenement> evenements = eventService.listAll(); // Utilisation de listAll() à la place de getAllEvenements()
-        model.addAttribute("listEvenements", evenements);
-        return "Event/Evenement"; // Chemin vers votre fichier evenement.html dans les ressources
+    public String showEvents(Model model) {
+        List<Evenement> events = eventRepo.findAll();
+        if (events.isEmpty()) {
+            return "Event/noEvent";
+        } else {
+            model.addAttribute("events", events);
+            return "Event/Evenement";
+        }
     }
 }

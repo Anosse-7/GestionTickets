@@ -1,0 +1,83 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="/static/assets/icon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/static/css/evenement.css" rel="stylesheet" />
+
+</head>
+<body style="background-color: #FAD961; background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);">
+<div th:replace="~{Interfaces/index :: navbar}"></div>
+<header class="bg-dark py-5 position-relative">
+    <img class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" th:src="${'/assets' + event.photo}" alt="Event Photo" />
+    <div class="container px-4 px-lg-5 my-5 header-content">
+        <div class="text-center text-white">
+            <h1>Event Title</h1>
+            <p>Event description goes here.</p>
+        </div>
+    </div>
+</header>
+<!-- Navigation-->
+<div th:replace="~{Interfaces/index :: navbar}"></div>
+<!-- Section-->
+<section>
+    <div class="container py-5">
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-12 col-xl-10">
+                <div class="card shadow-0 border rounded-3">
+                    <div class="card-body">
+                        <div th:each="ticket : ${tickets}" class="row mb-3">
+                            <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                                <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                                    <img th:src="${'/assets' + ticket.photo}" class="w-100" />
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                <h5 th:text="${ticket.titre}"></h5>
+                                <div class="mt-1 mb-0 text-muted small">
+                                    <!-- ticket type -->
+                                </div>
+                                <p th:text="${ticket.description}" class="text-truncate mb-4 mb-md-0"></p>
+                            </div>
+                            <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                                <div class="d-flex flex-row align-items-center mb-1">
+                                    <h4 th:text="${ticket.prix + ' Dh'}" class="mb-1 me-1"></h4>
+                                    <span class="text-danger"><s>$20.99</s></span>
+                                </div>
+                                <div class="d-flex flex-column mt-4">
+                                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-sm" type="button">Details</button>
+                                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary btn-sm mt-2" type="button">
+                                        Add to wishlist
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+<footer class="py-2 bg-dark fixed-bottom">
+    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="/static/js/evenement.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</body>
+</html>
