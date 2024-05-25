@@ -1,7 +1,7 @@
 package com.example.gestionticket.web.Controllers.UserManagement;
 
 import com.example.gestionticket.Entities.User;
-import com.example.gestionticket.services.UserService;
+import com.example.gestionticket.services.UserServices.UserService;
 import com.example.gestionticket.web.dto.UserRegistrationDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

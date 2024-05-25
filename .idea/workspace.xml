@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="version 1.0">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_14_2024_8_20_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_14_2024_8_20_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/ProfileImgs/icons8-user-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/ProfileImgs/icons8-user-100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b4984863-9728-4695-a528-c7ea1bab0bd8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b4984863-9728-4695-a528-c7ea1bab0bd8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EvenementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EvenementServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/Evenement/AddEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/Evenement/AddEventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/UserProfileController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Registration/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Registration/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/EvenementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/EvenementServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/Evenement/AddEventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/Evenement/AddEventController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserManagement/UserRegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserManagement/UserRegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserProfileController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/UserRegistrationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Interfaces/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Interfaces/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="version 1.6 updated" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,10 +13,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -51,7 +29,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="pavilion" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -110,43 +88,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.GestionTicketApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/GestionTickets/src/main/resources/static/js",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "database.data.views",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.GestionTicketApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;seconMaster&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/GestionTickets/src/main/resources/static/js&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.data.views&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\GestionTickets\src\main\resources\static\js" />
@@ -154,11 +132,11 @@
       <recent name="C:\Users\obino\OneDrive - Ecole Marocaine des Sciences de l'Ingénieur\Documents\demo\GestionTicket\target\classes\CSS" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\obino\OneDrive\Documents\GitHub\GestionTickets\src\main\resources\static\js" />
+      <recent name="C:\Users\obino\OneDrive\Documents\GitHub\GestionTickets\src\main\resources\static\assets" />
+      <recent name="C:\Users\obino\OneDrive\Documents\GitHub\GestionTickets\src\main\resources\static\css" />
       <recent name="C:\Users\obino\OneDrive\Documents\GitHub\GestionTickets\src\main\resources\static\ProfileImgs" />
       <recent name="D:\GestionTickets\src\main\resources\static\assets\img" />
-      <recent name="D:\GestionTickets\src\main\resources\static\assets\img\userImg" />
-      <recent name="D:\GestionTickets\src\main\resources\static" />
-      <recent name="D:\GestionTickets\src\main\resources\static\" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.gestionticket.web" />
@@ -257,7 +235,22 @@
       <workItem from="1715635341461" duration="876000" />
       <workItem from="1715636268300" duration="2790000" />
       <workItem from="1715699902360" duration="378000" />
-      <workItem from="1715717064594" duration="669000" />
+      <workItem from="1715717064594" duration="1063000" />
+      <workItem from="1715809231973" duration="610000" />
+      <workItem from="1715809861886" duration="283000" />
+      <workItem from="1715810691980" duration="647000" />
+      <workItem from="1715972588247" duration="13150000" />
+      <workItem from="1716022334864" duration="8464000" />
+      <workItem from="1716033117034" duration="5709000" />
+      <workItem from="1716041670974" duration="343000" />
+      <workItem from="1716057870162" duration="1267000" />
+      <workItem from="1716060431997" duration="22000" />
+      <workItem from="1716060478434" duration="3959000" />
+      <workItem from="1716109738416" duration="10001000" />
+      <workItem from="1716119991335" duration="4200000" />
+      <workItem from="1716147294217" duration="5262000" />
+      <workItem from="1716152719782" duration="43000" />
+      <workItem from="1716322002462" duration="5162000" />
     </task>
     <task id="LOCAL-00001" summary="commit uncommplite registration">
       <option name="closed" value="true" />
@@ -435,7 +428,47 @@
       <option name="project" value="LOCAL" />
       <updated>1715698450762</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="version 1.3">
+      <option name="closed" value="true" />
+      <created>1715717947487</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1715717947487</updated>
+    </task>
+    <task id="LOCAL-00024" summary="version 1.4">
+      <option name="closed" value="true" />
+      <created>1716041697681</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1716041697682</updated>
+    </task>
+    <task id="LOCAL-00025" summary="version 1.5">
+      <option name="closed" value="true" />
+      <created>1716152737965</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1716152737966</updated>
+    </task>
+    <task id="LOCAL-00026" summary="version 1.6">
+      <option name="closed" value="true" />
+      <created>1716325677381</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1716325677381</updated>
+    </task>
+    <task id="LOCAL-00027" summary="version 1.6 updated">
+      <option name="closed" value="true" />
+      <created>1716327139055</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1716327139055</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,8 +487,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="commit uncommplite registration" />
-    <MESSAGE value="commit second version uncommplite registration" />
     <MESSAGE value="the first functionnale demo" />
     <MESSAGE value="first registration functionality" />
     <MESSAGE value="non therd version finish authentication" />
@@ -476,7 +507,12 @@
     <MESSAGE value="commit 4" />
     <MESSAGE value="commit 5" />
     <MESSAGE value="version 1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1.0" />
+    <MESSAGE value="version 1.3" />
+    <MESSAGE value="version 1.4" />
+    <MESSAGE value="version 1.5" />
+    <MESSAGE value="version 1.6" />
+    <MESSAGE value="version 1.6 updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.6 updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -2,8 +2,8 @@ package com.example.gestionticket.web.Controllers.UserManagement;
 
 import com.example.gestionticket.Entities.User;
 import com.example.gestionticket.Repository.UserRepository;
-import com.example.gestionticket.services.PhoneNumberService;
-import com.example.gestionticket.services.UserService;
+import com.example.gestionticket.services.PhoneNumServices.PhoneNumberService;
+import com.example.gestionticket.services.UserServices.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.Base64;
 
 @Controller
 @RequestMapping("/userProfile")
