@@ -1,4 +1,3 @@
-// Evenement.java
 package com.example.gestionticket.Entities;
 
 import jakarta.persistence.*;
@@ -6,9 +5,11 @@ import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
-@Setter
-@Getter
+// If Ticket class is in a different package, import it
+import com.example.gestionticket.Entities.Ticket;
+
 @Entity
 @Table(name = "Event")
 @Data
@@ -21,7 +22,6 @@ public class Evenement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter
     @Column(length = 45, nullable = false, name = "nom")
     private String titre;
 
@@ -32,13 +32,12 @@ public class Evenement {
     @Column
     private String typeEvenement;
 
-    @Setter
     @Column
     private String description;
 
     @Column
-    private Double price; // Changed from 'double' to 'Double'
+    private String photo;
 
-    // ... rest of the code ...
-
+    @OneToMany(mappedBy = "evenement", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Ticket> tickets;
 }

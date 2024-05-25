@@ -20,6 +20,7 @@ public class UserRegistrationDto {
     private String repeatPassword;
     private String ville;
     private String telephone;
+    private String profileImage;
     private boolean active;
     private String role;
 
@@ -37,6 +38,7 @@ public class UserRegistrationDto {
     user.setPassword(this.password);
     user.setVille(this.ville);
     user.setTelephone(this.telephone);
+    user.setProfileImage(this.profileImage);
     user.setActive(this.active);
     if (this.role == null || this.role.isEmpty()) {
         user.setRole("Client"); // replace "DEFAULT_ROLE" with your default role

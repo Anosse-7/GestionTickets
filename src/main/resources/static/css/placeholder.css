@@ -1,0 +1,4 @@
+input::placeholder {
+    /* Move the placeholder up by 5px and shrink it to 90% of its original size */
+    transform: translate(0, -5px) scale(0.9);
+}
