@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_25_05_2024_11_24_[Changes]" date="1716632687803" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_05_2024_11_24_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 25/05/2024 11:24 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="target/classes/com/example/gestionticket/web/Controllers/UserManagement/UserProfileController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_05_2024_11_24_[Changes]/UserProfileController.class" />
+  </binary>
+</changelist>

@@ -1,0 +1,39 @@
+<changelist name="Uncommitted_changes_before_Merge_at_25_05_2024_23_26_[Changes]" date="1716675981890" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_25_05_2024_23_26_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Merge at 25/05/2024 23:26 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/gestionticket/Entities/CartItem$CartItemBuilder.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/gestionticket/Entities/CartItem$CartItemBuilder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_25_05_2024_23_26_[Changes]/CartItem$CartItemBuilder.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/gestionticket/Entities/CartItem.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/gestionticket/Entities/CartItem.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_25_05_2024_23_26_[Changes]/CartItem.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/gestionticket/services/CartServiceImpl.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/gestionticket/services/CartServiceImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_25_05_2024_23_26_[Changes]/CartServiceImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/gestionticket/Entities/Ticket$TicketBuilder.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/gestionticket/Entities/Ticket$TicketBuilder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_25_05_2024_23_26_[Changes]/Ticket$TicketBuilder.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/gestionticket/web/Controllers/UserManagement/UserRegistrationController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/gestionticket/web/Controllers/UserManagement/UserRegistrationController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_25_05_2024_23_26_[Changes]/UserRegistrationController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/gestionticket/Entities/Ticket.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/gestionticket/Entities/Ticket.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_25_05_2024_23_26_[Changes]/Ticket.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/main/resources/static/assets/eventImg/event raja wydad.jpeg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_25_05_2024_23_26_[Changes]/event raja wydad.jpeg" />
+  </binary>
+</changelist>
