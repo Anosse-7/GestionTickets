@@ -19,4 +19,8 @@ public interface EvenementService {
     String addEvent(Evenement evenement, MultipartFile file) throws IOException;
 
     Evenement getEventById(Long id);
+
+    Evenement updateEvenement(Evenement newEvenement);
+
+    List<Evenement> findEventsByUser(String username);
 }

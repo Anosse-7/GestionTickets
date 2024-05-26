@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.logo img {
+    width: 100%;
+    max-width: 150px;
+}
+
+.profile {
+    margin-top: auto;
+}
+
+.main-content .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filters button,
+.filters select {
+    margin-right: 10px;
+}
+
+.product-images img {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-new-image {
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}

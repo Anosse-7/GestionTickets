@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoMarketplace Products</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/updateEvent.css">
+</head>
+<body style="background-color: #FAD961; background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);">
+<div th:replace="~{Interfaces/index :: navbar}"></div>
+<div class="container-fluid py-5" >
+    <div class="row">
+        <div class="col-2 sidebar bg-light p-3 rounded-3 ">
+            <div class="logo mb-4">
+                <img src="" alt="GoMarketplace" class="img-fluid">
+            </div>
+            <nav>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a class="nav-link" href="#">Evenement</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link" href="#">Supplier Products</a></li>
+                </ul>
+            </nav>
+            <div class="profile mt-auto">
+                <a th:href="@{/userProfile}" class="d-block mb-2">Profile</a>
+                <a th:href="@{/logout}" class="d-block">Log out</a>
+            </div>
+        </div>
+        <div class="col-7 main-content p-3">
+            <div class="header mb-3">
+                <h1 class="h3">GoMarketplace Products</h1>
+                <input type="text" class="form-control" placeholder="Search...">
+            </div>
+            <div class="filters mb-3 d-flex align-items-center">
+                <button class="btn btn-sm btn-secondary mr-2">Select All Products</button>
+                <div class="col-md-3 mr-5">
+                    <select class="form-control form-control-sm">
+                        <option>All Category</option>
+                    </select>
+                </div>
+                <div class="col-md-3 m-lg-3">
+                    <select class="form-control form-control-sm">
+                        <option>All Marketplace</option>
+                    </select>
+                </div>
+                <a class="btn btn-sm btn-primary" th:href="@{/addEvent}">Ajouter Evenement</a>
+            </div>
+            <div class="product-list">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Nom Evenement</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>ticket manager</th>
+                    </tr>
+                    </thead>
+                    <tbody th:each="eventuser : ${userEvents}">
+                    <tr>
+                        <td><input type="radio" name="product"></td>
+                        <td th:text="${eventuser.titre}"></td>
+                        <td th:text="${eventuser.description}"></td>
+                        <td th:text="${eventuser.dateEvenement}"></td>
+                        <td><a href="#">EditTicket</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-3 edit-product p-3 bg-light rounded-3">
+            <h2 class="h4">Edit Products</h2>
+            <p class="text-danger">Attention please! The operations you make here will affect all product variants.</p>
+            <div class="product-images mb-3">
+                <img src="product1.jpg" alt="Product" class="img-fluid mb-2" style="width: 100px;">
+                <button class="btn btn-outline-primary btn-block" style="width: 150px;">Add new image</button>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" class="form-control" id="product-name" value="Drykorn FIND - Blouses" style="width: 300px;">
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Product Description</label>
+                    <textarea class="form-control form-control-sm" id="product-description" rows="3" style="width: 300px;">blouse, loose fit, in light material mix, with print, with one chest pocket, with extra long sleeves the model is 178 cm tall and is wearing size 2</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="purchase-price">Purchase Price</label>
+                    <input type="number" class="form-control" id="purchase-price" value="35.99" style="width: 150px;">
+                </div>
+                <div class="form-group">
+                    <label for="selling-price">Selling Price</label>
+                    <input type="number" class="form-control" id="selling-price" value="90.00" style="width: 150px;">
+                </div>
+                <div class="form-group">
+                    <label for="compare-price">Compare at Price</label>
+                    <input type="number" class="form-control" id="compare-price" value="120.00" style="width: 150px;">
+                </div>
+                <div class="form-group">
+                    <label for="inventory-category">Inventory Category</label>
+                    <select class="form-control" id="inventory-category" style="width: 200px;">
+                        <option>Dresses</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="hts-code">HTS Code</label>
+                    <input type="text" class="form-control" id="hts-code" style="width: 150px;">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" style="width: 150px;">Save Changes</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

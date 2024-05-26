@@ -40,4 +40,8 @@ public class Evenement {
 
     @OneToMany(mappedBy = "evenement", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Ticket> tickets;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

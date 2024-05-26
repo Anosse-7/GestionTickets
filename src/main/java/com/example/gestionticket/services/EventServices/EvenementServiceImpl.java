@@ -1,6 +1,7 @@
 package com.example.gestionticket.services.EventServices;
 
 import com.example.gestionticket.Entities.Evenement;
+import com.example.gestionticket.Entities.User;
 import com.example.gestionticket.Repository.EvenementRepository;
 import com.example.gestionticket.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.List;
+import java.util.Optional;
 
 @Service("evenementServiceImpl")
 public class EvenementServiceImpl implements EvenementService {
@@ -63,5 +66,48 @@ public class EvenementServiceImpl implements EvenementService {
             return eventRepository.save(evenement);
         }
         return null;
+    }
+
+    @Override
+    public Evenement updateEvenement(Evenement newEvenement) {
+        Optional<Evenement> oldEvenementOpt = eventRepository.findById(newEvenement.getId());
+
+        if (oldEvenementOpt.isPresent()) {
+            Evenement oldEvenement = oldEvenementOpt.get();
+
+            if (newEvenement.getTitre() != null && !newEvenement.getTitre().equals(oldEvenement.getTitre())) {
+                oldEvenement.setTitre(newEvenement.getTitre());
+            }
+
+            if (newEvenement.getDateEvenement() != null && !newEvenement.getDateEvenement().equals(oldEvenement.getDateEvenement())) {
+                oldEvenement.setDateEvenement(newEvenement.getDateEvenement());
+            }
+
+            if (newEvenement.getTypeEvenement() != null && !newEvenement.getTypeEvenement().equals(oldEvenement.getTypeEvenement())) {
+                oldEvenement.setTypeEvenement(newEvenement.getTypeEvenement());
+            }
+
+            if (newEvenement.getDescription() != null && !newEvenement.getDescription().equals(oldEvenement.getDescription())) {
+                oldEvenement.setDescription(newEvenement.getDescription());
+            }
+
+            if (newEvenement.getPhoto() != null && !newEvenement.getPhoto().equals(oldEvenement.getPhoto())) {
+                oldEvenement.setPhoto(newEvenement.getPhoto());
+            }
+
+            return eventRepository.save(oldEvenement);
+        } else {
+            throw new RuntimeException("Event not found with id: " + newEvenement.getId());
+        }
+    }
+
+    @Override
+    public List<Evenement> findEventsByUser(String username) {
+        User user = userRepository.findByUsername(username);
+        if (user != null) {
+            return eventRepository.findByUser(user);
+        } else {
+            return null;
+        }
     }
 }

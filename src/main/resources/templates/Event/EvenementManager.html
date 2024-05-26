@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoMarketplace Products</title>
+    <link rel="stylesheet" href="/static/css/updateEvent.css">
+</head>
+<body>
+
+<div th:replace="~{Interfaces/index :: navbar}"></div>
+
+<div class="sidebar">
+    <div class="logo">
+        <img src="logo.png" alt="GoMarketplace">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Supplier Products</a></li>
+            <li class="active"><a href="#">GoMarketplace Products</a></li>
+            <li><a href="#">Shop Products</a></li>
+            <li><a href="#">Compliance Report</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Shipments</a></li>
+            <li><a href="#">Payments</a></li>
+            <li><a href="#">Definitions</a></li>
+            <li><a href="#">Events</a></li>
+        </ul>
+    </nav>
+    <div class="profile">
+        <a href="#">Profile</a>
+        <a href="#">Log out</a>
+    </div>
+</div>
+<div class="main-content">
+    <div class="header">
+        <h1>GoMarketplace Products</h1>
+        <input type="text" placeholder="Search...">
+    </div>
+    <div class="filters">
+        <button>Select All Products</button>
+        <select>
+            <option>All Category</option>
+        </select>
+        <select>
+            <option>All Marketplace</option>
+        </select>
+        <button>More Filters</button>
+    </div>
+    <div class="product-list">
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+                <th>Product Name</th>
+                <th>Marketplace</th>
+                <th>Inventory</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="radio" name="product"></td>
+                <td>Drykorn FIND - Blouses</td>
+                <td>Trendyol, Joom, 1 more place</td>
+                <td>164 in stock for 5 variants</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="product"></td>
+                <td>Benetton Stripe Tank Short</td>
+                <td>Ceneo, Joom, Allegro</td>
+                <td>942 in stock for 6 variants</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="product"></td>
+                <td>Aldo FIOLLA - High heeled sandals</td>
+                <td>Allegro, Joom, 1 more place</td>
+                <td>5930 in stock for 12 variants</td>
+            </tr>
+            <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="edit-product">
+    <h2>Edit Products</h2>
+    <p class="warning">Attention please! The operations you make here will affect all product variants.</p>
+    <div class="product-images">
+        <img src="product1.png" alt="Product Image">
+        <div class="add-new-image">Add new image</div>
+    </div>
+    <form>
+        <label for="product-name">Product Name</label>
+        <input type="text" id="product-name" value="Drykorn FIND - Blouses">
+
+        <label for="product-description">Product Description</label>
+        <textarea id="product-description">blouse, loose fit, in light material mix, with print, with one chest pocket, with extra long sleeves the model is 178 cm tall and is wearing size 2</textarea>
+
+        <label for="purchase-price">Purchase Price</label>
+        <input type="number" id="purchase-price" value="35.99">
+
+        <label for="selling-price">Selling Price</label>
+        <input type="number" id="selling-price" value="90.00">
+
+        <label for="compare-price">Compare at Price</label>
+        <input type="number" id="compare-price" value="120.00">
+
+        <label for="inventory-category">Inventory Category</label>
+        <select id="inventory-category">
+            <option>Dresses</option>
+        </select>
+
+        <label for="hts-code">HTS Code</label>
+        <input type="text" id="hts-code">
+
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+</body>
+</html>

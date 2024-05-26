@@ -57,11 +57,14 @@ public class User implements UserDetails {
     @Column(name = "profile_image")
     private String profileImage;
 
-    @Column(nullable = false,name = "active")
+    @Column(name = "active")
     private boolean active;
 
-    @Column(nullable = false,name = "role")
+    @Column(name = "role")
     private String role;
+
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    private List<Evenement> evenements;
 
 
 

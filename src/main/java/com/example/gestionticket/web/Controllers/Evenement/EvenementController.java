@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@Controller
+@Controller("evenementController1")
 public class EvenementController {
 
+
+    @Qualifier("EvenementRepository")
+    @Autowired
     private final EvenementRepository eventRepo;
 
     @Autowired

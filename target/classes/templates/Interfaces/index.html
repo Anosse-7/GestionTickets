@@ -34,7 +34,7 @@
                         <li class="nav-item">
                             <a class="nav-link"
                                th:if="${#authorization.expression('isAuthenticated() and hasAuthority(''Organizator'')')}"
-                               th:href="@{/addEvent}">Ajouter Evenement</a>
+                               th:href="@{/EvenementManager}">Evenement Manager</a>
                         </li>
                         <li class="nav-item"><a class="nav-link" th:href="@{/userProfile}">Profile</a></li>
                     </ul>
