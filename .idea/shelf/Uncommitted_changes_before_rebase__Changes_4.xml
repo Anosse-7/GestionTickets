@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_rebase_[Changes]4" date="1716678052264" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/gestionticket/web/Controllers/UserManagement/UserRegistrationController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/gestionticket/web/Controllers/UserManagement/UserRegistrationController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/UserRegistrationController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/gestionticket/Entities/Ticket.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/gestionticket/Entities/Ticket.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/Ticket.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/gestionticket/Entities/Ticket$TicketBuilder.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/gestionticket/Entities/Ticket$TicketBuilder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/Ticket$TicketBuilder.class" />
+  </binary>
+</changelist>
