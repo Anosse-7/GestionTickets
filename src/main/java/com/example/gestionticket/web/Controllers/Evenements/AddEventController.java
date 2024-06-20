@@ -26,7 +26,7 @@ public class AddEventController {
     private final UserRepository userRepo;
 
     @Autowired
-    public AddEventController(@Qualifier("evenementServiceImpl") EvenementService eventService, UserRepository userRepo) {
+    public AddEventController(@Qualifier("evenementServiceImpl") EvenementService eventService, @Qualifier("UserRepository") UserRepository userRepo) {
         this.eventService = eventService;
         this.userRepo = userRepo;
     }

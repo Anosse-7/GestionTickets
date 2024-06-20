@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -58,14 +59,22 @@ public class EventAdminController {
     }
 
     @PostMapping("/adminEvents/{idEvent}")
-    public String updateEvenement(@PathVariable("idEvent") Long idEvent, @Valid @ModelAttribute("evenement") Evenement evenement, BindingResult result, Model model){
-        System.out.println("idEvent: " + idEvent);
-        System.out.println("Evenement: " + evenement);
+    public String updateEvenement(@PathVariable("idEvent") Long idEvent, @Valid @ModelAttribute("evenement") Evenement evenement,@RequestParam("file") MultipartFile file, BindingResult result, Model model){
         if (result.hasErrors()) {
             return "redirect:/adminEvent?id=" + idEvent + "&error=true";
         }
+        if (file != null) {
+            try {
+                String photoEvent = eventService.saveEventImage(file);
+                System.out.println("Type of file: " + file.getClass().getName()); // Log the type of file
+                System.out.println("Return value of saveEventImage: " + photoEvent); // Log the return value of saveEventImage
+                evenement.setPhoto(photoEvent);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
         model.addAttribute("evenement", evenement);
-        System.out.println("Evenement 2: " + evenement);
         eventService.updateEvent(evenement);
         return "redirect:/adminEvents";
     }

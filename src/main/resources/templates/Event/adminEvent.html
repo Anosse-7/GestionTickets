@@ -72,6 +72,21 @@
         .header-container h2 {
             margin-right: 10px;
         }
+
+        .photo-container {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .photo-container img {
+            max-width: 100%;
+            max-height: 100%;
+        }
     </style>
 </head>
 
@@ -81,14 +96,14 @@
         <span class="navbar-brand toggle-btn" id="toggleSidebarBtn">
             <i class="bi bi-list"></i>
         </span>
-        <a class="navbar-brand" href="#">TicketMaster</a>
+        <a class="navbar-brand" th:href="@{/}">TicketMaster</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Evenement</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/Evenement}">Evenement</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/userProfile}">Profile</a></li>
             </ul>
         </div>
     </div>
@@ -148,35 +163,42 @@
     <div class="sidebar-right">
         <h2>Update Event</h2>
 
-        <form id="updateEventForm" th:action="@{/adminEvents/{idEvent}(id=${evenement.id})}" th:object="${evenement}" method="post" style="display: none;">
+        <form id="updateEventForm" th:action="@{/adminEvents/{idEvent}(id=${evenement.id})}" th:object="${evenement}" method="post" enctype="multipart/form-data" style="display: none;">
             <div th:if="${evenement != null}">
-            <input type="hidden" id="id" name="id" th:value="${evenement != null ? evenement.id : ''}" />
-            <div class="mb-3">
-                <label for="titre" class="form-label">Event Name</label>
-                <input type="text" class="form-control" id="titre" name="titre" th:value="${evenement.titre}" required>
-            </div>
-            <div class="mb-3">
-                <label for="description" class="form-label">Event Description</label>
-                <textarea class="form-control" id="description" name="description" rows="3" th:text="${evenement.description}" required></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="typeEvenement" class="form-label">Event Type</label>
-                <select type="text" class="form-control" id="typeEvenement" name="typeEvenement" th:value="${evenement.typeEvenement}" required>
-                    <option value="" disabled selected>Sélectionnez le type d'événement</option>
-                    <option value="Concert">Concert</option>
-                    <option value="Festival">Festival</option>
-                    <option value="Théâtre">Théâtre</option>
-                    <option value="Cinéma">Cinéma</option>
-                    <option value="Spectacle">Spectacle</option>
-                    <option value="Match">Match</option>
-                    <option value="Conférence avec billets">Conférence avec billets</option>
-                    <option value="Salon avec billets">Salon avec billets</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="dateEvenement" class="form-label">Event Date</label>
-                <input type="date" class="form-control" id="dateEvenement" name="dateEvenement" th:value="${evenement.dateEvenement}" required>
-            </div>
+                <div class="photo-container">
+                    <img id="file" th:src="@{'/assets' + ${evenement.photo}}" alt="Event Photo" />
+                </div>
+                <input type="hidden" id="id" name="id" th:value="${evenement.id}" />
+                <div class="mb-3">
+                    <label for="titre" class="form-label">Event Name</label>
+                    <input type="text" class="form-control" id="titre" name="titre" th:value="${evenement.titre}">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Event Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" th:text="${evenement.description}"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="typeEvenement" class="form-label">Event Type</label>
+                    <select type="text" class="form-control" id="typeEvenement" name="typeEvenement" th:value="${evenement.typeEvenement}">
+                        <option value="" disabled selected>Sélectionnez le type d'événement</option>
+                        <option value="Concert">Concert</option>
+                        <option value="Festival">Festival</option>
+                        <option value="Théâtre">Théâtre</option>
+                        <option value="Cinéma">Cinéma</option>
+                        <option value="Spectacle">Spectacle</option>
+                        <option value="Match">Match</option>
+                        <option value="Conférence avec billets">Conférence avec billets</option>
+                        <option value="Salon avec billets">Salon avec billets</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="dateEvenement" class="form-label">Event Date</label>
+                    <input type="date" class="form-control" id="dateEvenement" name="dateEvenement" th:value="${evenement.dateEvenement}">
+                </div>
+                <div class="mb-3">
+                    <label for="photoEvent" class="form-label">Event Photo</label>
+                    <input type="file" class="form-control" id="photoEvent"  name="file">
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Update Event</button>
         </form>
@@ -208,6 +230,9 @@
 
                 // Set the value of the hidden ID field
                 document.getElementById('id').value = data.id;
+
+                // Update the event photo
+                document.getElementById('file').src = '/assets' + data.photo;
             })
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
