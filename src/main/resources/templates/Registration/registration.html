@@ -153,5 +153,18 @@
         </div>
     </div>
 </section>
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        var password = document.querySelector('#form5Example4cdg').value;
+        var repeatPassword = document.querySelector('#form6Example4cdg').value;
+
+        if (password !== repeatPassword) {
+            event.preventDefault();
+            var errorSpan = document.querySelector('#form6Example4cdg').nextElementSibling;
+            errorSpan.textContent = "Passwords don't match!";
+            errorSpan.style.color = "red";
+        }
+    });
+</script>
 </body>
 </html>

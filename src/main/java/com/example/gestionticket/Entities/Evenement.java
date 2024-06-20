@@ -1,5 +1,6 @@
 package com.example.gestionticket.Entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -40,4 +41,10 @@ public class Evenement {
 
     @OneToMany(mappedBy = "evenement", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Ticket> tickets;
+
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "created_by")
+    private User createdBy;
+
 }

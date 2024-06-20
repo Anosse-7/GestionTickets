@@ -1,4 +1,5 @@
 package com.example.gestionticket.Entities;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -63,7 +64,9 @@ public class User implements UserDetails {
     @Column(nullable = false,name = "role")
     private String role;
 
-
+    @JsonBackReference
+    @OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Evenement> createdEvents;
 
 
     @Override
