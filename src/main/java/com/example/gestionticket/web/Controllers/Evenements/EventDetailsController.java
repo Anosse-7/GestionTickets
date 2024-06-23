@@ -10,13 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/eventDetails")
 public class EventDetailsController {
 
     @Autowired
     private EvenementService evenementService;
 
-    @GetMapping
+    @GetMapping("/eventDetails")
     public String showEventDetails(@RequestParam("id") Long id, Model model) {
         Evenement evenement = evenementService.getEventById(id);
         model.addAttribute("event", evenement);

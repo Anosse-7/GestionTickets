@@ -51,17 +51,18 @@
         }
 
         .navbar-custom {
-            background-color: #007bff;
+            background-color: #FAD961;
+            background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
             color: white;
         }
 
         .toggle-btn {
-            color: white;
+            color: black;
             cursor: pointer;
         }
 
         .toggle-btn:hover {
-            color: #cccccc;
+            color: black;
         }
 
         .header-container {
@@ -76,7 +77,6 @@
         .photo-container {
             width: 100%;
             height: 200px;
-            background-color: #ddd;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -91,12 +91,14 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-custom">
+<nav class="navbar navbar-expand-lg navbar-custom" style="">
     <div class="container-fluid">
         <span class="navbar-brand toggle-btn" id="toggleSidebarBtn">
             <i class="bi bi-list"></i>
         </span>
-        <a class="navbar-brand" th:href="@{/}">TicketMaster</a>
+        <a class="navbar-brand" th:href="@{/}">
+            <img src="/static/assets/img/logo-no-background.svg" alt="Logo" style="height: 30px;">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -139,6 +141,7 @@
                     <th scope="col">Type</th>
                     <th scope="col">Date</th>
                     <th scope="col">Actions</th>
+                    <th scope="col">Manage Tickets</th>
                 </tr>
                 </thead>
                 <tbody th:each="event : ${events}">
@@ -153,6 +156,9 @@
                             <input type="hidden" name="_method" value="delete" />
                             <button class="btn btn-danger btn-sm" type="submit">Delete</button>
                         </form>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning btn-sm" th:href="@{/adminTickets/{eventId}(id=${event.id})}">Manage Tickets</a>
                     </td>
                 </tr>
                 </tbody>

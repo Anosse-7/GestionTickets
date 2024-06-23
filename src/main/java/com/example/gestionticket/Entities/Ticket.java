@@ -1,5 +1,6 @@
 package com.example.gestionticket.Entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,12 +24,15 @@ public class Ticket {
     @Column
     private String etat;
     @Column
+    private String quantite;
+    @Column
     private String photo;
     @Column
     private Double prix;
     @Column
     private String reduction;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "evenement_id", nullable = false)
     private Evenement evenement;

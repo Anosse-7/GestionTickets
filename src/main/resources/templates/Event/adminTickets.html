@@ -51,18 +51,17 @@
         }
 
         .navbar-custom {
-            background-color: #FAD961;
-            background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
+            background-color: #007bff;
             color: white;
         }
 
         .toggle-btn {
-            color: black;
+            color: white;
             cursor: pointer;
         }
 
         .toggle-btn:hover {
-            color: black;
+            color: #cccccc;
         }
 
         .header-container {
@@ -77,6 +76,7 @@
         .photo-container {
             width: 100%;
             height: 200px;
+            background-color: #ddd;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -91,14 +91,12 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-custom" style="">
+<nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
         <span class="navbar-brand toggle-btn" id="toggleSidebarBtn">
             <i class="bi bi-list"></i>
         </span>
-        <a class="navbar-brand" th:href="@{/}">
-            <img src="/static/assets/img/logo-no-background.svg" alt="Logo" style="height: 30px;">
-        </a>
+        <a class="navbar-brand" th:href="@{/}">TicketMaster</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -136,29 +134,26 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th scope="col">Event Name</th>
+                    <th scope="col">Tickets Title</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Actions</th>
-                    <th scope="col">Manage Tickets</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Reduction</th>
                 </tr>
                 </thead>
-                <tbody th:each="event : ${events}">
+                <tbody th:each="ticket : ${tickets}">
                 <tr>
-                    <td th:text="${event.titre}"></td>
-                    <td th:text="${event.description}"></td>
-                    <td th:text="${event.typeEvenement}"></td>
-                    <td th:text="${event.dateEvenement}"></td>
+                    <td th:text="${ticket.titre}"></td>
+                    <td th:text="${ticket.description}"></td>
+                    <td th:text="${ticket.etat}"></td>
+                    <td th:text="${ticket.prix}"></td>
+                    <td th:text="${ticket.reduction}"></td>
                     <td>
-                        <button class="btn btn-primary btn-sm" th:onclick="'setFormAction(' + ${event.id} + ')'">Update</button>
-                        <form th:action="@{/adminEvents/{id}(id=${event.id})}" th:method="post" style="display: inline;">
+                        <button class="btn btn-primary btn-sm" th:onclick="'setFormAction(' + ${ticket.id} + ')'">Update</button>
+                        <form th:action="@{/adminTickets/{id}(id=${ticket.id})}" th:method="post" style="display: inline;">
                             <input type="hidden" name="_method" value="delete" />
                             <button class="btn btn-danger btn-sm" type="submit">Delete</button>
                         </form>
-                    </td>
-                    <td>
-                        <a class="btn btn-warning btn-sm" th:href="@{/adminTickets/{eventId}(id=${event.id})}">Manage Tickets</a>
                     </td>
                 </tr>
                 </tbody>
@@ -169,44 +164,34 @@
     <div class="sidebar-right">
         <h2>Update Event</h2>
 
-        <form id="updateEventForm" th:action="@{/adminEvents/{idEvent}(id=${evenement.id})}" th:object="${evenement}" method="post" enctype="multipart/form-data" style="display: none;">
-            <div th:if="${evenement != null}">
+        <form id="updateTicketForm" th:action="@{/adminTickets/{idTicket}(id=${Ticket.id})}" th:object="${Ticket}" method="post" enctype="multipart/form-data" style="display: none;">
+            <div th:if="${Ticket != null}">
                 <div class="photo-container">
-                    <img id="file" th:src="@{'/assets' + ${evenement.photo}}" alt="Event Photo" />
+                    <img id="file" th:src="@{'/assets' + ${Ticket.photo}}" alt="Event Photo" />
                 </div>
-                <input type="hidden" id="id" name="id" th:value="${evenement.id}" />
+                <input type="hidden" id="idTicket" name="id" th:value="${Ticket.id}" />
                 <div class="mb-3">
                     <label for="titre" class="form-label">Event Name</label>
-                    <input type="text" class="form-control" id="titre" name="titre" th:value="${evenement.titre}">
+                    <input type="text" class="form-control" id="titre" name="titre" th:value="${Ticket.titre}">
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Event Description</label>
-                    <textarea class="form-control" id="description" name="description" rows="3" th:text="${evenement.description}"></textarea>
+                    <textarea class="form-control" id="description" name="description" rows="3" th:text="${Ticket.description}"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="typeEvenement" class="form-label">Event Type</label>
-                    <select type="text" class="form-control" id="typeEvenement" name="typeEvenement" th:value="${evenement.typeEvenement}">
-                        <option value="" disabled selected>Sélectionnez le type d'événement</option>
-                        <option value="Concert">Concert</option>
-                        <option value="Festival">Festival</option>
-                        <option value="Théâtre">Théâtre</option>
-                        <option value="Cinéma">Cinéma</option>
-                        <option value="Spectacle">Spectacle</option>
-                        <option value="Match">Match</option>
-                        <option value="Conférence avec billets">Conférence avec billets</option>
-                        <option value="Salon avec billets">Salon avec billets</option>
-                    </select>
+                    <label for="quantite" class="form-label">Event Type</label>
+                    <input type="text" class="form-control" id="quantite" name="quantite" th:value="${Ticket.quantite}">
                 </div>
                 <div class="mb-3">
-                    <label for="dateEvenement" class="form-label">Event Date</label>
-                    <input type="date" class="form-control" id="dateEvenement" name="dateEvenement" th:value="${evenement.dateEvenement}">
+                    <label for="prix" class="form-label">Event Date</label>
+                    <input type="date" class="form-control" id="prix" name="prix" th:value="${Ticket.prix}">
                 </div>
                 <div class="mb-3">
-                    <label for="photoEvent" class="form-label">Event Photo</label>
+                    <label for="photoEvent" class="form-label">Ticket Photo</label>
                     <input type="file" class="form-control" id="photoEvent"  name="file">
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Update Event</button>
+            <button type="submit" class="btn btn-primary">Update Ticket</button>
         </form>
     </div>
 </div>
@@ -214,42 +199,42 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 <script>
-    window.setFormAction = function(id) {
-        console.log('setFormAction called with id:', id);
-        document.getElementById('updateEventForm').action = '/adminEvents/' + id;
-        document.getElementById('updateEventForm').style.display = 'block'; // Show the form
+window.setFormAction = function(id) {
+    console.log('setFormAction called with id:', id);
+    document.getElementById('updateTicketForm').action = '/adminTickets/' + id;
+    document.getElementById('updateTicketForm').style.display = 'block'; // Show the form
 
-        // Make an AJAX request to the server to fetch the event data
-        fetch('/adminEvents/details?id=' + id)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Populate the form fields with the event data
-                document.getElementById('titre').value = data.titre;
-                document.getElementById('description').value = data.description;
-                document.getElementById('typeEvenement').value = data.typeEvenement;
-                document.getElementById('dateEvenement').value = data.dateEvenement;
+    // Make an AJAX request to the server to fetch the ticket data
+    fetch('/adminTickets/details?id=' + id)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Populate the form fields with the ticket data
+            document.getElementById('titre').value = data.titre;
+            document.getElementById('description').value = data.description;
+            document.getElementById('quantite').value = data.quantite;
+            document.getElementById('prix').value = data.prix;
 
-                // Set the value of the hidden ID field
-                document.getElementById('id').value = data.id;
+            // Set the value of the hidden ID field
+            document.getElementById('idTicket').value = data.id;
 
-                // Update the event photo
-                document.getElementById('file').src = '/assets' + data.photo;
-            })
-            .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
-            });
-    }
-
-    document.addEventListener('DOMContentLoaded', (event) => {
-        document.getElementById('toggleSidebarBtn').addEventListener('click', function () {
-            document.getElementById('sidebar').classList.toggle('show');
+            // Update the ticket photo
+            document.getElementById('file').src = '/assets' + data.photo;
+        })
+        .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
         });
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('toggleSidebarBtn').addEventListener('click', function () {
+        document.getElementById('sidebar').classList.toggle('show');
     });
+});
 </script>
 </body>
 </html>

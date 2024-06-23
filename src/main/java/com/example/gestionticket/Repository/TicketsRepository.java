@@ -11,4 +11,5 @@ import java.util.List;
 public interface TicketsRepository extends JpaRepository<Ticket, Long> {
 
     List<Ticket> findByEvenementId(Long eventId);
+
 }

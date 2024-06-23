@@ -36,7 +36,7 @@ class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests((authz) -> authz
-                .requestMatchers("/registration", "/","/static/css/**", "/static/images/**" ,"/static/js/**").permitAll() // Allow access to /registration without authentication
+                .requestMatchers("/registration", "/","/static/css/**", "/static/assets/**" ,"/static/js/**").permitAll() // Allow access to /registration without authentication
                 .anyRequest().authenticated()
         );
 

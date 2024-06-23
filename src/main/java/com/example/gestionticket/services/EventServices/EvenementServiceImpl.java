@@ -1,6 +1,7 @@
 package com.example.gestionticket.services.EventServices;
 
 import com.example.gestionticket.Entities.Evenement;
+import com.example.gestionticket.Entities.Ticket;
 import com.example.gestionticket.Repository.EvenementRepository;
 import com.example.gestionticket.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Objects;
 
 @Service("evenementServiceImpl")
@@ -86,4 +88,12 @@ public class EvenementServiceImpl implements EvenementService {
     public void deleteEvent(Long id){
         eventRepository.deleteById(id);
     }
+
+    @Override
+    public List<Ticket> getEventTicketById(Long id) {
+        Evenement event = eventRepository.findById(id).orElse(null);
+        assert event != null;
+        return event.getTickets();
+    }
+
 }

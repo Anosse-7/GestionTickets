@@ -21,4 +21,6 @@ public interface EvenementService {
     Evenement getEventById(Long id);
 
     void deleteEvent(Long id);
+
+    List<Ticket> getEventTicketById(Long id);
 }
