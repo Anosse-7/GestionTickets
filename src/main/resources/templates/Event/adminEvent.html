@@ -116,20 +116,17 @@
         <h4>Ticket Admin</h4>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">Dashboard</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link text-white" href="#">Events</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">Products</a>
+                <a class="nav-link text-white" href="#">Tickets</a>
             </li>
         </ul>
     </div>
 
     <div class="content">
         <div class="header-container">
-            <h2>Events</h2>
+            <h2>Organizator Space</h2>
             <a href="/addEvent" class="btn btn-primary">Add Event</a>
         </div>
         <div class="table-container">
@@ -147,7 +144,7 @@
                 <tbody th:each="event : ${events}">
                 <tr>
                     <td th:text="${event.titre}"></td>
-                    <td th:text="${event.description}"></td>
+                    <td th:text="${#strings.abbreviate(event.description, 60)}"></td>
                     <td th:text="${event.typeEvenement}"></td>
                     <td th:text="${event.dateEvenement}"></td>
                     <td>
@@ -158,7 +155,7 @@
                         </form>
                     </td>
                     <td>
-                        <a class="btn btn-warning btn-sm" th:href="@{/adminTickets/{eventId}(id=${event.id})}">Manage Tickets</a>
+                        <a class="btn btn-warning btn-sm" th:href="@{/adminTickets/{id}(id=${event.id})}">Manage Tickets</a>
                     </td>
                 </tr>
                 </tbody>

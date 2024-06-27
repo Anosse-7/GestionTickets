@@ -52,7 +52,6 @@ public class AddEventController {
 
             eventService.addEvent(evenement, photo);
             redirectAttributes.addFlashAttribute("success", "Event added successfully");
-            return "redirect:/addEvent?success=true";
         } catch (IllegalArgumentException e) {
             result.rejectValue("photo", "error.photo", e.getMessage());
             System.out.println(e.getMessage());

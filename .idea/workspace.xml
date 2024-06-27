@@ -4,39 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="version with adminEvent with photo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/Evenements/AdminTicketsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/eventImg/pexels-wolfgang-1002140-2747449.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/logo-no-background.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/logo-no-background2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/logo-white.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Event/adminTickets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+    <list default="true" id="849cda33-1aee-49fc-965d-1910467d5656" name="Changes" comment="version with adminEvent manageticket">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fda1edad-632b-4289-b7cd-0cca106a5d37.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fda1edad-632b-4289-b7cd-0cca106a5d37.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2024_11_09_AM_[Changes]/Ticket$TicketBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2024_11_09_AM_[Changes]/Ticket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2024_11_09_AM_[Changes]/UserRegistrationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2024_11_09_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2024_11_09_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Entities/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/TicketsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/TicketsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/conf/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/conf/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EventServices/EvenementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EventServices/EvenementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EventServices/EvenementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/EventServices/EvenementServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/Repository/EventRepositoryImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/TicketsServices/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/TicketsServices/TicketService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/TicketsServices/TicketServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/services/TicketsServices/TicketServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/Evenements/EventDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/Evenements/EventDetailsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/Evenements/AddEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/Evenements/AddEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/Evenements/AddTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/Evenements/AddTicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/Evenements/AdminTicketsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestionticket/web/Controllers/Evenements/AdminTicketsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/ticketsImg/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/ticketsImg/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Event/addTicket.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Event/addTicket.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Event/adminEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Event/adminEvent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Interfaces/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Registration/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Registration/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Event/adminTickets.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Event/adminTickets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Event/eventDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Event/eventDetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Ticket$TicketBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Ticket$TicketBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Ticket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Entities/Ticket.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/UserRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/UserRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/conf/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/conf/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/EventServices/EvenementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/EventServices/EvenementServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/Repository/EventRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/EventServices/EvenementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/EventServices/EvenementService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/TicketsServices/TicketService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/TicketsServices/TicketService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/TicketsServices/TicketServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/services/TicketsServices/TicketServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/Evenements/EventDetailsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/Evenements/EventDetailsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/Evenements/AddEventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/Evenements/AddEventController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/Evenements/AddTicketController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gestionticket/web/Controllers/Evenements/AddTicketController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/ticketsImg/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/ticketsImg/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Event/addTicket.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Event/addTicket.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/Event/adminEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Event/adminEvent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Interfaces/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Interfaces/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Registration/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Registration/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/Event/eventDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Event/eventDetails.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +79,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Anosse-7/GestionTickets.git&quot;,
-    &quot;accountId&quot;: &quot;67a5ac6e-6fc4-4d82-b67c-4507f606382a&quot;
+    &quot;accountId&quot;: &quot;3dd40828-3c02-4292-8f79-e78ff71a9d82&quot;
   },
   &quot;recentNewPullRequestHead&quot;: {
     &quot;server&quot;: {
@@ -121,43 +124,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.GestionTicketApplication.executor": "Debug",
-    "git-widget-placeholder": "seconMaster2",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/obino/IdeaProjects/GestionTickets/src/main/resources/static/assets/img",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.GestionTicketApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;seconMaster2&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/obino/IdeaProjects/GestionTickets&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\obino\IdeaProjects\GestionTickets\src\main\resources\static\assets\img" />
@@ -191,8 +194,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
@@ -303,7 +306,25 @@
       <workItem from="1719148613997" duration="226000" />
       <workItem from="1719156747632" duration="800000" />
       <workItem from="1719163724789" duration="1009000" />
-      <workItem from="1719164763993" duration="11815000" />
+      <workItem from="1719164763993" duration="11966000" />
+      <workItem from="1719248090233" duration="388000" />
+      <workItem from="1719248526325" duration="412000" />
+      <workItem from="1719255329030" duration="684000" />
+      <workItem from="1719257874375" duration="1338000" />
+      <workItem from="1719264234340" duration="42000" />
+      <workItem from="1719400801036" duration="23000" />
+      <workItem from="1719400833953" duration="8671000" />
+      <workItem from="1719410261215" duration="952000" />
+      <workItem from="1719411231531" duration="5690000" />
+      <workItem from="1719424143535" duration="2104000" />
+      <workItem from="1719426269106" duration="7560000" />
+      <workItem from="1719435495633" duration="16000" />
+      <workItem from="1719436168510" duration="298000" />
+      <workItem from="1719436480149" duration="175000" />
+      <workItem from="1719436888109" duration="164000" />
+      <workItem from="1719437670541" duration="47000" />
+      <workItem from="1719437727679" duration="1180000" />
+      <workItem from="1719474399733" duration="4926000" />
     </task>
     <task id="LOCAL-00001" summary="commit uncommplite registration">
       <option name="closed" value="true" />
@@ -545,7 +566,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718897251436</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="version with adminEvent manageticket">
+      <option name="closed" value="true" />
+      <created>1719176815738</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1719176815738</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,7 +593,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Merge remote-tracking branch" />
     <MESSAGE value="index page commit" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="premier prototype" />
@@ -589,7 +617,8 @@
     <MESSAGE value="version 1.7" />
     <MESSAGE value="version with adminEvent" />
     <MESSAGE value="version with adminEvent with photo" />
-    <option name="LAST_COMMIT_MESSAGE" value="version with adminEvent with photo" />
+    <MESSAGE value="version with adminEvent manageticket" />
+    <option name="LAST_COMMIT_MESSAGE" value="version with adminEvent manageticket" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -29,8 +29,10 @@ public class Ticket {
     private String photo;
     @Column
     private Double prix;
-    @Column
-    private String reduction;
+    @Column(columnDefinition = "float default 0")
+    private double reduction;
+    @Transient
+    private double reducedPrice;
 
     @JsonBackReference
     @ManyToOne

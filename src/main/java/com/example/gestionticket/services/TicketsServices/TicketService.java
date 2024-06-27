@@ -18,4 +18,6 @@ public interface TicketService {
     void UpdateTicket(Ticket ticket);
 
     Ticket getTicketById(Long ticketId);
+
+    void deleteTicket(Long ticketId);
 }

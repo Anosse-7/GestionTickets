@@ -22,18 +22,14 @@ import java.util.Objects;
 public class TicketServiceImpl implements TicketService{
 
 
-    @Qualifier("EvenementRepository")
-
     @Autowired
     private EvenementRepository eventRepository;
 
     @Autowired
-    private TicketsRepository ticketRepository;
-
-    @Autowired
-    private EvenementService evenementService;
+    private  TicketsRepository ticketRepository;
 
     private Ticket ticket;
+
 
     @Override
     public String saveTicketImage(MultipartFile file) throws IOException {
@@ -68,31 +64,36 @@ public class TicketServiceImpl implements TicketService{
         eventRepository.save(evenement); // Save the Event
     }
 
-    @Override
-    public void UpdateTicket(Ticket currentTicket) {
-        if (ticketRepository.existsById(currentTicket.getId())){
-            Ticket ticket = ticketRepository.findById(currentTicket.getId()).orElse(null);
-            assert ticket != null;
-            if(!Objects.equals(currentTicket.getTitre(),ticket.getTitre())){
-                currentTicket.setTitre(ticket.getTitre());
-            }
-            if(!Objects.equals(currentTicket.getDescription(),ticket.getDescription())){
-                currentTicket.setDescription(ticket.getDescription());
-            }
-            if(!Objects.equals(currentTicket.getPrix(),ticket.getPrix())){
-                currentTicket.setPrix(ticket.getPrix());
-            }
-            if(!Objects.equals(currentTicket.getQuantite(),ticket.getQuantite())){
-                currentTicket.setQuantite(ticket.getQuantite());
-            }
-            if(!Objects.equals(currentTicket.getPhoto(),ticket.getPhoto())){
-                currentTicket.setPhoto(ticket.getPhoto());
-            }
-            ticketRepository.save(currentTicket);
+@Override
+public void UpdateTicket(Ticket currentTicket) {
+    if (ticketRepository.existsById(currentTicket.getId())){
+        Ticket ticket = ticketRepository.findById(currentTicket.getId()).orElse(null);
+        assert ticket != null;
+        if(!Objects.equals(currentTicket.getTitre(),ticket.getTitre())){
+            ticket.setTitre(currentTicket.getTitre());
         }
+        if(!Objects.equals(currentTicket.getDescription(),ticket.getDescription())){
+            ticket.setDescription(currentTicket.getDescription());
+        }
+        if(!Objects.equals(currentTicket.getPrix(),ticket.getPrix())){
+            ticket.setPrix(currentTicket.getPrix());
+        }
+        if(!Objects.equals(currentTicket.getQuantite(),ticket.getQuantite())){
+            ticket.setQuantite(currentTicket.getQuantite());
+        }
+        if(!Objects.equals(currentTicket.getPhoto(),ticket.getPhoto())){
+            ticket.setPhoto(currentTicket.getPhoto());
+        }
+        ticketRepository.save(ticket);
     }
+}
     @Override
     public Ticket getTicketById(Long ticketId) {
         return ticketRepository.findById(ticketId).orElse(null);
+    }
+
+    @Override
+    public void deleteTicket(Long ticketId) {
+        ticketRepository.deleteById(ticketId);
     }
 }

@@ -16,11 +16,14 @@ import java.io.IOException;
 @Controller
 public class AddTicketController {
 
-    @Autowired
-    private TicketService ticketService;
+    private final TicketService ticketService;
 
-    @GetMapping("/addTicket")
-    public String showAddTicketForm(@RequestParam("eventId") Long eventId, Model model) {
+    public AddTicketController(TicketService ticketService) {
+        this.ticketService = ticketService;
+    }
+
+    @GetMapping("/addTicket/{eventId}")
+    public String showAddTicketForm(@PathVariable("eventId") Long eventId, Model model) {
         model.addAttribute("ticket", new Ticket());
         model.addAttribute("eventId", eventId);
         return "Event/addTicket";
@@ -38,7 +41,7 @@ public class AddTicketController {
         try {
             ticketService.addTicketToEvent(eventId, ticket, file); // Pass the file to the method
             redirectAttributes.addFlashAttribute("success", "Ticket added successfully!");
-            return "Event/addTicket";
+            return "redirect:/adminTickets/" + eventId;
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("error", "An error occurred while adding the ticket: " + e.getMessage());
             return "Event/addTicket";

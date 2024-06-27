@@ -6,11 +6,17 @@ import com.example.gestionticket.services.EventServices.EvenementService;
 import com.example.gestionticket.services.TicketsServices.TicketService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.List;
 
 @Controller
 public class AdminTicketsController {
@@ -24,29 +30,59 @@ public class AdminTicketsController {
     }
 
     @GetMapping("/adminTickets/{eventId}")
-    public String loadTicketsForEvent(@PathVariable("eventId") Long eventId, Model model) {
+    public String loadTicketsForEvent(@PathVariable("eventId") Long eventId, Model model, RedirectAttributes redirectAttributes){
         Evenement evenement = evenementService.getEventById(eventId);
-        if (evenement != null) {
-            model.addAttribute("tickets", evenement.getTickets());
-            model.addAttribute("Ticket", new Ticket()); // For the form
+        if (evenement == null) {
+            redirectAttributes.addFlashAttribute("errorMessage", "Event not found");
+            System.out.println("Event not found");
+            return "redirect:/errorPage";
         }
+        List<Ticket> tickets = evenement.getTickets();
+        tickets.forEach(ticket -> {
+
+            double reducedPrice = ticket.getPrix() - (ticket.getPrix() * ticket.getReduction() / 100);
+            ticket.setReducedPrice(reducedPrice);
+        });
+        model.addAttribute("Event", evenement);
+        model.addAttribute("tickets", tickets);
+        model.addAttribute("Ticket", new Ticket()); // For the form
         return "Event/adminTickets";
     }
 
     @GetMapping("/adminTickets/ticket/{idTicket}")
     public String loadTicket(@PathVariable("idTicket") Long ticketId, Model model) {
         Ticket ticket = ticketService.getTicketById(ticketId);
-        if (ticket != null) {
-            model.addAttribute("Ticket", ticket);
+        if (ticket == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Ticket not found");
         }
+        model.addAttribute("Ticket", ticket);
         return "Event/adminTickets";
     }
 
-    @PostMapping("/adminEvents/{idTicket}")
-    public String updateTicket(@PathVariable("idTicket") Long idEvent, @Valid @ModelAttribute("Ticket") Ticket ticket, @RequestParam("file") MultipartFile file, BindingResult result, Model model){
-        if (result.hasErrors()) {
-            return "redirect:/adminTickets?id=" + idEvent + "&error=true";
+    @GetMapping("/adminTickets/details")
+    public ResponseEntity<Ticket> getTicketDetails(@RequestParam("id") Long id) {
+        Ticket ticket = ticketService.getTicketById(id);
+        if (ticket == null) {
+            return ResponseEntity.notFound().build();
         }
+        double reducedPrice = ticket.getPrix() - (ticket.getPrix() * ticket.getReduction() / 100);
+        ticket.setReducedPrice(reducedPrice);
+        return ResponseEntity.ok(ticket);
+    }
+
+    @DeleteMapping("/adminTickets/delete/{idTicket}")
+    public String deleteTicket(@PathVariable("idTicket") Long ticketId, Model model){
+        Long eventId = ticketService.getTicketById(ticketId).getEvenement().getId();
+        ticketService.deleteTicket(ticketId);
+        return "redirect:/adminTickets/" + eventId;
+    }
+
+    @PostMapping("/adminTickets/update/{eventId}/{idTicket}")
+    public String updateTicket( @PathVariable("eventId") Long eventId,
+                                @PathVariable("idTicket") Long idTicket,
+                                @Valid @ModelAttribute("Ticket") Ticket ticket,
+                                @RequestParam("file") MultipartFile file,
+                                Model model) {
         if (file != null && !file.isEmpty()) {
             try {
                 String photoEvent = ticketService.saveTicketImage(file);
@@ -56,15 +92,10 @@ public class AdminTicketsController {
                 return "Event/adminTickets";
             }
         }
+        ticket.setId(idTicket);
+        System.out.println("Ticket updated successfully   ::::::::::::>>>>  " + ticket.getPhoto());
+        ticketService.UpdateTicket(ticket);
 
-        try {
-            ticketService.UpdateTicket(ticket);
-        } catch (Exception e) {
-            model.addAttribute("updateError", "Error occurred while updating the event. Please try again.");
-            return "Event/adminTickets";
-        }
-
-        return "redirect:/adminTickets/" + idEvent + "?updated=true";
+        return "redirect:/adminTickets/" + eventId ;
     }
-
 }

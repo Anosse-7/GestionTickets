@@ -40,13 +40,19 @@
 
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="description">Discription</label>
-                                    <textarea type="text" id="description" name="titre" class="form-control form-control-lg"></textarea>
+                                    <textarea type="text" id="description" name="description" class="form-control form-control-lg"></textarea>
                                     <p class="alert alert-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></p>
                                 </div>
 
                                 <div data-mdb-input-init class="form-outline mb-4">
+                                    <label class="form-label" for="quantite">Qantiter</label>
+                                    <input type="number" id="quantite" name="quantite" class="form-control form-control-lg"></input>
+                                    <p class="alert alert-danger" th:if="${#fields.hasErrors('quantite')}" th:errors="*{quantite}"></p>
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="etat">Etat</label>
-                                    <select id="etat" th:field="*{etat}" class="form-select form-select-lg">
+                                    <select id="etat" name="etat" th:field="*{etat}" class="form-select form-select-lg">
                                         <option value="" disabled selected>Sélectionnez l'etat de ticket</option>
                                         <option value="disponible">Disponible</option>
                                         <option value="indisponible">Indisponible</option>
@@ -59,6 +65,13 @@
                                     <input id="prix" name="prix" class="form-control form-control-lg">
                                     <p class="alert alert-danger" th:if="${#fields.hasErrors('prix')}" th:errors="*{prix}"></p>
                                 </div>
+
+                                <div data-mdb-input-init class="form-outline mb-4">
+                                    <label class="form-label" for="reduction">Reduction (%)</label>
+                                    <input type="number" id="reduction" name="reduction" class="form-control form-control-lg">
+                                    <p class="alert alert-danger" th:if="${#fields.hasErrors('reduction')}" th:errors="*{reduction}"></p>
+                                </div>
+
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <label class="form-label" for="photo">Photo</label>
                                     <input type="file" id="photo" name="file" class="form-control form-control-lg">
